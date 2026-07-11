@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Living Apothecary | Kawsaypac Ancestral Herbs</title>
+  <meta name="description" content="An interactive archive of the medicinal plants Kawsaypac works with, their ancestral wisdom, traditional uses, and how to prepare them the way the Amazon always has.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Cormorant:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="apothecary.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Kawsaypac home">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="1.4" aria-hidden="true"><circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="14.5"/><circle cx="50" cy="35.5" r="14.5"/><circle cx="50" cy="64.5" r="14.5"/><circle cx="62.6" cy="42.8" r="14.5"/><circle cx="62.6" cy="57.2" r="14.5"/><circle cx="37.4" cy="42.8" r="14.5"/><circle cx="37.4" cy="57.2" r="14.5"/></svg>
+      <span><span class="brand-name">KAWSAYPAC</span><span class="brand-sub">Ancestral Herbs</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html#collections">Shop</a></li>
+        <li><a href="apothecary.html" class="active">The Apothecary</a></li>
+        <li><a href="index.html#retreats">Retreats</a></li>
+        <li><a href="index.html#story">Our Story</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="index.html#collections">Shop Herbs</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ 1. PAGE HERO ============ -->
+  <section class="apo-hero">
+    <div class="apo-hero-collage" aria-hidden="true">
+      <div class="photo-arch apo-arch apo-arch-1"><img src="assets/img/jungle-herbs-4.jpg" alt=""></div>
+      <div class="photo-arch apo-arch apo-arch-2"><img src="assets/img/herbal-infusion.jpg" alt=""></div>
+    </div>
+    <div class="container apo-hero-inner">
+      <p class="overline" data-reveal>The Living Apothecary</p>
+      <h1 class="h-xl" data-reveal>Explore the <span class="accent-i">wisdom</span> of the plants we work with</h1>
+      <p class="lede apo-hero-lede" data-reveal>An interactive archive of the plants we work with, their ancestral wisdom, and the lands they come from.</p>
+      <div class="apo-microtags" data-reveal>
+        <span>Explore</span><i class="dot"></i><span>Learn</span><i class="dot"></i><span>Remember</span>
+      </div>
+    </div>
+    <div class="journal-tag" aria-hidden="true">
+      <span class="line"></span>
+      <span class="label">Herbarium of the Andes and Amazon</span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- ============ 2. FILTER RAIL ============ -->
+  <section class="apo-filter" aria-label="Filter the archive">
+    <div class="container">
+      <div class="filter-rail" role="group" aria-label="Filter herbs">
+        <button class="filter-pill active" data-filter="all" type="button">All Herbs</button>
+        <button class="filter-pill" data-filter="single" type="button">Single Herbs</button>
+        <button class="filter-pill" data-filter="blend" type="button">Signature Blends</button>
+        <span class="filter-divider" aria-hidden="true"></span>
+        <button class="filter-pill" data-filter="immune" type="button">Immune</button>
+        <button class="filter-pill" data-filter="digestive" type="button">Digestive</button>
+        <button class="filter-pill" data-filter="nervous" type="button">Nervous System</button>
+        <button class="filter-pill" data-filter="womens" type="button">Womens Health</button>
+        <button class="filter-pill" data-filter="energy" type="button">Energy</button>
+        <button class="filter-pill" data-filter="detox" type="button">Detox</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. HERB ARCHIVE GRID ============ -->
+  <section class="apo-archive section-pad" id="archive">
+    <div class="container">
+      <div class="archive-head" data-reveal>
+        <p class="overline">Specimen Plates</p>
+        <h2 class="h-lg">The single <span class="accent-i">herbs</span></h2>
+        <p class="lede">Seven plants, each carrying generations of observation, respect, and lived experience. Open a plate to read its story.</p>
+      </div>
+
+      <div class="herb-grid" id="herbGrid">
+
+        <!-- Cat's Claw -->
+        <article class="herb-card" data-type="single" data-benefits="immune digestive" data-detail="detail-cats-claw" data-reveal>
+          <span class="specimen-no">Plate No. 01</span>
+          <div class="herb-photo"><img src="assets/img/leaf-cats-claw.jpg" alt="Cat's Claw, dried bark of the Uncaria tomentosa vine" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Cat's Claw</h3>
+            <p class="herb-latin">Uncaria tomentosa</p>
+            <p class="herb-use">The great vine of the Amazon, taken for generations to fortify the body's defenses from within.</p>
+            <div class="herb-chips">
+              <span class="chip">Immune</span>
+              <span class="chip">Joints</span>
+              <span class="chip">Gut</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Decoction</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-cats-claw" data-open="detail-cats-claw">Open the plate <span class="arrow">&rarr;</span></a>
+                <a class="plate-link plate-link-gold" href="product.html" data-noexpand>Learn more <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chuchuhuasi -->
+        <article class="herb-card" data-type="single" data-benefits="womens immune" data-detail="detail-chuchuhuasi" data-reveal>
+          <span class="specimen-no">Plate No. 02</span>
+          <div class="herb-photo"><img src="assets/img/leaf-chuchuhuasi.jpg" alt="Chuchuhuasi, bark of the Maytenus macrocarpa tree" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Chuchuhuasi</h3>
+            <p class="herb-latin">Maytenus macrocarpa</p>
+            <p class="herb-use">Bark of a towering rainforest tree, long trusted by elders for strength in the back, joints, and bones.</p>
+            <div class="herb-chips">
+              <span class="chip">Joints</span>
+              <span class="chip">Bones</span>
+              <span class="chip">Strength</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Decoction</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-chuchuhuasi" data-open="detail-chuchuhuasi">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Valerian Root -->
+        <article class="herb-card" data-type="single" data-benefits="nervous" data-detail="detail-valerian" data-reveal>
+          <span class="specimen-no">Plate No. 03</span>
+          <div class="herb-photo"><img src="assets/img/leaf-valerian.jpg" alt="Valerian root, Valeriana officinalis" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Valerian Root</h3>
+            <p class="herb-latin">Valeriana officinalis</p>
+            <p class="herb-use">The root of rest. A time-honored evening companion for deep sleep and a settled nervous system.</p>
+            <div class="herb-chips">
+              <span class="chip">Sleep</span>
+              <span class="chip">Nervous System</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Decoction</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-valerian" data-open="detail-valerian">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Guayusa -->
+        <article class="herb-card" data-type="single" data-benefits="energy" data-detail="detail-guayusa" data-reveal>
+          <span class="specimen-no">Plate No. 04</span>
+          <div class="herb-photo"><img src="assets/img/leaf-guayusa-2.jpg" alt="Guayusa leaves, Ilex guayusa" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Guayusa</h3>
+            <p class="herb-latin">Ilex guayusa</p>
+            <p class="herb-use">The Kichwa morning leaf. Clean, steady energy and mental clarity, the same caffeine as coffee without the crash.</p>
+            <div class="herb-chips">
+              <span class="chip">Energy</span>
+              <span class="chip">Clarity</span>
+              <span class="chip">Coffee Alternative</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Infusion</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-guayusa" data-open="detail-guayusa">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Matico -->
+        <article class="herb-card" data-type="single" data-benefits="digestive immune" data-detail="detail-matico" data-reveal>
+          <span class="specimen-no">Plate No. 05</span>
+          <div class="herb-photo"><img src="assets/img/leaf-matico.jpg" alt="Matico leaves, Piper aduncum" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Matico</h3>
+            <p class="herb-latin">Piper aduncum</p>
+            <p class="herb-use">The soldier's herb of the Andes, brewed for digestive comfort and cherished for the skin and the breath.</p>
+            <div class="herb-chips">
+              <span class="chip">Digestive</span>
+              <span class="chip">Skin</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Infusion</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-matico" data-open="detail-matico">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Soursop -->
+        <article class="herb-card" data-type="single" data-benefits="nervous immune" data-detail="detail-soursop" data-reveal>
+          <span class="specimen-no">Plate No. 06</span>
+          <div class="herb-photo"><img src="assets/img/leaf-soursop.jpg" alt="Soursop leaves, Annona muricata" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Soursop</h3>
+            <p class="herb-latin">Annona muricata</p>
+            <p class="herb-use">Gentle leaves of the graviola tree, steeped for calm, ease, and whole body balance, day after day.</p>
+            <div class="herb-chips">
+              <span class="chip">Calm</span>
+              <span class="chip">Balance</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Infusion</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-soursop" data-open="detail-soursop">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clavo Huasca -->
+        <article class="herb-card" data-type="single" data-benefits="energy digestive" data-detail="detail-clavo-huasca" data-reveal>
+          <span class="specimen-no">Plate No. 07</span>
+          <div class="herb-photo"><img src="assets/img/jungle-herbs-2.jpg" alt="Clavo Huasca, the clove-scented vine of the Amazon" loading="lazy"></div>
+          <div class="herb-body">
+            <h3 class="herb-name">Clavo Huasca</h3>
+            <p class="herb-latin">Tynanthus panurensis</p>
+            <p class="herb-use">The clove-scented vine, simmered for inner warmth, vitality, and healthy circulation through the whole body.</p>
+            <div class="herb-chips">
+              <span class="chip">Warmth</span>
+              <span class="chip">Vitality</span>
+              <span class="chip">Circulation</span>
+            </div>
+            <div class="herb-foot">
+              <span class="prep-tag">Preparation: Decoction</span>
+              <div class="herb-actions">
+                <a class="plate-link" href="#detail-clavo-huasca" data-open="detail-clavo-huasca">Open the plate <span class="arrow">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- empty state when a benefit filter matches no single herb -->
+      <div class="archive-empty" id="archiveEmpty" hidden>
+        <p class="archive-empty-title">For this goal, our signature blends do the deeper work.</p>
+        <p>Formulas like Final Flush, Bowel Banisher, and Sacred Sacral were built for exactly this. You will find them just below.</p>
+        <a class="btn btn-ghost" href="#blends">See the blends <span class="arrow">&darr;</span></a>
+      </div>
+
+      <!-- ============ 4. FEATURED HERB DETAIL PANELS ============ -->
+      <div class="herb-details" id="herbDetails">
+
+        <!-- Cat's Claw detail -->
+        <div class="herb-detail" id="detail-cats-claw">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-cats-claw.jpg" alt="Cat's Claw bark prepared for decoction">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 01</p>
+                <h3>Cat's Claw</h3>
+                <p class="detail-latin">Uncaria tomentosa</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Cat's Claw panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Amazon</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">400 to 800 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Tropical rainforest</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Decoction</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Deep in the Ecuadorian Amazon, a woody vine climbs the canopy with curved thorns that resemble a cat's claws, which is how una de gato earned its name. For generations, Kichwa communities and traditional healers have peeled its inner bark and simmered it low and slow as one of the forest's most trusted daily medicines. It is a plant that has earned its place not through trends or marketing claims, but through centuries of observation, respect, and lived experience passed from elder to elder.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support a healthy, balanced immune response</li>
+                  <li>May support joint comfort and everyday mobility</li>
+                  <li>May support gut health and a calm digestive environment</li>
+                  <li>Traditionally taken during seasonal changes to help the body stay resilient</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a boil.</li>
+                  <li>Add 1 heaping tablespoon of Cat's Claw bark.</li>
+                  <li>Reduce to low, cover, and simmer for 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Big batch: bring 5 cups of water to a boil with 1/4 cup of herb, simmer covered for 30 minutes, then store in a sealed glass jar in the fridge for up to 4 days. Always reheat before drinking. Rhythm: take for up to 3 consecutive weeks, then rest for 1 week.</p>
+              </div>
+              <a class="btn btn-gold detail-cta" href="product.html">Learn more about Cat's Claw <span class="arrow">&rarr;</span></a>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Chuchuhuasi detail -->
+        <div class="herb-detail" id="detail-chuchuhuasi">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-chuchuhuasi.jpg" alt="Chuchuhuasi bark prepared for decoction">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 02</p>
+                <h3>Chuchuhuasi</h3>
+                <p class="detail-latin">Maytenus macrocarpa</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Chuchuhuasi panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Amazon lowlands</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">200 to 700 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Tropical rainforest</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Decoction</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Chuchuhuasi comes from a rainforest giant that can rise thirty meters above the forest floor. Its name in Quechua is often translated as trembling back, because this is the bark the elders reached for when the body ached from a life of work. Harvesters carry its story with pride: a tree strong enough to stand for a century lends a little of that strength to the people who prepare it with respect. It remains one of the most beloved barks in the Amazonian apothecary.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support joint comfort and flexibility</li>
+                  <li>May support strong, healthy bones as the body ages</li>
+                  <li>Traditionally taken by elders for lower back ease and stamina</li>
+                  <li>Traditionally shared during long harvests to keep the body feeling capable</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a boil.</li>
+                  <li>Add 1 heaping tablespoon of Chuchuhuasi bark.</li>
+                  <li>Reduce to low, cover, and simmer for 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Big batch: 5 cups of water with 1/4 cup of herb, simmered covered for 30 minutes, keeps refrigerated in a sealed glass jar for up to 4 days. Always reheat before drinking. Rhythm: up to 3 consecutive weeks, then a 1 week break.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Valerian detail -->
+        <div class="herb-detail" id="detail-valerian">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-valerian.jpg" alt="Valerian root prepared for decoction">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 03</p>
+                <h3>Valerian Root</h3>
+                <p class="detail-latin">Valeriana officinalis</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Valerian Root panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Andean highlands</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">2,500 to 3,600 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Mountain meadow</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Decoction</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Valerian is one of the oldest documented sleep herbs in the world, and in the high country its root is still dug by hand, washed in cold mountain water, and simmered as an evening medicine. Healers speak of it as a root that teaches the body to set the day down. Its earthy aroma is unmistakable, and so is the tradition behind it: a warm cup in the last hour before bed, taken slowly, with the lights low.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support deep, restful sleep</li>
+                  <li>May support a calm, settled nervous system</li>
+                  <li>Traditionally taken in the evening to unwind after demanding days</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a boil.</li>
+                  <li>Add 1 heaping tablespoon of Valerian root.</li>
+                  <li>Reduce to low, cover, and simmer for 30 minutes.</li>
+                  <li>Strain and drink warm, ideally within the hour before bed.</li>
+                </ol>
+                <p class="prep-note">Rhythm: up to 3 consecutive weeks, then a 1 week break. Roots hold their strength for a second, lighter brew: reuse once with half the water.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Guayusa detail -->
+        <div class="herb-detail" id="detail-guayusa">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-guayusa-2.jpg" alt="Guayusa leaves prepared for infusion">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 04</p>
+                <h3>Guayusa</h3>
+                <p class="detail-latin">Ilex guayusa</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Guayusa panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Upper Amazon</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">400 to 1,200 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Rainforest gardens</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Infusion</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Long before dawn, Kichwa families in the Ecuadorian Amazon gather around the fire to share guayusa, tell dreams, and set intentions for the day. The leaf has been cultivated in forest gardens for a very long time, so long that it is rarely found growing wild. Guayusa carries the same caffeine as coffee alongside theobromine, the feel-good compound in cacao, which is why the energy arrives smooth and steady, without the spike and without the crash. It is a leaf of clarity, community, and morning ritual.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support clean, sustained energy through the morning</li>
+                  <li>May support mental clarity and steady focus</li>
+                  <li>A beloved coffee alternative, same caffeine without the crash</li>
+                  <li>Traditionally shared before dawn for dream telling and intention setting</li>
+                  <li>Delicious chilled over ice, or added to a morning smoothie</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a gentle boil, never a rolling boil.</li>
+                  <li>Add 1 heaping tablespoon of Guayusa leaves.</li>
+                  <li>Turn the heat off, cover, and steep for 15 to 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Turning the heat off before steeping preserves the leaf's more delicate active compounds. Best made fresh. Rhythm: gentle enough for daily use, no cycling required.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Matico detail -->
+        <div class="herb-detail" id="detail-matico">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-matico.jpg" alt="Matico leaves prepared for infusion">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 05</p>
+                <h3>Matico</h3>
+                <p class="detail-latin">Piper aduncum</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Matico panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Andes to Amazon</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">500 to 1,500 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Forest edge, riverbanks</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Infusion</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Known across the Andes as the soldier's herb, matico grows generously along riverbanks and forest edges, always close to the people who need it. Its aromatic leaves have been steeped for the stomach, pressed for the skin, and inhaled for the breath for generations. It is the kind of plant every grandmother in the sierra knows by sight and by scent.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support digestive comfort after meals</li>
+                  <li>Traditionally used to care for the skin</li>
+                  <li>A favorite for steam inhalation: pour a hot cup into a bowl, drape a towel over your head, and breathe deeply for 5 to 10 minutes</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a gentle boil, never a rolling boil.</li>
+                  <li>Add 1 heaping tablespoon of Matico leaves.</li>
+                  <li>Turn the heat off, cover, and steep for 15 to 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Best made fresh in small batches. Rhythm: up to 3 consecutive weeks, then a 1 week break.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Soursop detail -->
+        <div class="herb-detail" id="detail-soursop">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/leaf-soursop.jpg" alt="Soursop leaves prepared for infusion">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 06</p>
+                <h3>Soursop</h3>
+                <p class="detail-latin">Annona muricata</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Soursop panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Amazon lowlands</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">0 to 600 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Humid tropics</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Infusion</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>The soursop tree, known through Latin America as guanabana, gives twice: a sweet fruit loved by children and a broad green leaf treasured by their grandmothers. In the warm lowlands the leaves are steeped gently into a soft, calming tea taken through the day or in the quiet of the evening. It is medicine of ease, unhurried, familiar, and generous.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support a sense of calm and ease</li>
+                  <li>May support whole body balance when taken consistently</li>
+                  <li>Traditionally steeped as a gentle everyday tea for the whole household</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a gentle boil, never a rolling boil.</li>
+                  <li>Add 1 heaping tablespoon of Soursop leaves.</li>
+                  <li>Turn the heat off, cover, and steep for 15 to 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Rhythm: gentle enough for daily use, no cycling required. Also lovely chilled over ice on warm afternoons.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Clavo Huasca detail -->
+        <div class="herb-detail" id="detail-clavo-huasca">
+          <div class="detail-clip"><div class="detail-inner">
+            <div class="detail-visual">
+              <img src="assets/img/jungle-herbs-2.jpg" alt="Clavo Huasca vine bark prepared for decoction">
+              <div class="detail-visual-cap">
+                <p class="detail-plate">Plate No. 07</p>
+                <h3>Clavo Huasca</h3>
+                <p class="detail-latin">Tynanthus panurensis</p>
+              </div>
+            </div>
+            <div class="detail-content">
+              <button class="detail-close" type="button" data-close aria-label="Close Clavo Huasca panel">Close &times;</button>
+              <div class="detail-stats">
+                <div class="stat-chip"><span class="stat-label">Origin</span><span class="stat-value">Amazon basin</span></div>
+                <div class="stat-chip"><span class="stat-label">Elevation</span><span class="stat-value">200 to 800 m</span></div>
+                <div class="stat-chip"><span class="stat-label">Ecosystem</span><span class="stat-value">Tropical rainforest</span></div>
+                <div class="stat-chip"><span class="stat-label">Preparation</span><span class="stat-value">Decoction</span></div>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Ancestral Wisdom</h4>
+                <p>Cut the bark of this rainforest vine and the air fills with the scent of clove, which is exactly how clavo huasca, the clove vine, earned its name. Amazonian communities simmer it as a warming tonic, the cup you reach for when the rains set in and the body wants heat from the inside out. It has long been associated with vitality and inner fire.</p>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">Traditional Uses</h4>
+                <ul class="leaf-list">
+                  <li>May support inner warmth and everyday vitality</li>
+                  <li>May support healthy circulation</li>
+                  <li>Traditionally simmered as a warming digestive tonic in the rainy season</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4 class="detail-heading">How To Prepare</h4>
+                <ol class="prep-steps">
+                  <li>Bring 2 cups of water to a boil.</li>
+                  <li>Add 1 heaping tablespoon of Clavo Huasca bark.</li>
+                  <li>Reduce to low, cover, and simmer for 30 minutes.</li>
+                  <li>Strain and drink warm.</li>
+                </ol>
+                <p class="prep-note">Rhythm: up to 3 consecutive weeks, then a 1 week break. Barks reward a big batch: brew 5 cups with 1/4 cup of herb and keep refrigerated for up to 4 days.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. INFUSION VS DECOCTION ============ -->
+  <section class="apo-methods section-pad">
+    <div class="container">
+      <div class="methods-head" data-reveal>
+        <p class="overline">Prepare It Properly</p>
+        <h2 class="h-lg">Infusion vs <span class="accent-i">decoction</span></h2>
+        <p class="lede">Not all herbs are prepared the same way. Understanding the difference sets you up for the best results, because the way you prepare your medicine matters just as much as what you choose to take.</p>
+      </div>
+      <div class="methods-grid">
+        <article class="card method-card" data-reveal>
+          <div class="method-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 20h24v6a12 12 0 0 1-24 0v-6z"/><path d="M34 22h4a4 4 0 0 1 0 8h-4"/><path d="M17 14c0-2 2-2 2-4s-2-2-2-4M25 14c0-2 2-2 2-4s-2-2-2-4"/></svg>
+          </div>
+          <p class="method-kicker">The Gentle Way</p>
+          <h3>Infusion</h3>
+          <p>An infusion is what most people call tea: pouring hot water over delicate herbs like leaves and flowers and allowing them to steep. It works well for softer plant material, and turning the heat off before steeping preserves the more delicate active compounds.</p>
+          <ul class="leaf-list">
+            <li>Bring 2 cups of water to a gentle boil, never a rolling boil</li>
+            <li>Add 1 heaping tablespoon of your herbs</li>
+            <li>Turn heat off, cover, and steep for 15 to 30 minutes</li>
+            <li>Strain and drink warm</li>
+          </ul>
+          <p class="method-for"><strong>For:</strong> Guayusa, Matico, Soursop, and our more delicate blends</p>
+        </article>
+        <article class="card method-card method-card-forest" data-reveal>
+          <div class="method-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 22h32v8a10 10 0 0 1-10 10H18A10 10 0 0 1 8 30v-8z"/><path d="M6 22h36M14 16l2-4M24 16l2-4M34 16l2-4"/></svg>
+          </div>
+          <p class="method-kicker">The Ancestral Way</p>
+          <h3>Decoction</h3>
+          <p>A decoction is what we use for all barks, roots, and tougher plant material, which require longer exposure to heat to release their full medicinal compounds. You bring the water and herbs to a boil together, then reduce to a low simmer with the lid on. This is the method the indigenous communities of the Amazon and Andes have always used. It isn't a shortcut. It's THE protocol.</p>
+          <ul class="leaf-list">
+            <li>Bring 2 cups of water to a boil with 1 heaping tablespoon of herb</li>
+            <li>Reduce to low, cover, and simmer for 30 minutes</li>
+            <li>Strain and drink warm</li>
+          </ul>
+          <p class="method-for"><strong>For:</strong> Cat's Claw, Chuchuhuasi, Valerian Root, Clavo Huasca, and our bark and root blends</p>
+        </article>
+      </div>
+      <div class="card need-band" data-reveal>
+        <div class="need-head">
+          <p class="overline">What You Will Need</p>
+          <h3 class="h-md">Gather these before you brew</h3>
+        </div>
+        <ul class="need-list">
+          <li><span class="need-check" aria-hidden="true">&#10003;</span>A medium saucepan with a lid, or a stove-top safe glass pot</li>
+          <li><span class="need-check" aria-hidden="true">&#10003;</span>A fine mesh strainer</li>
+          <li><span class="need-check" aria-hidden="true">&#10003;</span>A glass jar with a lid for storage</li>
+          <li><span class="need-check" aria-hidden="true">&#10003;</span>A measuring cup or tablespoon</li>
+          <li><span class="need-check" aria-hidden="true">&#10003;</span>A mug you love. This is a ritual, not a chore</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. SIGNATURE BLENDS STRIP ============ -->
+  <section class="apo-blends section-pad" id="blends">
+    <div class="container blends-head" data-reveal>
+      <div>
+        <p class="overline">Formulated Protocols</p>
+        <h2 class="h-lg">The signature <span class="accent-i">blends</span></h2>
+        <p class="lede">Pre-designed combinations built on the same plants in this archive. They do the mixing for you.</p>
+      </div>
+      <div class="blend-nav">
+        <button class="blend-arrow" id="blendPrev" type="button" aria-label="Scroll blends left"><span aria-hidden="true">&larr;</span></button>
+        <button class="blend-arrow" id="blendNext" type="button" aria-label="Scroll blends right"><span aria-hidden="true">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="blend-strip-wrap">
+      <div class="blend-strip" id="blendStrip" tabindex="0" aria-label="Signature blends, scroll horizontally">
+        <article class="card blend-card" data-type="blend" data-benefits="energy">
+          <div class="blend-photo"><img src="assets/img/blend-zapped-in-cover.jpg" alt="Zapped In blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Zapped In</h3>
+            <p>Sustained natural energy for the days that ask more of you.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="digestive">
+          <div class="blend-photo"><img src="assets/img/blend-bowel-balance-tea.jpg" alt="Bowel Balance blend tea" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Bowel Balance</h3>
+            <p>Gentle daily support for regularity and digestive ease.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="digestive detox">
+          <div class="blend-photo"><img src="assets/img/blend-restoring-order.jpg" alt="Restoring Order blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Restoring Order</h3>
+            <p>A grounding protocol to help the gut find its rhythm again.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="detox digestive">
+          <div class="blend-photo"><img src="assets/img/blend-final-flush-tea.jpg" alt="Final Flush blend tea" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Final Flush</h3>
+            <p>A short, focused deep cleanse. Seven days, then rest.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="immune detox">
+          <div class="blend-photo"><img src="assets/img/blend-one-way-out.jpg" alt="One Way Out blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>One Way Out</h3>
+            <p>Open airways and clear breath, beautiful as tea or steam.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="energy immune">
+          <div class="blend-photo"><img src="assets/img/blend-river-of-life.jpg" alt="River of Life blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>River of Life</h3>
+            <p>May support healthy circulation, so everything flows.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="womens">
+          <div class="blend-photo"><img src="assets/img/blend-sacred-sacral.jpg" alt="Sacred Sacral blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Sacred Sacral</h3>
+            <p>Daily nourishment for the womb space and womens rhythms.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="womens digestive">
+          <div class="blend-photo"><img src="assets/img/blend-scales-of-balance.jpg" alt="Scales of Balance blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Scales of Balance</h3>
+            <p>May support steady blood sugar balance through the day.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="card blend-card" data-type="blend" data-benefits="digestive detox">
+          <div class="blend-photo"><img src="assets/img/blend-bowel-balance-tea.jpg" alt="Bowel Banisher blend" loading="lazy"></div>
+          <div class="blend-body">
+            <h3>Bowel Banisher</h3>
+            <p>A stronger bark and root protocol for stubborn sluggishness.</p>
+            <a class="plate-link" href="index.html#blends">Shop <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. CTA BAND ============ -->
+  <section class="apo-cta">
+    <div class="container apo-cta-inner" data-reveal>
+      <p class="overline apo-cta-overline">Begin Your Ritual</p>
+      <h2 class="h-lg">Not sure where to <span class="accent-i">begin?</span></h2>
+      <p>Start with one herb at a time so you can feel what your body responds to, or let one of our pre-designed protocols do the choosing for you. Every plant in this archive is sustainably wild-harvested with the Kichwa communities of Ecuador.</p>
+      <a class="btn btn-gold" href="index.html#collections">Explore Our Collections <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-scene"><img src="assets/img/amazon-river.jpg" alt="The Amazon river winding through the jungle" loading="lazy"></div>
+  <div class="footer-main container">
+    <div class="footer-news">
+      <h2>Join The <span class="accent-i">Herbal</span> Journal</h2>
+      <p>Receive seasonal herbal wisdom, new harvests, educational tools and retreat announcements.</p>
+      <form class="news-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:var(--gold-soft);font-size:16px\'>Welcome to the journal. Speak soon.</p>';">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Subscribe</button>
+      </form>
+      <p class="news-note">No spam. Only stories worth reading.</p>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="index.html#collections">Shop All Herbs</a></li><li><a href="index.html#blends">Kawsaypac Blends</a></li><li><a href="index.html#blends">Kawsaypac Bundles</a></li><li><a href="index.html#retreats">Ecuador Retreats</a></li><li><a href="#">Recipes &amp; Programs</a></li></ul></div>
+      <div class="footer-col"><h4>Learn</h4><ul><li><a href="apothecary.html">Why Kawsaypac</a></li><li><a href="#">Tea Preparation Guide</a></li><li><a href="#">Preparing Your Body</a></li><li><a href="index.html#story">Our Story</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Contact Us</a></li><li><a href="#">FAQ</a></li><li><a href="#">Wholesale</a></li></ul></div>
+      <div class="footer-col"><h4>Policies</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">FDA Statement</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="brand-name">KAWSAYPAC</span>
+      <p class="footer-tagline">Rooted in Ecuador. Guided by Nature. Created for Transformation.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 11-2.9 0 1.4 1.4 0 012.9 0z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0024 12z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.6 5.8a4.8 4.8 0 01-3.4-4.5H12.6v14.1a2.9 2.9 0 11-2.9-2.9c.3 0 .6 0 .9.1V9a6.4 6.4 0 00-.9-.1 6.5 6.5 0 106.5 6.5V9.2a8.3 8.3 0 004.4 1.3V6.9c-.3 0-.7 0-1-.1z"/></svg></a>
+      </div>
+      <p class="legal">&copy; 2026 The Electric Eats. All rights reserved. These statements have not been evaluated by the FDA.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* Signal that JS is live. Detail panels collapse only when this class exists,
+     so with JS off every panel stays fully visible. */
+  document.documentElement.classList.add('js');
+
+  /* ---------- header + nav fallback (skipped if app.js already bound) ---------- */
+  if (!window.__kwHeaderBound) {
+    window.__kwHeaderBound = true;
+    var header = document.getElementById('siteHeader');
+    var onScroll = function () {
+      if (header) header.classList.toggle('scrolled', window.scrollY > 24);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    var toggle = document.querySelector('.nav-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        document.body.classList.toggle('nav-open');
+      });
+    }
+  }
+
+  /* ---------- image guard: swap broken images to branded placeholder ---------- */
+  var PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Crect width='800' height='800' fill='%23FAF9F6'/%3E%3Ccircle cx='400' cy='352' r='118' fill='none' stroke='%23C9A942' stroke-width='2.5'/%3E%3Ccircle cx='400' cy='352' r='44' fill='none' stroke='%23C9A942' stroke-width='1.5'/%3E%3Ctext x='400' y='560' text-anchor='middle' font-family='Georgia,serif' font-size='40' letter-spacing='14' fill='%231F3A2A'%3EKAWSAYPAC%3C/text%3E%3C/svg%3E";
+  Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
+    img.addEventListener('error', function () {
+      if (img.src !== PLACEHOLDER) img.src = PLACEHOLDER;
+    });
+    if (img.complete && img.naturalWidth === 0 && img.src && img.src !== PLACEHOLDER) {
+      img.src = PLACEHOLDER;
+    }
+  });
+
+  /* ---------- detail panels: accordion with smooth height, deep-linkable ---------- */
+  var details = document.querySelectorAll('.herb-detail');
+  var cards = document.querySelectorAll('.herb-card');
+
+  function closeAll() {
+    Array.prototype.forEach.call(details, function (p) { p.classList.remove('open'); });
+    Array.prototype.forEach.call(cards, function (c) {
+      c.classList.remove('is-open');
+      c.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function openDetail(id, scrollTo) {
+    var panel = document.getElementById(id);
+    if (!panel) return;
+    var wasOpen = panel.classList.contains('open');
+    closeAll();
+    if (!wasOpen) {
+      panel.classList.add('open');
+      var card = document.querySelector('.herb-card[data-detail="' + id + '"]');
+      if (card) { card.classList.add('is-open'); card.setAttribute('aria-expanded', 'true'); }
+      if (scrollTo) {
+        window.setTimeout(function () {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+      }
+      if (window.history && history.replaceState) history.replaceState(null, '', '#' + id);
+    } else if (window.history && history.replaceState) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  }
+
+  Array.prototype.forEach.call(cards, function (card) {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-expanded', 'false');
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('[data-noexpand]')) return; /* let LEARN MORE navigate */
+      var openLink = e.target.closest('[data-open]');
+      if (openLink) e.preventDefault();
+      openDetail(card.dataset.detail, true);
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target !== card) return;
+        e.preventDefault();
+        openDetail(card.dataset.detail, true);
+      }
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.detail-close'), function (btn) {
+    btn.addEventListener('click', function () {
+      closeAll();
+      if (window.history && history.replaceState) history.replaceState(null, '', window.location.pathname);
+    });
+  });
+
+  /* deep link: #detail-<herb> opens that panel on load and on hash change */
+  function openFromHash() {
+    var hashId = window.location.hash.slice(1);
+    if (hashId.indexOf('detail-') === 0 && document.getElementById(hashId)) {
+      window.setTimeout(function () { openDetail(hashId, true); }, 300);
+    }
+  }
+  if (window.location.hash) openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
+  /* ---------- filter rail ---------- */
+  var pills = document.querySelectorAll('.filter-pill');
+  var emptyState = document.getElementById('archiveEmpty');
+  var blendCards = document.querySelectorAll('.blend-card');
+
+  Array.prototype.forEach.call(pills, function (pill) {
+    pill.addEventListener('click', function () {
+      Array.prototype.forEach.call(pills, function (p) {
+        p.classList.remove('active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.add('active');
+      pill.setAttribute('aria-pressed', 'true');
+      var f = pill.dataset.filter;
+      var visible = 0;
+
+      Array.prototype.forEach.call(cards, function (card) {
+        var benefits = (card.dataset.benefits || '').split(' ');
+        var show = f === 'all' || f === 'single' || f === 'blend' || benefits.indexOf(f) > -1;
+        card.classList.toggle('is-filtered-out', !show);
+        if (show) visible++;
+      });
+
+      Array.prototype.forEach.call(blendCards, function (bc) {
+        var benefits = (bc.dataset.benefits || '').split(' ');
+        var show = f === 'all' || f === 'single' || f === 'blend' || benefits.indexOf(f) > -1;
+        bc.classList.toggle('is-filtered-out', !show);
+      });
+
+      if (emptyState) emptyState.hidden = visible !== 0;
+      if (visible === 0) closeAll();
+
+      if (f === 'blend') {
+        var blends = document.getElementById('blends');
+        if (blends) blends.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* ---------- blend strip arrows ---------- */
+  var strip = document.getElementById('blendStrip');
+  var prev = document.getElementById('blendPrev');
+  var next = document.getElementById('blendNext');
+  function stripStep() {
+    var card = strip ? strip.querySelector('.blend-card:not(.is-filtered-out)') : null;
+    return card ? card.getBoundingClientRect().width + 28 : 340;
+  }
+  if (strip && prev && next) {
+    prev.addEventListener('click', function () { strip.scrollBy({ left: -stripStep(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { strip.scrollBy({ left: stripStep(), behavior: 'smooth' }); });
+  }
+
+  /* ---------- GSAP reveals (progressive enhancement only) ---------- */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-reveal]'), function (el) {
+      gsap.from(el, {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        immediateRender: false,
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+      });
+    });
+  }
+
+  /* safety net: after 3s force-clear any inline opacity/transform GSAP left behind */
+  window.setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-reveal]'), function (el) {
+      if (el.style.opacity !== '' && parseFloat(el.style.opacity) < 1) {
+        el.style.opacity = '';
+        el.style.transform = '';
+      }
+    });
+  }, 3000);
+})();
+</script>
+</body>
+</html>
