@@ -138,4 +138,67 @@
   } else {
     initReveals();
   }
+
+  /* ----- hummingbird companion: follows the visitor like the PeachWeb fish ----- */
+  function initCompanion() {
+    if (window.matchMedia("(max-width: 960px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (document.querySelector(".companion")) return;
+
+    var el = document.createElement("div");
+    el.className = "companion";
+    el.setAttribute("aria-hidden", "true");
+    el.innerHTML =
+      '<svg viewBox="0 0 74 74" fill="none">' +
+      '<g class="bird-body">' +
+      '<path class="wing-back" d="M38 34 C30 18, 16 12, 6 16 C16 22, 24 30, 36 35 Z" fill="#958E59"/>' +
+      '<path d="M20 44 C10 50, 5 58, 3 66 C12 62, 20 56, 27 48 Z" fill="#1F3A2A"/>' +
+      '<path d="M24 40 C30 30, 44 28, 52 34 C58 38, 60 44, 56 48 C50 54, 36 54, 28 48 C24 45, 23 43, 24 40 Z" fill="#1F3A2A"/>' +
+      '<path d="M50 34 C56 30, 62 30, 66 33 L72 35 L65 37 C61 40, 55 40, 51 38 Z" fill="#2A2A26"/>' +
+      '<circle cx="58" cy="34.5" r="1.6" fill="#FAF9F6"/>' +
+      '<path d="M46 46 C44 52, 40 56, 35 58 C39 51, 41 48, 43 45 Z" fill="#C9A942"/>' +
+      '<path class="wing-front" d="M38 34 C34 16, 22 6, 10 8 C18 18, 26 28, 36 36 Z" fill="#C9A942"/>' +
+      '</g></svg>';
+    document.body.appendChild(el);
+
+    var tx = window.innerWidth * 0.72, ty = window.innerHeight * 0.3;
+    var x = tx, y = ty, facing = 1, lastX = tx;
+    var idleT = 0;
+
+    document.addEventListener("mousemove", function (e) {
+      tx = e.clientX + 46;
+      ty = e.clientY - 62;
+      idleT = 0;
+    }, { passive: true });
+
+    window.addEventListener("scroll", function () { idleT = 0; }, { passive: true });
+
+    function tick() {
+      idleT += 1;
+      // gentle autonomous drift when idle, like a bird losing interest
+      if (idleT > 240) {
+        tx = window.innerWidth * (0.62 + 0.18 * Math.sin(idleT / 130));
+        ty = window.innerHeight * (0.24 + 0.1 * Math.cos(idleT / 170));
+      }
+      var maxX = window.innerWidth - 84, maxY = window.innerHeight - 84;
+      var cx = Math.min(Math.max(tx, 10), maxX);
+      var cy = Math.min(Math.max(ty, 74), maxY);
+      x += (cx - x) * 0.045;
+      y += (cy - y) * 0.045;
+      if (x - lastX > 0.35) facing = 1;
+      else if (x - lastX < -0.35) facing = -1;
+      lastX = x;
+      var tilt = Math.max(Math.min((cy - y) * 0.18, 10), -10);
+      el.style.transform =
+        "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scaleX(" + facing + ") rotate(" + tilt.toFixed(1) + "deg)";
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCompanion);
+  } else {
+    initCompanion();
+  }
 })();
