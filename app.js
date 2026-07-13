@@ -102,13 +102,12 @@
       if (!els.length) return;
       els.forEach(function (el, i) {
         gsap.from(el, {
-          y: 34,
-          opacity: 0,
-          duration: 1.05,
+          y: 30,
+          duration: 1.0,
           ease: "power3.out",
-          delay: (i % 6) * 0.08,
+          delay: (i % 6) * 0.07,
           immediateRender: false,
-          scrollTrigger: { trigger: el, start: "top 88%", once: true }
+          scrollTrigger: { trigger: el, start: "top 90%", once: true }
         });
       });
     });
@@ -160,7 +159,7 @@
       '</g></svg>';
     document.body.appendChild(el);
 
-    var tx = window.innerWidth * 0.72, ty = window.innerHeight * 0.3;
+    var tx = window.innerWidth * 0.84, ty = window.innerHeight * 0.66;
     var x = tx, y = ty, facing = 1, lastX = tx;
     var idleT = 0;
 
@@ -222,14 +221,7 @@
     }
   });
   function initParallax() {
-    if (!window.gsap || !window.ScrollTrigger) return;
-    document.querySelectorAll(".j-bg img").forEach(function (img) {
-      gsap.to(img, {
-        yPercent: 8,
-        ease: "none",
-        scrollTrigger: { trigger: img.closest("section, footer"), start: "top bottom", end: "bottom top", scrub: 1.4 }
-      });
-    });
+    /* disabled: parallax on masked backgrounds created visible gaps between sections */
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initParallax);
