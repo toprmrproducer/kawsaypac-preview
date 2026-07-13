@@ -83,18 +83,17 @@
     gsap.registerPlugin(ScrollTrigger);
 
     var groups = [
-      ".hero-copy > *",
-      ".hero-visual",
+      ".j-hero-inner > *",
       ".section-head > *",
-      ".collection-card",
-      ".split-photo",
-      ".split-copy > *",
-      ".retreats-copy > *",
+      ".bowl",
+      ".why-icons li",
+      ".j-num-head > *",
+      ".j-quote",
       ".video-facade",
-      ".blend-card",
+      ".pouch",
       ".testi-card",
       ".specimen",
-      ".closing-inner > *",
+      ".footer-news > *",
       ".reveal-item"
     ];
 
@@ -200,5 +199,41 @@
     document.addEventListener("DOMContentLoaded", initCompanion);
   } else {
     initCompanion();
+  }
+})();
+
+/* Journey page: touch-friendly dropdowns + gentle bg parallax */
+(function () {
+  "use strict";
+  document.querySelectorAll(".has-drop > a").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var li = a.parentElement;
+      var isOpen = li.classList.contains("open");
+      document.querySelectorAll(".has-drop.open").forEach(function (o) { o.classList.remove("open"); });
+      if (!isOpen && window.matchMedia("(hover: none)").matches) {
+        e.preventDefault();
+        li.classList.add("open");
+      }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".has-drop")) {
+      document.querySelectorAll(".has-drop.open").forEach(function (o) { o.classList.remove("open"); });
+    }
+  });
+  function initParallax() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    document.querySelectorAll(".j-bg img").forEach(function (img) {
+      gsap.to(img, {
+        yPercent: 8,
+        ease: "none",
+        scrollTrigger: { trigger: img.closest("section, footer"), start: "top bottom", end: "bottom top", scrub: 1.4 }
+      });
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initParallax);
+  } else {
+    initParallax();
   }
 })();
