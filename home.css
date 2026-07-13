@@ -508,3 +508,50 @@ p.overline.center-line { justify-content: center; display: flex; }
   .pouch-row { grid-template-columns: repeat(2, 1fr); }
   .leaf-right { display: none; }
 }
+
+/* ---------- 06b testimonial marquee (21st.dev pattern: infinite track, hover pause, fade edges) ---------- */
+.testi-marquee {
+  overflow: hidden;
+  position: relative;
+  padding: 6px 0 14px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+}
+.testi-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: testi-scroll 52s linear infinite;
+  will-change: transform;
+}
+.testi-marquee:hover .testi-track { animation-play-state: paused; }
+.testi-track .testi-card {
+  flex: 0 0 auto;
+  width: clamp(280px, 26vw, 360px);
+  display: flex;
+  flex-direction: column;
+}
+.testi-track .testi-card blockquote { flex: 1; }
+@keyframes testi-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 12px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testi-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+  .testi-track .testi-card:nth-child(n+4) { display: none; }
+  .testi-marquee { mask-image: none; -webkit-mask-image: none; }
+}
+
+/* ---------- 03b word reveal (21st.dev text-reveal pattern; content intact with JS off) ---------- */
+.word-reveal .wr-word {
+  display: inline-block;
+  opacity: 0.16;
+  transform: translateY(0.18em);
+  transition: opacity 0.5s var(--ease-lux), transform 0.5s var(--ease-lux);
+}
+.word-reveal .wr-word.on { opacity: 1; transform: translateY(0); }
+.word-reveal .wr-word.wr-accent { font-family: var(--accent-serif); font-style: italic; color: var(--gold); }
+
+/* ---------- master-image placeholder slots ---------- */
+.pouch-img img[src*="/ph/"],
+.specimen img[src*="/ph/"] { object-fit: cover; background: #FBFAF7; }

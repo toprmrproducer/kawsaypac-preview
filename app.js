@@ -91,7 +91,7 @@
       ".j-quote",
       ".video-facade",
       ".pouch",
-      ".testi-card",
+      ".testi-marquee",
       ".specimen",
       ".footer-news > *",
       ".reveal-item"
@@ -110,6 +110,34 @@
           scrollTrigger: { trigger: el, start: "top 90%", once: true }
         });
       });
+    });
+
+    /* word-by-word quote reveal (21st.dev text-reveal pattern) */
+    document.querySelectorAll(".word-reveal").forEach(function (p) {
+      var text = p.getAttribute("data-reveal-text") || p.textContent;
+      var words = text.trim().split(/\s+/);
+      p.innerHTML = words.map(function (w) {
+        var accent = /listen/i.test(w) ? " wr-accent" : "";
+        return '<span class="wr-word' + accent + '">' + w + "</span>";
+      }).join(" ");
+      var spans = p.querySelectorAll(".wr-word");
+      ScrollTrigger.create({
+        trigger: p,
+        start: "top 88%",
+        end: "top 38%",
+        scrub: 0.4,
+        onUpdate: function (self) {
+          var n = Math.round(self.progress * spans.length);
+          spans.forEach(function (s, i) { s.classList.toggle("on", i < n); });
+        },
+        onLeave: function () { spans.forEach(function (s) { s.classList.add("on"); }); }
+      });
+      /* safety: never leave the quote dim */
+      setTimeout(function () {
+        if (p.getBoundingClientRect().top < window.innerHeight) {
+          spans.forEach(function (s) { s.classList.add("on"); });
+        }
+      }, 4000);
     });
 
     /* gentle parallax on arch photos */
