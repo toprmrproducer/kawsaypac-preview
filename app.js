@@ -413,7 +413,7 @@
       });
       b.addEventListener("mouseleave", function () { b.style.transform = ""; });
     });
-    document.querySelectorAll(".p-card, .specimen").forEach(function (c) {
+    document.querySelectorAll(".p-card").forEach(function (c) {
       c.addEventListener("mousemove", function (e) {
         var r = c.getBoundingClientRect();
         var rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
