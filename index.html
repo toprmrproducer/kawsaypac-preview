@@ -1,306 +1,981 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kawsaypac | Wildcrafted Ecuadorian Herbs from the Andes &amp; Amazon</title>
-  <meta name="description" content="Premium wildcrafted Ecuadorian herbs, teas and retreats. Descend through Ecuador's landscapes, from Cotopaxi to the Amazon, and discover plants with purpose.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kawsaypac | Wildcrafted Herbal Remedies from the Andes &amp; Amazon</title>
+  <meta name="description" content="Small-batch herbal teas and blends, wildcrafted with Indigenous partners across Ecuador's Andes and Amazon.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://api.fontshare.com https://cdn.fontshare.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kawsaypac | Wildcrafted Herbal Remedies from the Andes &amp; Amazon">
+  <meta property="og:description" content="Small-batch herbal remedies from Ecuador, rooted in ancestral wisdom and direct community partnerships.">
+  <meta property="og:image" content="assets/img/hero-cloud-sea.jpg">
+  <meta property="og:image:alt" content="Cotopaxi rising above a golden sea of clouds in Ecuador">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FAF9F6'/%3E%3Cg fill='none' stroke='%23A17E16' stroke-width='2.4'%3E%3Ccircle cx='32' cy='23' r='11'/%3E%3Ccircle cx='41.5' cy='28.5' r='11'/%3E%3Ccircle cx='41.5' cy='39.5' r='11'/%3E%3Ccircle cx='32' cy='45' r='11'/%3E%3Ccircle cx='22.5' cy='39.5' r='11'/%3E%3Ccircle cx='22.5' cy='28.5' r='11'/%3E%3Ccircle cx='32' cy='34' r='11'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/img/hero-cloud-sea.webp" imagesrcset="assets/img/hero-cloud-sea-960.webp 960w, assets/img/hero-cloud-sea.webp 1672w" imagesizes="(max-width: 767px) calc(100vw - 16px), calc(100vw - 40px)" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Cormorant:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi%40400%2C500%2C700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="home.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23C9A942' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="bridge.css">
+  <link rel="stylesheet" href="flora.css">
+  <link rel="stylesheet" href="hybrid-home.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js" integrity="sha384-Xq1BeDwNtxiPZnIDa1Xk2YQr3EXhSAo+J8Hh1roNN1EwHBkTJ8dXdW+T+2vTQny4" crossorigin="anonymous"></script>
+  <script defer src="app.js"></script>
 </head>
-<body class="journey-page">
+<body class="hybrid-home">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<header class="site-header pill-header" id="siteHeader">
-  <div class="container header-inner pill-inner">
-    <a class="brand" href="index.html" aria-label="Kawsaypac home">
-      <svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="1.4" aria-hidden="true"><circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="14.5"/><circle cx="50" cy="35.5" r="14.5"/><circle cx="50" cy="64.5" r="14.5"/><circle cx="62.6" cy="42.8" r="14.5"/><circle cx="62.6" cy="57.2" r="14.5"/><circle cx="37.4" cy="42.8" r="14.5"/><circle cx="37.4" cy="57.2" r="14.5"/></svg>
-      <span><span class="brand-name">KAWSAYPAC</span><span class="brand-sub">Ancestral Herbs</span></span>
-    </a>
-    <nav aria-label="Main">
-      <ul class="nav-links">
-        <li class="has-drop">
-          <a href="#collections" aria-haspopup="true">Shop by Concern <span class="caret">&#9662;</span></a>
-          <div class="dropdown mega">
-            <a href="#collections">All Products</a>
-            <a href="#collections">Women's Wellness</a>
-            <a href="#collections">Men's Wellness</a>
-            <a href="#collections">Digestive Health</a>
-            <a href="#collections">Auto-Immune Support</a>
-            <a href="#collections">Nervous System</a>
-            <a href="#collections">Energy &amp; Vitality</a>
-            <a href="#collections">Joint &amp; Mobility</a>
-            <a href="product.html">Heart Health</a>
-            <a href="#collections">Liver Support</a>
-            <a href="#collections">Kidney Support</a>
-            <a href="#collections">Lung Support</a>
-            <a href="#collections">Hormone Balance</a>
-            <a href="#collections">Sleep &amp; Relaxation</a>
-            <a href="#collections">Full Body Detox</a>
-          </div>
-        </li>
-        <li><a href="#retreats">Retreats</a></li>
-        <li class="has-drop">
-          <a href="#philosophy" aria-haspopup="true">Learn <span class="caret">&#9662;</span></a>
-          <div class="dropdown">
-            <a href="apothecary.html">About Kawsaypac</a>
-            <a href="apothecary.html#prepare">Tea Preparation Guide</a>
-            <a href="apothecary.html#prepare">Preparing Your Body</a>
-            <a href="#blends">Recipes &amp; Programs</a>
-          </div>
-        </li>
-        <li><a href="apothecary.html">Apothecary</a></li>
-        <li><a href="#story">Our Story</a></li>
-      </ul>
+  <aside class="announcement-ribbon" role="region" aria-label="Store benefits: free US shipping over 75 dollars, a 30-day happiness guarantee, small-batch freshness, and secure checkout">
+    <div class="announcement-ribbon__viewport">
+      <div class="announcement-ribbon__track" aria-hidden="true">
+        <div class="announcement-ribbon__copy">
+          <span class="announcement-ribbon__item">Free US shipping over $75</span>
+          <span class="announcement-ribbon__item">30-day happiness guarantee</span>
+          <span class="announcement-ribbon__item">Small-batch freshness</span>
+          <span class="announcement-ribbon__item">Secure checkout</span>
+          <span class="announcement-ribbon__item">Wildcrafted in Ecuador</span>
+        </div>
+        <div class="announcement-ribbon__copy" aria-hidden="true">
+          <span class="announcement-ribbon__item">Free US shipping over $75</span>
+          <span class="announcement-ribbon__item">30-day happiness guarantee</span>
+          <span class="announcement-ribbon__item">Small-batch freshness</span>
+          <span class="announcement-ribbon__item">Secure checkout</span>
+          <span class="announcement-ribbon__item">Wildcrafted in Ecuador</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <svg class="svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M14 7l5 5-5 5"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m7 9 5 5 5-5"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24">
+        <path d="M20 4C11 4 5 8 5 15c0 3 2 5 5 5 7 0 10-7 10-16Z"/>
+        <path d="M4 21c3-6 7-9 13-12"/>
+      </symbol>
+      <symbol id="i-mountain" viewBox="0 0 24 24">
+        <path d="m3 19 7-12 4 6 2-3 5 9H3Z"/>
+        <path d="m8 11 2 2 2-3"/>
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M20 15.3A8.5 8.5 0 0 1 8.7 4 8.5 8.5 0 1 0 20 15.3Z"/>
+        <path d="M16 4v3M14.5 5.5h3"/>
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path d="M12 2 9.8 9.8 2 12l7.8 2.2L12 22l2.2-7.8L22 12l-7.8-2.2L12 2Z"/>
+      </symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24">
+        <path d="M12 3S6 10 6 15a6 6 0 0 0 12 0c0-5-6-12-6-12Z"/>
+        <path d="M9 16a3 3 0 0 0 3 2"/>
+      </symbol>
+      <symbol id="i-lungs" viewBox="0 0 24 24">
+        <path d="M11 5v8c-1-3-2-5-4-5-2 0-4 5-4 9 0 2 1 3 3 3 3 0 5-2 5-5M13 5v8c1-3 2-5 4-5 2 0 4 5 4 9 0 2-1 3-3 3-3 0-5-2-5-5"/>
+      </symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24">
+        <path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 3 20 6v5c0 5-3.3 8.4-8 10-4.7-1.6-8-5-8-10V6l8-3Z"/>
+        <path d="m8.5 12 2.2 2.2 4.8-5"/>
+      </symbol>
+      <symbol id="i-joint" viewBox="0 0 24 24">
+        <path d="M7 4v5a3 3 0 0 0 3 3h4a3 3 0 0 1 3 3v5"/>
+        <circle cx="7" cy="4" r="2"/><circle cx="17" cy="20" r="2"/>
+      </symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24">
+        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/>
+        <path d="M7 16h10M13 12c2-1 3-2 3-4-2 0-4 1-4 4"/>
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24">
+        <path d="M4 5c3-1 6 0 8 2v13c-2-2-5-3-8-2V5ZM20 5c-3-1-6 0-8 2v13c2-2 5-3 8-2V5Z"/>
+      </symbol>
+      <symbol id="i-hands" viewBox="0 0 24 24">
+        <path d="M3 14c3-1 5-1 8 1l2 1c1 .6.5 2-.5 2H9"/>
+        <path d="m3 19 3 1h7c2 0 4-1 8-5M21 10c-3-1-5-1-8 1l-2 1c-1 .6-.5 2 .5 2H15"/>
+        <path d="M12 11c-2-1-3-3-3-5 2 0 3 .8 3 3 0-2 1-3 3-3 0 2-1 4-3 5Z"/>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="m9 6 9 6-9 6V6Z"/>
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M20 7v5h-5M4 17v-5h5"/>
+        <path d="M18 12a6 6 0 0 0-10-4L4 12M6 12a6 6 0 0 0 10 4l4-4"/>
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="m4 7 8-4 8 4-8 4-8-4Z"/>
+        <path d="M4 7v10l8 4 8-4V7M12 11v10"/>
+      </symbol>
+      <symbol id="i-pouch" viewBox="0 0 24 24">
+        <path d="M7 5h10l2 4-1 12H6L5 9l2-4Z"/>
+        <path d="M7 5V3h10v2M7 10h10"/>
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="5" y="10" width="14" height="11" rx="2"/>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24">
+        <path d="M14 21v-8h3l.5-4H14V7c0-1.2.5-2 2-2h2V2.4c-.7-.1-1.8-.4-3.2-.4C11.8 2 10 3.8 10 6.8V9H7v4h3v8"/>
+      </symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24">
+        <path d="M21 8.2a3 3 0 0 0-2.1-2.1C17 5.6 14.3 5.5 12 5.5s-5 .1-6.9.6A3 3 0 0 0 3 8.2 24 24 0 0 0 2.5 12 24 24 0 0 0 3 15.8a3 3 0 0 0 2.1 2.1c1.9.5 4.6.6 6.9.6s5-.1 6.9-.6a3 3 0 0 0 2.1-2.1 24 24 0 0 0 .5-3.8 24 24 0 0 0-.5-3.8Z"/>
+        <path d="m10 9 5 3-5 3V9Z"/>
+      </symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24">
+        <path d="M14 3v11.5a4.5 4.5 0 1 1-4-4.5M14 3c.5 3 2 4.5 5 5"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="cursor-glint" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <nav class="site-nav nav-shell" id="site-nav" aria-label="Primary navigation">
+      <a class="brand brand-lockup" href="#hero" aria-label="Kawsaypac Ancestral Herbs, home">
+        <svg class="brand-mark brand-flower" viewBox="0 0 64 64" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="32" cy="21" r="11"/><circle cx="41.5" cy="26.5" r="11"/>
+            <circle cx="41.5" cy="37.5" r="11"/><circle cx="32" cy="43" r="11"/>
+            <circle cx="22.5" cy="37.5" r="11"/><circle cx="22.5" cy="26.5" r="11"/>
+            <circle cx="32" cy="32" r="11"/>
+          </g>
+        </svg>
+        <span class="brand-copy"><strong class="brand-name">KAWSAYPAC</strong><small class="brand-sub">ANCESTRAL HERBS</small></span>
+      </a>
+
+      <div class="desktop-nav desktop-nav-links hybrid-nav-links">
+        <a class="nav-link" href="shop.html">SHOP</a>
+        <a class="nav-link" href="events.html">EVENTS</a>
+        <a class="nav-link" href="learn.html">LEARN</a>
+        <a class="nav-link" href="journal.html">JOURNAL</a>
+        <a class="nav-link" href="brand.html">OUR STORY</a>
+      </div>
+
+      <a class="btn btn-primary button button-primary nav-shop nav-cta" href="shop.html">SHOP HERBS <span aria-hidden="true">&rarr;</span></a>
+      <button class="menu-toggle nav-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+        <span>MENU</span>
+      </button>
     </nav>
-    <div class="header-cta">
-      <a class="btn btn-primary" href="#collections">Shop Herbs</a>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title" hidden>
+    <div class="mobile-menu__header mobile-menu-head">
+      <a class="brand brand-lockup" href="#hero" aria-label="Kawsaypac Ancestral Herbs, home">
+        <svg class="brand-mark brand-flower" viewBox="0 0 64 64" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="32" cy="21" r="11"/><circle cx="41.5" cy="26.5" r="11"/>
+            <circle cx="41.5" cy="37.5" r="11"/><circle cx="32" cy="43" r="11"/>
+            <circle cx="22.5" cy="37.5" r="11"/><circle cx="22.5" cy="26.5" r="11"/>
+            <circle cx="32" cy="32" r="11"/>
+          </g>
+        </svg>
+        <span class="brand-copy"><strong class="brand-name">KAWSAYPAC</strong><small class="brand-sub">ANCESTRAL HERBS</small></span>
+      </a>
+      <h2 class="visually-hidden" id="mobile-menu-title">Site navigation</h2>
+      <button class="mobile-menu-close" id="menuClose" type="button" aria-label="Close navigation menu">
+        <svg aria-hidden="true"><use href="#i-close"/></svg>
+        <span>CLOSE</span>
+      </button>
     </div>
+
+    <nav class="mobile-menu__body mobile-menu-nav hybrid-mobile-nav" aria-label="Mobile navigation">
+      <a class="mobile-menu__link mobile-main-link" href="shop.html">Shop</a>
+      <a class="mobile-menu__link mobile-main-link" href="events.html">Events</a>
+      <a class="mobile-menu__link mobile-main-link" href="learn.html">Learn</a>
+      <a class="mobile-menu__link mobile-main-link" href="journal.html">Journal</a>
+      <a class="mobile-menu__link mobile-main-link" href="apothecary.html">Apothecary</a>
+      <a class="mobile-menu__link mobile-main-link" href="brand.html">Our Story</a>
+      <a class="btn btn-primary button button-primary mobile-menu__cta mobile-menu-cta" href="shop.html">SHOP HERBS <span aria-hidden="true">&rarr;</span></a>
+    </nav>
   </div>
-</header>
 
-<main class="journey">
+  <aside class="altitude-ledger" id="altitude-ledger" aria-label="Current elevation on the journey">
+    <span class="altitude-line" aria-hidden="true"><i class="altitude-ledger__tick"></i></span>
+    <span class="altitude-ledger__label altitude-label" id="altitude-label" aria-live="polite">5,897 m &middot; Cotopaxi</span>
+  </aside>
 
-  <!-- 01 · HERO — Cotopaxi summit, clouds gently moving -->
-  <section class="j-hero" id="top">
-    <div class="j-bg"><img src="assets/img/cotopaxi.jpg" alt="" aria-hidden="true" fetchpriority="high" data-master="bg_hero_cotopaxi"></div>
-    <div class="cloud cloud-a" aria-hidden="true"></div>
-    <div class="cloud cloud-b" aria-hidden="true"></div>
-    <div class="cloud cloud-c" aria-hidden="true"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">5,897 m &middot; Cotopaxi</span></div>
-    <div class="container j-hero-inner">
-      <h1 class="h-xl">Wildcrafted Ecuadorian Herbs from the <span class="accent-i">Andes</span> and <span class="accent-i">Amazon</span></h1>
-      <p class="lede">Premium botanical formulations, educational resources, and immersive wellness retreats inspired by generations of Ecuadorian herbal wisdom.</p>
-      <a class="btn btn-primary" href="#collections">Explore Our World <span class="arrow">&rarr;</span></a>
-    </div>
-  </section>
+  <span class="journey-hummingbird" aria-hidden="true">
+    <svg viewBox="0 0 120 76" focusable="false">
+      <g class="hb-wing-upper">
+        <path d="M51 38C33 25 20 8 17 2c18 3 35 11 45 26-2-13 3-23 12-28 2 17-2 31-12 42Z" fill="#D7BC65" fill-opacity=".92"/>
+        <path d="M54 35C39 24 30 13 26 8c14 5 26 13 34 25Z" fill="#FAF9F6" fill-opacity=".62"/>
+      </g>
+      <g class="hb-wing-lower"><path d="M53 41C34 40 17 47 8 59c19-5 36-4 52 3Z" fill="#A17E16" fill-opacity=".78"/></g>
+      <path d="M47 38c11-11 28-12 39-3 7 6 10 13 8 19-14 3-27 1-38-6-5-3-8-6-9-10Z" fill="#2C4A37"/>
+      <path d="M55 45c11 2 22 1 33-4-3 9-12 15-25 14Z" fill="#D7BC65"/>
+      <path d="M84 35c7-7 15-6 21-1-3 7-9 11-17 10Z" fill="#1F3A2A"/>
+      <circle cx="99" cy="34" r="2.25" fill="#FAF9F6"/>
+      <path d="M105 37 119 41 105 40Z" fill="#A17E16"/>
+      <path d="M49 47 31 67 53 54M55 50 43 72 62 55" fill="#1F3A2A"/>
+    </svg>
+  </span>
 
-  <!-- 02 · COLLECTIONS — Andes highlands, overflowing bowls -->
-  <section class="j-section j-collections" id="collections">
-    <div class="j-bg fade-both"><img src="assets/img/ecuador-volcano.jpg" alt="" aria-hidden="true" loading="lazy" data-master="bg_highlands_paramo"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">3,000 m &middot; Alto Andes</span></div>
-    <div class="container">
-      <p class="overline center-line">Our Collections</p>
-      <h2 class="h-lg center-line">Plants with <span class="accent-i">purpose</span>, formulas with intention</h2>
-      <div class="bowl-row">
-        <a class="bowl" href="#blends"><span class="bowl-img"><img src="assets/img/jungle-herbs-2.jpg" alt="Adaptogen herbs freshly gathered" loading="lazy"></span><h3>Adaptogens</h3><span class="bowl-arrow">&rarr;</span></a>
-        <a class="bowl" href="#blends"><span class="bowl-img"><img src="assets/img/blend-bowel-balance-tea.jpg" alt="Digestive support herbs" loading="lazy"></span><h3>Digestive Support</h3><span class="bowl-arrow">&rarr;</span></a>
-        <a class="bowl" href="product.html"><span class="bowl-img"><img src="assets/img/leaf-cats-claw.jpg" alt="Immune support herbs" loading="lazy"></span><h3>Immune Support</h3><span class="bowl-arrow">&rarr;</span></a>
-        <a class="bowl" href="#blends"><span class="bowl-img"><img src="assets/img/blend-final-flush-tea.jpg" alt="Detox and cleanse herbs" loading="lazy"></span><h3>Detox &amp; Cleanse</h3><span class="bowl-arrow">&rarr;</span></a>
-        <a class="bowl" href="#blends"><span class="bowl-img"><img src="assets/img/blend-scales-of-balance-2.jpg" alt="Women's balance herbal blend" loading="lazy"></span><h3>Women's Balance</h3><span class="bowl-arrow">&rarr;</span></a>
-        <a class="bowl" href="#blends"><span class="bowl-img"><img src="assets/img/leaf-guayusa-2.jpg" alt="Energy and vitality herbs" loading="lazy"></span><h3>Energy &amp; Vitality</h3><span class="bowl-arrow">&rarr;</span></a>
+  <main id="main-content">
+    <section class="hero terrain-section journey-section" id="hero" aria-labelledby="hero-title" data-section="1" data-altitude="5,897 m &middot; Cotopaxi">
+      <div class="hero-frame">
+        <div class="hero-media" data-parallax data-parallax-speed="0.97">
+          <picture>
+            <source srcset="assets/img/hero-cloud-sea-960.webp 960w, assets/img/hero-cloud-sea.webp 1672w" sizes="(max-width: 767px) calc(100vw - 16px), calc(100vw - 40px)" type="image/webp">
+            <img class="hero-media-base" src="assets/img/hero-cloud-sea.jpg" width="1672" height="941" alt="Cotopaxi rising above a golden sea of clouds at dawn in Ecuador" fetchpriority="high" decoding="async" data-master="bg_hero_cloudsea">
+          </picture>
+          <span class="hero-cloud hero-cloud-one" data-cloud aria-hidden="true"></span>
+          <span class="hero-cloud hero-cloud-two" data-cloud aria-hidden="true"></span>
+        </div>
+
+        <div class="hero-scrim" aria-hidden="true"></div>
+
+        <div class="hero-heading-layer">
+          <p class="hero-review" data-hero-sequence>
+            <span class="rating-stars" aria-hidden="true">★★★★★</span>
+            <span>Loved by 1,000+ customers across the Americas</span>
+          </p>
+          <h1 id="hero-title" data-hero-title data-hero-sequence>
+            <span class="hero-title-line">Wildcrafted</span>
+            <span class="hero-title-line"><em class="accent-word">herbal</em> remedies</span>
+          </h1>
+        </div>
+
+        <img class="hero-peak-cutout" src="assets/img/hero-peak-cutout.png" width="1672" height="941" alt="" aria-hidden="true" data-master="hero_peak_cutout">
+
+        <div class="hero-content-layer">
+          <p class="hero-lede" data-hero-sequence>Small-batch teas and blends from the Andes and Amazon, for sleep, digestion, hormones, immunity and energy.</p>
+          <div class="hero-actions" data-hero-sequence>
+            <a class="btn btn-primary button button-primary" href="shop.html">SHOP BY CONCERN <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-glass button button-glass" href="brand.html">OUR PHILOSOPHY <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="hero-altitude" data-perch aria-label="Current elevation, 5,897 meters at Cotopaxi">
+          <svg class="rotating-flower" viewBox="0 0 64 64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="21" r="11"/><circle cx="41.5" cy="26.5" r="11"/>
+              <circle cx="41.5" cy="37.5" r="11"/><circle cx="32" cy="43" r="11"/>
+              <circle cx="22.5" cy="37.5" r="11"/><circle cx="22.5" cy="26.5" r="11"/>
+              <circle cx="32" cy="32" r="11"/>
+            </g>
+          </svg>
+          <span>5,897 m &middot; Cotopaxi</span>
+        </div>
+
+        <aside class="hero-ritual-card" aria-label="Featured Kawsaypac ritual" data-hero-sequence>
+          <div class="hero-thumb-stack" aria-hidden="true">
+            <img class="is-active" src="assets/img/new/kawsaypac-zapped-in-editorial-hero.webp" width="1672" height="941" alt="" data-hero-thumb>
+            <img src="assets/img/blend-scales-of-balance.webp" width="720" height="960" alt="" data-hero-thumb>
+            <img src="assets/img/blend-sacred-sacral.webp" width="720" height="960" alt="" data-hero-thumb>
+          </div>
+          <div class="hero-ritual-copy">
+            <strong>Your Ecuador ritual starts here</strong>
+            <span>Wild-harvested with Indigenous partners</span>
+            <div class="hero-dots" aria-label="Featured ritual slides">
+              <button class="is-active" type="button" data-hero-dot aria-label="Show Zapped In editorial ritual" aria-pressed="true"></button>
+              <button type="button" data-hero-dot aria-label="Show Scales of Balance" aria-pressed="false"></button>
+              <button type="button" data-hero-dot aria-label="Show Sacred Sacral" aria-pressed="false"></button>
+            </div>
+          </div>
+        </aside>
+
+        <a class="hero-scroll-cue" href="#collections" aria-label="Scroll to our collections">
+          <span>OUR COLLECTIONS</span><i aria-hidden="true"></i>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 02b · WHY US — six icons (client-requested) -->
-  <section class="j-section j-whyus" id="why">
-    <div class="container">
-      <p class="overline center-line">Why Kawsaypac</p>
-      <h2 class="h-md center-line">Rooted in the land, held to a <span class="accent-i">higher</span> standard</h2>
-      <ul class="why-icons">
-        <li><svg viewBox="0 0 24 24"><path d="M12 3l7 4v10l-7 4-7-4V7z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4" stroke="currentColor" stroke-width="1.1"/></svg><strong>Ecuador Sourced</strong><span>Direct from the Andes and Amazon, never the secondary market.</span></li>
-        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><strong>Small Batch</strong><span>Harvested and blended in small, careful runs, never mass produced.</span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 21C7 16 5 12.5 5 9.5A7 7 0 0119 9.5c0 3-2 6.5-7 11.5z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 6c-1.8 1.8-1.8 4.2 0 6 1.8-1.8 1.8-4.2 0-6z" fill="none" stroke="currentColor" stroke-width="1.1"/></svg><strong>Wild-Crafted</strong><span>Gathered where the plants naturally thrive, with deep respect.</span></li>
-        <li><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.4"/></svg><strong>Research Informed</strong><span>Ancestral knowledge held alongside modern evidence.</span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M4 6h9a3 3 0 013 3v9H7a3 3 0 01-3-3V6z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M16 9h4v9a2 2 0 01-2 2h-2z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7 10h6M7 13h6" stroke="currentColor" stroke-width="1.1"/></svg><strong>Educational Approach</strong><span>Every plant taught, never just sold.</span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 11l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg><strong>Ethical Stewardship</strong><span>The forests protected, the families supported.</span></li>
-      </ul>
-    </div>
-  </section>
+    <section class="why-section terrain-section journey-section" id="why" aria-labelledby="why-title" data-section="2" data-altitude="4,100 m &middot; Páramo">
+      <div class="trust-bar" aria-label="Kawsaypac customer and sourcing facts" data-reveal>
+        <div class="trust-stat"><strong><span aria-hidden="true">★</span> <span data-count="4.9">4.9</span></strong><span>average rating</span></div>
+        <div class="trust-stat"><strong><span data-count="1000">1,000</span>+</strong><span>orders shipped</span></div>
+        <div class="trust-stat"><strong><span data-count="100">100</span>%</strong><span>wildcrafted, no fillers</span></div>
+        <div class="trust-stat"><strong>Direct</strong><span>from Indigenous partners</span></div>
+      </div>
 
-  <!-- 03 · PHILOSOPHY — river valley -->
-  <section class="j-section j-philosophy" id="philosophy">
-    <div class="j-bg fade-both"><img src="assets/img/banos.jpg" alt="" aria-hidden="true" loading="lazy" data-master="bg_river_cloudforest"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">03 &middot; Philosophy</span></div>
-    <div class="container j-num-grid">
-      <div class="j-num-head"><span class="j-num">03</span><h2 class="h-lg">Philosophy</h2>
-        <p class="j-side-copy">We believe true wellness begins in harmony between nature, body and spirit.</p>
-      </div>
-      <blockquote class="j-quote">
-        <p class="word-reveal" data-reveal-text="&ldquo;The land teaches. The plants heal. We are only here to listen.&rdquo;">&ldquo;The land teaches. The plants heal. We are only here to <span class="accent-i">listen</span>.&rdquo;</p>
-      </blockquote>
-    </div>
-  </section>
+      <img class="terrain-backdrop terrain-backdrop-paramo" src="assets/img/bg-paramo-band.webp" srcset="assets/img/bg-paramo-band-768.webp 768w, assets/img/bg-paramo-band-1280.webp 1280w, assets/img/bg-paramo-band.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="bg_paramo_band" data-parallax data-parallax-speed="0.94">
 
-  <!-- 04 · RETREATS — cloud forest -->
-  <section class="j-section j-retreats" id="retreats">
-    <div class="j-bg fade-both"><img src="assets/img/waterfall.jpg" alt="" aria-hidden="true" loading="lazy"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">04 &middot; Retreats</span></div>
-    <div class="container j-num-grid">
-      <div class="j-num-head"><span class="j-num">04</span><h2 class="h-lg">Retreats</h2>
-        <p class="j-side-copy">Step away. Reconnect. Return renewed.</p>
-        <a class="link-more" href="#retreats">Explore Our Retreats <span class="arrow">&rarr;</span></a>
-      </div>
-      <div class="video-facade card" id="retreatVideo" data-video-id="MHHxiENWMho" role="button" tabindex="0" aria-label="Play the retreat film">
-        <img src="assets/img/jungle-group.jpg" alt="Watch the Kawsaypac retreat film" loading="lazy">
-        <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="video-side-quote">In the stillness of nature, we remember who we are.</span>
-      </div>
-    </div>
-  </section>
+      <div class="section-shell why-shell">
+        <header class="section-heading" data-reveal>
+          <p class="kicker">WHY KAWSAYPAC</p>
+          <h2 id="why-title" data-split-heading>Real plants. Real place. <em class="accent-word" data-accent>Real people.</em></h2>
+        </header>
 
-  <!-- 05 · KAWSAYPAC BLENDS — upper amazon -->
-  <section class="j-section j-blends" id="blends">
-    <div class="j-bg fade-both"><img src="assets/img/jungle.jpg" alt="" aria-hidden="true" loading="lazy" data-master="bg_amazon_jungle"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">05 &middot; Blends</span></div>
-    <div class="container">
-      <div class="j-num-head solo"><span class="j-num">05</span><h2 class="h-lg">Kawsaypac Blends</h2>
-        <p class="j-side-copy">Crafted with intention. Blended for balance.</p>
+        <div class="why-grid" data-reveal-group>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-mountain"/><circle class="icon-accent" cx="18" cy="5" r="1.4"/></svg></div>
+            <h3>Ecuador Sourced</h3>
+            <p>Grown where altitude, soil and sun make these plants strongest.</p>
+          </article>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-hands"/><circle class="icon-accent" cx="19" cy="5" r="1.4"/></svg></div>
+            <h3>Small Batch</h3>
+            <p>Modest quantities, made with care, never mass produced.</p>
+          </article>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-leaf"/><circle class="icon-accent" cx="5" cy="5" r="1.4"/></svg></div>
+            <h3>Wild-Crafted</h3>
+            <p>Harvested from the wild at peak potency, not farmed in rows.</p>
+          </article>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-flask"/><circle class="icon-accent" cx="19" cy="5" r="1.4"/></svg></div>
+            <h3>Research Informed</h3>
+            <p>Ancestral wisdom, checked against modern science.</p>
+          </article>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-book"/><circle class="icon-accent" cx="12" cy="4" r="1.4"/></svg></div>
+            <h3>Educational Approach</h3>
+            <p>We teach you how to use every herb, not just sell it.</p>
+          </article>
+          <article class="why-tile" data-reveal>
+            <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-hands"/><circle class="icon-accent" cx="12" cy="5" r="1.4"/></svg></div>
+            <h3>Ethical Stewardship</h3>
+            <p>Fair, direct partnerships with the communities who harvest.</p>
+          </article>
+        </div>
       </div>
-      <div class="pouch-row">
-        <a class="pouch card" href="product.html"><span class="pouch-img"><img src="assets/img/ph/pouch-cats-claw.svg" alt="Cat's Claw blend" loading="lazy" data-master="pouch_catsclaw"></span><h3>Cat's Claw</h3><span class="pouch-price">$22.50</span></a>
-        <a class="pouch card" href="apothecary.html"><span class="pouch-img"><img src="assets/img/ph/pouch-zapped-in.svg" alt="Zapped In blend" loading="lazy" data-master="pouch_zappedin"></span><h3>Zapped In</h3><span class="pouch-price">View Blend</span></a>
-        <a class="pouch card" href="apothecary.html"><span class="pouch-img"><img src="assets/img/ph/pouch-restoring-order.svg" alt="Restoring Order blend" loading="lazy" data-master="pouch_restoringorder"></span><h3>Restoring Order</h3><span class="pouch-price">View Blend</span></a>
-        <a class="pouch card" href="apothecary.html"><span class="pouch-img"><img src="assets/img/ph/pouch-river-of-life.svg" alt="River of Life blend" loading="lazy" data-master="pouch_riveroflife"></span><h3>River of Life</h3><span class="pouch-price">View Blend</span></a>
-        <a class="pouch card" href="apothecary.html"><span class="pouch-img"><img src="assets/img/ph/pouch-scales-of-balance.svg" alt="Scales of Balance blend" loading="lazy" data-master="pouch_scales"></span><h3>Scales of Balance</h3><span class="pouch-price">View Blend</span></a>
-      </div>
-      <div class="center-cta"><a class="link-more" href="apothecary.html">View All Blends <span class="arrow">&rarr;</span></a></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 06 · TESTIMONIALS — own section (client-requested split) -->
-  <section class="j-section j-testimonials" id="testimonials">
-    <div class="j-bg fade-both"><img src="assets/img/amazon-river.jpg" alt="" aria-hidden="true" loading="lazy"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">06 &middot; Testimonials</span></div>
-    <div class="container">
-      <div class="j-num-head solo"><span class="j-num">06</span><h2 class="h-lg">Testimonials</h2></div>
-      <div class="testi-marquee" aria-label="Customer testimonials">
-        <div class="testi-track">
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>These blends have truly transformed my energy and wellbeing.</blockquote>
-            <figcaption><strong>Maria S.</strong><span>Quito, Ecuador</span></figcaption>
+    <aside class="education-bridge" aria-labelledby="education-bridge-title" data-reveal>
+      <div class="education-bridge__copy">
+        <p class="kicker">KNOW BEFORE YOU CHOOSE</p>
+        <h2 id="education-bridge-title">Know the plant. Understand the ritual. Choose what your body needs.</h2>
+        <p>Move from sourcing and preparation to a collection organised around the support you are exploring.</p>
+        <div class="education-bridge__links">
+          <a href="learn.html">Explore the learning hub</a>
+          <a href="apothecary.html">Open the plant archive</a>
+        </div>
+      </div>
+      <figure class="education-bridge__media">
+        <img src="assets/img/new/kawsaypac-hands-botanical-partnership.webp" alt="Hands sharing freshly gathered botanicals in a respectful sourcing partnership" width="1672" height="941" loading="lazy" decoding="async">
+      </figure>
+    </aside>
+
+    <section class="collections-section terrain-section journey-section" id="collections" aria-labelledby="collections-title" data-section="3" data-altitude="3,400 m &middot; Alto Andes">
+      <img class="terrain-full terrain-highlands" src="assets/img/bg-highlands.webp" srcset="assets/img/bg-highlands-768.webp 768w, assets/img/bg-highlands-1280.webp 1280w, assets/img/bg-highlands.webp 1920w" sizes="100vw" width="1920" height="1080" alt="Golden highland grass rolling toward a distant Ecuadorian volcano" loading="lazy" decoding="async" data-master="bg_highlands" data-parallax data-parallax-speed="0.85">
+      <div class="collections-island section-shell">
+        <header class="section-heading section-heading-centered" data-reveal>
+          <p class="kicker">SHOP BY CONCERN</p>
+          <h2 id="collections-title" data-split-heading>What does your body <em class="accent-word" data-accent>need?</em></h2>
+          <p class="section-intro">Every blend begins with a question. Start with yours.</p>
+        </header>
+
+        <div class="concern-grid" data-reveal-group>
+          <a class="concern-card" href="product.html#sleep-relaxation" data-reveal>
+            <span class="bowl-frame"><img src="assets/img/bowl-sleep.webp" srcset="assets/img/bowl-sleep-340.webp 340w, assets/img/bowl-sleep.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with valerian and calming herbs" loading="lazy" decoding="async" data-master="bowl_sleep"></span>
+            <strong>Sleep &amp; Relaxation</strong><span>Valerian and calming blends</span><i aria-hidden="true">&rarr;</i>
+          </a>
+          <a class="concern-card" href="product.html#digestive-health" data-reveal>
+            <span class="bowl-frame"><img src="assets/img/bowl-digestive.webp" srcset="assets/img/bowl-digestive-340.webp 340w, assets/img/bowl-digestive.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with digestive herbs and roots" loading="lazy" decoding="async" data-master="bowl_digestive"></span>
+            <strong>Digestive Health</strong><span>Bowel Balance, Final Flush and more</span><i aria-hidden="true">&rarr;</i>
+          </a>
+          <a class="concern-card" href="product.html#womens-wellness" data-reveal data-perch>
+            <span class="bowl-frame"><img src="assets/img/bowl-womens.webp" srcset="assets/img/bowl-womens-340.webp 340w, assets/img/bowl-womens.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with herbs traditionally used for women's wellness" loading="lazy" decoding="async" data-master="bowl_womens"></span>
+            <strong>Women's Wellness</strong><span>Sacred Sacral, Her Fertile Waters</span><i aria-hidden="true">&rarr;</i>
+          </a>
+          <a class="concern-card" href="product.html#auto-immune-support" data-reveal>
+            <span class="bowl-frame"><img src="assets/img/bowl-immune.webp" srcset="assets/img/bowl-immune-340.webp 340w, assets/img/bowl-immune.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with Cat's Claw and soursop leaves" loading="lazy" decoding="async" data-master="bowl_immune"></span>
+            <strong>Immune Support</strong><span>Cat's Claw, Soursop</span><i aria-hidden="true">&rarr;</i>
+          </a>
+          <a class="concern-card" href="product.html#energy-vitality" data-reveal>
+            <span class="bowl-frame"><img src="assets/img/bowl-energy.webp" srcset="assets/img/bowl-energy-340.webp 340w, assets/img/bowl-energy.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with guayusa leaves and energizing herbs" loading="lazy" decoding="async" data-master="bowl_energy"></span>
+            <strong>Energy &amp; Vitality</strong><span>Zapped In, Guayusa</span><i aria-hidden="true">&rarr;</i>
+          </a>
+          <a class="concern-card" href="product.html#full-body-detox" data-reveal>
+            <span class="bowl-frame"><img src="assets/img/bowl-detox.webp" srcset="assets/img/bowl-detox-340.webp 340w, assets/img/bowl-detox.webp 640w" sizes="(max-width: 639px) 44vw, (max-width: 1023px) 30vw, 170px" width="640" height="640" alt="Ceramic bowl overflowing with herbs selected for full body detox rituals" loading="lazy" decoding="async" data-master="bowl_detox"></span>
+            <strong>Full Body Detox</strong><span>Kits and cleanse programs</span><i aria-hidden="true">&rarr;</i>
+          </a>
+        </div>
+
+        <div class="section-action" data-reveal>
+          <a class="btn btn-outline button button-outline" href="shop.html">VIEW THE COMPLETE SHOP <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <p class="inline-altitude" aria-hidden="true">3,400 m &middot; Alto Andes</p>
+      </div>
+    </section>
+
+    <section class="hybrid-shop-gateway" aria-labelledby="shop-gateway-title">
+      <div class="hybrid-home-shell hybrid-shop-gateway__grid">
+        <figure class="hybrid-shop-gateway__media" data-reveal>
+          <img src="assets/img/new/kawsaypac-zapped-in-editorial-hero.webp" width="1672" height="941" alt="Kawsaypac Zapped In herbal blend styled with loose botanicals in warm natural light" loading="lazy" decoding="async">
+          <figcaption><span>Wildcrafted in Ecuador</span><span>Small-batch preparation</span></figcaption>
+          <span class="ritual-seal ritual-seal--media" aria-hidden="true"><img src="assets/brand/flower-of-life.svg" alt="" width="100" height="100"><i>RITUAL<br>01</i></span>
+        </figure>
+        <div class="hybrid-shop-gateway__copy" data-reveal>
+          <p class="kicker">THE RITUAL SHOP</p>
+          <h2 id="shop-gateway-title">Find the blend that belongs in your <em>everyday.</em></h2>
+          <p>Move through the full collection by concern, compare formats and weights, then open each blend for its preparation notes and plant story.</p>
+          <ul class="hybrid-shop-paths" aria-label="Popular ways to shop">
+            <li><a href="shop.html#shop-calm"><span>01</span><strong>Calm + sleep</strong><i aria-hidden="true">&rarr;</i></a></li>
+            <li><a href="shop.html#shop-energy"><span>02</span><strong>Energy + focus</strong><i aria-hidden="true">&rarr;</i></a></li>
+            <li><a href="shop.html#shop-digestion"><span>03</span><strong>Digestion + cleansing</strong><i aria-hidden="true">&rarr;</i></a></li>
+          </ul>
+          <a class="btn btn-primary button button-primary" href="shop.html">ENTER THE SHOP <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto-section journey-section" id="philosophy" aria-labelledby="philosophy-title" data-section="4" data-altitude="2,600 m &middot; Valle del Río">
+      <div class="manifesto-watermark" aria-hidden="true">KAWSAYPAC</div>
+      <div class="manifesto-shell" data-reveal>
+        <p class="kicker">OUR PHILOSOPHY</p>
+        <h2 class="visually-hidden" id="philosophy-title">Kawsaypac means for life</h2>
+        <p class="manifesto-statement" data-manifesto>
+          Kawsaypac means
+          <span class="inline-image-chip" tabindex="0">
+            <img src="assets/img/chip-river.webp" width="560" height="280" alt="A misty river bending through the Ecuadorian forest" loading="lazy" decoding="async" data-master="chip_river">
+          </span>
+          &ldquo;for life.&rdquo; Every pouch begins in the wild,
+          <span class="inline-image-chip" tabindex="0">
+            <img src="assets/img/chip-hands.webp" width="560" height="280" alt="A healer's hands holding freshly gathered herbs" loading="lazy" decoding="async" data-master="chip_hands">
+          </span>
+          with the healers who know these plants best, and ends
+          <span class="inline-image-chip" tabindex="0">
+            <img src="assets/img/chip-cup.webp" width="560" height="280" alt="Steam rising from an earthen cup of herbal tea" loading="lazy" decoding="async" data-master="chip_cup">
+          </span>
+          in your daily ritual.
+        </p>
+        <blockquote class="manifesto-pull">&ldquo;The land teaches. The plants heal. We are only here to listen.&rdquo;</blockquote>
+      </div>
+    </section>
+
+    <section class="founders-section journey-section" id="story" aria-labelledby="story-title" data-section="5" data-altitude="1,900 m &middot; Bosque Nublado">
+      <img class="terrain-edge terrain-edge-left" src="assets/img/bg-cloudforest-edge.webp" srcset="assets/img/bg-cloudforest-edge-768.webp 768w, assets/img/bg-cloudforest-edge-1280.webp 1280w, assets/img/bg-cloudforest-edge.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="bg_cloudforest_edge" data-parallax data-parallax-speed="0.93">
+      <div class="section-shell founders-grid">
+        <div class="founders-media" data-reveal>
+          <figure class="founder-portrait">
+            <img src="assets/img/raisa-brian.webp" width="900" height="1200" alt="Kawsaypac founders Raisa and Brian together in Ecuador" loading="lazy" decoding="async">
           </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>I feel more balanced, more grounded, and more like myself.</blockquote>
-            <figcaption><strong>David L.</strong><span>Austin, Texas</span></figcaption>
+          <svg class="founder-flower rotating-flower" viewBox="0 0 64 64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="21" r="11"/><circle cx="41.5" cy="26.5" r="11"/>
+              <circle cx="41.5" cy="37.5" r="11"/><circle cx="32" cy="43" r="11"/>
+              <circle cx="22.5" cy="37.5" r="11"/><circle cx="22.5" cy="26.5" r="11"/>
+              <circle cx="32" cy="32" r="11"/>
+            </g>
+          </svg>
+          <figure class="community-polaroid">
+            <img src="assets/img/kichwa-kids.webp" width="1050" height="1400" alt="Kichwa children smiling together in their Ecuadorian community" loading="lazy" decoding="async">
+            <figcaption>Our community partners in Ecuador</figcaption>
           </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>The quality is unlike anything I have found. Deeply grateful.</blockquote>
-            <figcaption><strong>Ana P.</strong><span>Vancouver, Canada</span></figcaption>
+        </div>
+
+        <div class="founders-copy" data-reveal>
+          <p class="kicker">OUR STORY</p>
+          <h2 id="story-title" data-split-heading>Ecuador changed our <em class="accent-word" data-accent>lives</em></h2>
+          <p>We are Raisa and Brian. What started as a move to Ecuador became a calling: the plants that have kept families here well for generations deserve to be honored, not forgotten.</p>
+          <p>We work directly with Indigenous harvesters in the Andes and the Amazon, pay fairly, and take only what the land can give. Every pouch is a bridge between their wisdom and your kitchen.</p>
+          <a class="btn btn-outline button button-outline" href="brand.html">READ OUR FULL STORY <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="retreats-section journey-section" id="retreats" aria-labelledby="retreats-title" data-section="6" data-altitude="1,400 m &middot; Cascada">
+      <div class="retreats-frame">
+        <img class="retreats-media" src="assets/img/bg-waterfall.webp" srcset="assets/img/bg-waterfall-768.webp 768w, assets/img/bg-waterfall-1280.webp 1280w, assets/img/bg-waterfall.webp 1920w" sizes="100vw" width="1920" height="1080" alt="A tall waterfall descending into a bright Ecuadorian cloud forest" loading="lazy" decoding="async" data-master="bg_waterfall" data-parallax data-parallax-speed="0.88">
+        <div class="retreats-scrim" aria-hidden="true"></div>
+        <button class="retreat-play" id="retreat-open" type="button" aria-haspopup="dialog" aria-controls="retreatDialog" data-youtube-url="https://www.youtube.com/embed/MHHxiENWMho?autoplay=1&amp;rel=0" aria-label="Play a film about Kawsaypac retreats">
+          <svg aria-hidden="true"><use href="#i-play"/></svg>
+          <span>PLAY THE RETREAT FILM</span>
+        </button>
+
+        <div class="retreats-copy" data-reveal>
+          <p class="kicker kicker-light">RETREATS &middot; ECUADOR</p>
+          <h2 id="retreats-title" data-split-heading>Step away. Reconnect. Return renewed.</h2>
+          <p>Immersive plant-wisdom retreats in the Andes and the Amazon, guided by the people who live it.</p>
+          <a class="btn btn-glass button button-glass" href="events.html">EXPLORE RETREATS <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <blockquote class="retreat-quote-card" data-reveal data-perch>
+          <p>&ldquo;In the stillness of nature, we remember who we are.&rdquo;</p>
+          <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </blockquote>
+        <p class="inline-altitude inline-altitude-light" aria-hidden="true">1,400 m &middot; Cascada</p>
+      </div>
+    </section>
+
+    <dialog class="retreat-dialog" id="retreatDialog" aria-labelledby="retreat-dialog-title">
+      <div class="dialog-backdrop" data-dialog-backdrop></div>
+      <div class="dialog-panel" role="document">
+        <div class="dialog-head">
+          <div>
+            <p class="kicker">RETREATS &middot; ECUADOR</p>
+            <h2 id="retreat-dialog-title">A glimpse into the journey</h2>
+          </div>
+          <button class="dialog-close" id="retreat-close" type="button" aria-label="Close retreat film">
+            <svg aria-hidden="true"><use href="#i-close"/></svg><span>CLOSE</span>
+          </button>
+        </div>
+        <div class="retreat-video-mount" id="retreat-video-mount" data-video-id="MHHxiENWMho">
+          <noscript><p><a href="https://youtu.be/MHHxiENWMho">Watch the Kawsaypac retreat film on YouTube</a>.</p></noscript>
+        </div>
+      </div>
+    </dialog>
+
+    <section class="hybrid-events-preview" aria-labelledby="events-preview-title">
+      <div class="hybrid-home-shell">
+        <header class="hybrid-home-heading" data-reveal>
+          <div>
+            <p class="kicker">GATHER IN ECUADOR</p>
+            <h2 id="events-preview-title">Take the ritual beyond the <em>cup.</em></h2>
+          </div>
+          <div class="hybrid-home-heading__aside">
+            <span class="ritual-seal" aria-hidden="true"><img src="assets/brand/flower-of-life.svg" alt="" width="100" height="100"><i>FIELD<br>02</i></span>
+            <p>Small-group retreats, plant walks and practical workshops rooted in landscape, context and relationship.</p>
+            <a class="hybrid-text-link" href="events.html">VIEW ALL EXPERIENCES <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </header>
+
+        <div class="hybrid-event-grid" data-reveal-group>
+          <a class="hybrid-event-card hybrid-event-card--feature" href="events.html#upcoming" data-reveal>
+            <span class="hybrid-event-card__media"><img src="assets/img/real-amazon-river-2.webp" width="1600" height="1067" alt="A quiet river winding through dense Ecuadorian Amazon forest" loading="lazy" decoding="async"></span>
+            <span class="hybrid-event-card__meta"><b>SEASON 01</b><b>5 NIGHTS</b></span>
+            <span class="hybrid-event-card__copy"><small>Amazon basin &middot; Small group</small><strong>River to Ritual Retreat</strong><span>A slow immersion in habitat, preparation and integration.</span><i aria-hidden="true">&rarr;</i></span>
+          </a>
+          <a class="hybrid-event-card" href="events.html#upcoming" data-reveal>
+            <span class="hybrid-event-card__media"><img src="assets/img/bg-paramo-band.webp" width="1920" height="1080" alt="High-altitude páramo landscape under an open Ecuadorian sky" loading="lazy" decoding="async"></span>
+            <span class="hybrid-event-card__meta"><b>QUARTERLY</b><b>HALF DAY</b></span>
+            <span class="hybrid-event-card__copy"><small>Andean highlands &middot; Field learning</small><strong>Highland Plant Walk</strong><span>Learn to read habitat, harvest timing and restraint.</span><i aria-hidden="true">&rarr;</i></span>
+          </a>
+          <a class="hybrid-event-card" href="events.html#upcoming" data-reveal>
+            <span class="hybrid-event-card__media"><img src="assets/img/herbal-infusion.webp" width="900" height="1200" alt="An amber herbal infusion prepared with whole botanicals" loading="lazy" decoding="async"></span>
+            <span class="hybrid-event-card__meta"><b>MONTHLY</b><b>90 MIN</b></span>
+            <span class="hybrid-event-card__copy"><small>Live online &middot; Practical class</small><strong>Build a Better Cup</strong><span>Measure, steep and build a ritual that lasts.</span><i aria-hidden="true">&rarr;</i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="journey-ribbon" role="region" aria-label="From Ecuadorian harvest to your daily ritual">
+      <div class="journey-ribbon__viewport">
+        <div class="journey-ribbon__track" aria-hidden="true">
+          <div class="journey-ribbon__copy">
+            <span class="journey-ribbon__item">Meet the <em>plants</em> behind every pouch</span>
+            <span class="journey-ribbon__item">Harvested by <em>hand</em> in Ecuador</span>
+            <span class="journey-ribbon__item">Learn the <em>ritual</em> before you steep</span>
+            <span class="journey-ribbon__item">Choose by <em>concern</em>, not guesswork</span>
+            <span class="journey-ribbon__item">Small batch. <em>Fresh</em> by design</span>
+          </div>
+          <div class="journey-ribbon__copy" aria-hidden="true">
+            <span class="journey-ribbon__item">Meet the <em>plants</em> behind every pouch</span>
+            <span class="journey-ribbon__item">Harvested by <em>hand</em> in Ecuador</span>
+            <span class="journey-ribbon__item">Learn the <em>ritual</em> before you steep</span>
+            <span class="journey-ribbon__item">Choose by <em>concern</em>, not guesswork</span>
+            <span class="journey-ribbon__item">Small batch. <em>Fresh</em> by design</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="blends-section journey-section" id="blends" aria-labelledby="blends-title" data-section="7" data-altitude="900 m &middot; Selva Alta">
+      <div class="section-shell">
+        <header class="section-heading blends-heading" data-reveal>
+          <div>
+            <p class="kicker">KAWSAYPAC BLENDS</p>
+            <h2 id="blends-title" data-split-heading>Choose a blend that <em class="accent-word" data-accent>speaks</em> to you</h2>
+          </div>
+          <div class="carousel-controls" aria-label="Signature blend carousel controls">
+            <button id="products-prev" type="button" data-carousel-prev aria-controls="productRail" aria-label="Show previous blends">
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg><span>PREVIOUS</span>
+            </button>
+            <button id="products-next" type="button" data-carousel-next aria-controls="productRail" aria-label="Show next blends">
+              <span>NEXT</span><svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+        </header>
+      </div>
+
+      <div class="product-rail" id="productRail" role="region" aria-label="Signature Kawsaypac blends" tabindex="0">
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#river-of-life" aria-label="View River of Life">
+            <span class="product-tag">CIRCULATION</span>
+            <img src="assets/img/blend-river-of-life.webp" width="720" height="960" alt="River of Life herbal blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>River of Life</h3><p>Blood + circulatory daily foundation</p>
+            <div class="product-buy"><strong>$34.00</strong><a class="btn btn-primary button button-primary button-small" href="product.html#river-of-life">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#scales-of-balance" aria-label="View Scales of Balance">
+            <span class="product-tag">NERVOUS SYSTEM</span>
+            <img src="assets/img/blend-scales-of-balance.webp" width="720" height="960" alt="Scales of Balance nervous system blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Scales of Balance</h3><p>Calm for the nervous system</p>
+            <div class="product-buy"><strong>$28.50</strong><a class="btn btn-primary button button-primary button-small" href="product.html#scales-of-balance">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#sacred-sacral" aria-label="View Sacred Sacral">
+            <span class="product-tag">WOMEN'S WELLNESS</span>
+            <img src="assets/img/blend-sacred-sacral.webp" width="720" height="960" alt="Sacred Sacral womb wellness blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Sacred Sacral</h3><p>Womb health, cycle rhythm</p>
+            <div class="product-buy"><strong>$28.50</strong><a class="btn btn-primary button button-primary button-small" href="product.html#sacred-sacral">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#zapped-in" aria-label="View Zapped In">
+            <span class="product-tag">ENERGY</span>
+            <img src="assets/img/blend-zapped-in.webp" width="720" height="960" alt="Zapped In energy blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Zapped In</h3><p>Clean energy, sharp focus</p>
+            <div class="product-buy"><strong>$34.00</strong><a class="btn btn-primary button button-primary button-small" href="product.html#zapped-in">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#bowel-balance" aria-label="View Bowel Balance">
+            <span class="product-tag">DIGESTIVE</span>
+            <img src="assets/img/blend-bowel-balance.webp" width="720" height="960" alt="Bowel Balance digestive blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Bowel Balance</h3><p>Daily digestive comfort</p>
+            <div class="product-buy"><strong>$28.50</strong><a class="btn btn-primary button button-primary button-small" href="product.html#bowel-balance">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-product-card data-reveal>
+          <a class="product-image" href="product.html#final-flush" aria-label="View Final Flush">
+            <span class="product-tag">DETOX</span>
+            <img src="assets/img/blend-final-flush.webp" width="720" height="960" alt="Final Flush detox blend in its kraft Kawsaypac pouch" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Final Flush</h3><p>A supported gentle reset</p>
+            <div class="product-buy"><strong>$28.50</strong><a class="btn btn-primary button button-primary button-small" href="product.html#final-flush">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+
+        <article class="product-card product-card-kit" data-product-card data-reveal>
+          <a class="product-image" href="product.html#eliminate-regenerate" aria-label="View Eliminate and Regenerate Kit">
+            <span class="product-tag">FULL BODY DETOX</span><span class="best-value">BEST VALUE</span>
+            <img src="assets/img/blend-eliminate-regenerate.webp" width="720" height="960" alt="Eliminate and Regenerate complete detox kit from Kawsaypac" loading="lazy" decoding="async">
+          </a>
+          <div class="product-copy">
+            <h3>Eliminate &amp; Regenerate KIT</h3><p>The complete detox system</p>
+            <div class="product-buy"><strong>$113.00</strong><a class="btn btn-primary button button-primary button-small" href="product.html#eliminate-regenerate">SHOP <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="subscribe-save section-shell" data-reveal>
+        <svg aria-hidden="true"><use href="#i-refresh"/></svg>
+        <span>Subscribe &amp; Save 15% on every blend</span>
+        <a class="text-link" href="learn.html">LEARN MORE</a>
+      </div>
+    </section>
+
+    <section class="testimonials-section journey-section" id="testimonials" aria-labelledby="testimonials-title" data-section="8" data-altitude="500 m &middot; Selva">
+      <div class="testimonial-panel" id="testimonialPanel">
+        <img class="panel-leaf panel-leaf-top" src="assets/img/fg-leaves-corner.webp" width="1200" height="900" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_leaves_corner" data-leaf>
+        <img class="panel-leaf panel-leaf-bottom" src="assets/img/fg-leaves-corner.webp" width="1200" height="900" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_leaves_corner" data-leaf>
+
+        <span class="testimonial-hummingbird" aria-hidden="true">
+          <svg viewBox="0 0 118 74" focusable="false">
+            <path d="M47 36C30 23 21 9 18 3c16 4 30 12 39 26 0-11 5-20 13-25 1 14-3 27-12 36Z" fill="#D7BC65" fill-opacity=".9"/>
+            <path d="M49 39c12-10 29-9 39 1 5 5 7 11 5 16-15 3-29-1-42-10Z" fill="#FAF9F6"/>
+            <path d="M58 48c11 1 21-1 30-6-4 9-13 14-25 13Z" fill="#D7BC65"/>
+            <path d="M84 39c7-6 15-5 20 1-4 6-10 9-18 7Z" fill="#C9A942"/>
+            <circle cx="98" cy="40" r="2" fill="#1F3A2A"/>
+            <path d="m104 42 13 4-14-1Z" fill="#D7BC65"/>
+            <path d="M54 52 39 67 57 57M61 54 53 70 66 57" fill="none" stroke="#D7BC65" stroke-width="3" stroke-linecap="round"/>
+            <path d="M31 68c23-4 46-3 68 2" fill="none" stroke="#D7BC65" stroke-width="1.5" stroke-linecap="round" opacity=".72"/>
+          </svg>
+        </span>
+
+        <div class="testimonial-copy" data-reveal>
+          <p class="kicker kicker-light">LOVED ACROSS THE AMERICAS</p>
+          <h2 id="testimonials-title" data-split-heading>The impression that lasts</h2>
+          <p class="testimonial-intro">A good herbal ritual does more than sit on a shelf. It teaches you what you are taking, where it came from, and when to return to it.</p>
+
+          <div class="testimonial-stage" aria-live="polite">
+            <figure class="testimonial is-active" data-testimonial aria-current="true">
+              <blockquote>&ldquo;I started with one blend. The preparation guide made the ritual easy to understand and easy to keep.&rdquo;</blockquote>
+              <figcaption>Maria S., Quito</figcaption>
+              <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </figure>
+            <figure class="testimonial" data-testimonial>
+              <blockquote>&ldquo;I feel more balanced, more grounded, and more like myself.&rdquo;</blockquote>
+              <figcaption>David L., Austin</figcaption>
+              <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </figure>
+            <figure class="testimonial" data-testimonial>
+              <blockquote>&ldquo;You can see the care in every detail, from the ingredients to the way each blend is prepared.&rdquo;</blockquote>
+              <figcaption>Ana P., Vancouver</figcaption>
+              <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </figure>
+          </div>
+
+          <div class="testimonial-controls" aria-label="Testimonial controls">
+            <button id="testimonial-prev" type="button" aria-controls="testimonialPanel" aria-label="Show previous testimonial">
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg><span>PREVIOUS</span>
+            </button>
+            <button id="testimonial-next" type="button" aria-controls="testimonialPanel" aria-label="Show next testimonial">
+              <span>NEXT</span><svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-gallery" data-reveal>
+          <figure>
+            <img src="assets/img/chip-cup.webp" width="560" height="280" alt="A steaming clay cup prepared as a quiet evening ritual" loading="lazy" decoding="async" data-master="chip_cup">
+            <figcaption>Evening ritual</figcaption>
           </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>My mornings finally feel calm. This is a daily ritual now.</blockquote>
-            <figcaption><strong>Sofia R.</strong><span>Madrid, Spain</span></figcaption>
+          <figure>
+            <img src="assets/img/chip-hands.webp" width="560" height="280" alt="Hands sorting fresh herbs with care" loading="lazy" decoding="async" data-master="chip_hands">
+            <figcaption>Gathered by hand</figcaption>
           </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>You can feel these plants were gathered with real respect.</blockquote>
-            <figcaption><strong>James K.</strong><span>Toronto, Canada</span></figcaption>
+          <figure>
+            <img src="assets/img/blend-river-of-life.webp" width="720" height="960" alt="River of Life herbal blend in its Kawsaypac pouch" loading="lazy" decoding="async">
+            <figcaption>River of Life</figcaption>
           </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>Guayusa replaced my coffee in a week. Clean, steady energy.</blockquote>
-            <figcaption><strong>Elena M.</strong><span>Lisbon, Portugal</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>These blends have truly transformed my energy and wellbeing.</blockquote>
-            <figcaption><strong>Maria S.</strong><span>Quito, Ecuador</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>I feel more balanced, more grounded, and more like myself.</blockquote>
-            <figcaption><strong>David L.</strong><span>Austin, Texas</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>The quality is unlike anything I have found. Deeply grateful.</blockquote>
-            <figcaption><strong>Ana P.</strong><span>Vancouver, Canada</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>My mornings finally feel calm. This is a daily ritual now.</blockquote>
-            <figcaption><strong>Sofia R.</strong><span>Madrid, Spain</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>You can feel these plants were gathered with real respect.</blockquote>
-            <figcaption><strong>James K.</strong><span>Toronto, Canada</span></figcaption>
-          </figure>
-          <figure class="testi-card">
-            <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>Guayusa replaced my coffee in a week. Clean, steady energy.</blockquote>
-            <figcaption><strong>Elena M.</strong><span>Lisbon, Portugal</span></figcaption>
+          <figure>
+            <img src="assets/img/blend-sacred-sacral.webp" width="720" height="960" alt="Sacred Sacral herbal blend in its Kawsaypac pouch" loading="lazy" decoding="async">
+            <figcaption>Sacred Sacral</figcaption>
           </figure>
         </div>
       </div>
-</div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 07 · APOTHECARY — own section (client-requested split) -->
-  <section class="j-section j-apothecary" id="apothecary">
-    <div class="j-bg fade-both"><img src="assets/img/amazon-basin.jpg" alt="" aria-hidden="true" loading="lazy"></div>
-    <div class="j-badge"><span class="fol"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A942" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="36" r="14"/><circle cx="50" cy="64" r="14"/><circle cx="62" cy="43" r="14"/><circle cx="62" cy="57" r="14"/><circle cx="38" cy="43" r="14"/><circle cx="38" cy="57" r="14"/></svg></span><span class="tag">07 &middot; Apothecary</span></div>
-    <div class="container">
-      <div class="j-num-head solo"><span class="j-num">07</span><h2 class="h-lg">Apothecary</h2>
-        <p class="j-side-copy">An interactive archive of the plants we work with, their ancestral wisdom, and the lands they come from.</p>
-      </div>
-      <div class="specimen-row">
-        <a class="specimen card" href="apothecary.html"><img src="assets/img/ph/bot-cats-claw.svg" alt="Cat's Claw botanical plate" loading="lazy" data-master="botanical_catsclaw"><h3>Cat's Claw</h3><p class="accent-i">Uncaria tomentosa</p></a>
-        <a class="specimen card" href="apothecary.html"><img src="assets/img/ph/bot-guayusa.svg" alt="Guayusa botanical plate" loading="lazy" data-master="botanical_guayusa"><h3>Guayusa</h3><p class="accent-i">Ilex guayusa</p></a>
-        <a class="specimen card" href="apothecary.html"><img src="assets/img/ph/bot-chuchuhuasi.svg" alt="Chuchuhuasi botanical plate" loading="lazy" data-master="botanical_chuchuhuasi"><h3>Chuchuhuasi</h3><p class="accent-i">Maytenus macrocarpa</p></a>
-        <a class="specimen card" href="apothecary.html"><img src="assets/img/ph/bot-matico.svg" alt="Matico botanical plate" loading="lazy" data-master="botanical_matico"><h3>Matico</h3><p class="accent-i">Piper aduncum</p></a>
-      </div>
-      <div class="center-cta"><a class="btn btn-gold big-cta" href="apothecary.html">Enter the Apothecary <span class="arrow">&rarr;</span></a></div>
-    </div>
-  </section>
+    <section class="apothecary-section journey-section" id="apothecary" aria-labelledby="apothecary-title" data-section="9" data-altitude="250 m &middot; Amazonía">
+      <img class="terrain-backdrop terrain-amazon" src="assets/img/bg-amazon-basin.webp" srcset="assets/img/bg-amazon-basin-768.webp 768w, assets/img/bg-amazon-basin-1280.webp 1280w, assets/img/bg-amazon-basin.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="bg_amazon_basin" data-parallax data-parallax-speed="0.92">
+      <div class="section-shell">
+        <header class="section-heading section-heading-centered" data-reveal>
+          <p class="kicker">THE LIVING APOTHECARY</p>
+          <h2 id="apothecary-title" data-split-heading>Know your <em class="accent-word" data-accent>medicine</em></h2>
+          <p class="section-intro">An open archive of every plant we work with: where it grows, what it does, and how Ecuador has used it for centuries.</p>
+        </header>
 
-  <!-- 08 · FOOTER JOURNEY END — forest floor, leaves swaying -->
-  <footer class="site-footer j-footer">
-    <div class="j-bg footer-bg"><img src="assets/img/person-picking-herbs.jpg" alt="" aria-hidden="true" loading="lazy" data-master="bg_footer_forest_floor"></div>
-    <div class="sway-leaf leaf-left" aria-hidden="true">
-      <svg viewBox="0 0 200 300" fill="#1F3A2A"><path d="M100 300 C95 220 90 180 60 150 C20 110 10 60 30 20 C70 40 110 80 115 140 C118 180 110 240 100 300 Z" opacity="0.85"/><path d="M100 300 C108 230 120 190 150 160 C180 130 190 90 180 55 C150 75 120 115 112 165 C107 205 103 255 100 300 Z" opacity="0.7"/></svg>
-    </div>
-    <div class="sway-leaf leaf-right" aria-hidden="true">
-      <svg viewBox="0 0 200 300" fill="#16281D"><path d="M100 300 C95 220 90 180 60 150 C20 110 10 60 30 20 C70 40 110 80 115 140 C118 180 110 240 100 300 Z" opacity="0.8"/></svg>
-    </div>
-    <div class="sway-leaf orchid-right" aria-hidden="true">
-      <svg viewBox="0 0 120 120" fill="#C9A942"><circle cx="60" cy="60" r="10"/><ellipse cx="60" cy="34" rx="13" ry="22" opacity="0.6"/><ellipse cx="60" cy="86" rx="13" ry="22" opacity="0.6"/><ellipse cx="34" cy="60" rx="22" ry="13" opacity="0.6"/><ellipse cx="86" cy="60" rx="22" ry="13" opacity="0.6"/></svg>
-    </div>
-    <div class="footer-main container">
-      <div class="footer-news">
-        <h2>Join The <span class="accent-i">Herbal</span> Journal</h2>
-        <p>Herbal wisdom, recipes, and stories delivered to your inbox.</p>
-        <form class="news-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:var(--gold-soft);font-size:16px\'>Welcome to the journal. Speak soon.</p>';">
-          <input type="email" placeholder="Enter your email address" required aria-label="Email address">
-          <button class="btn btn-gold" type="submit">Subscribe</button>
+        <div class="specimen-grid" data-reveal-group>
+          <a class="specimen-card" href="apothecary.html#cats-claw" data-reveal>
+            <span class="specimen-image"><img src="assets/img/apoth-cats-claw.webp" width="768" height="1024" alt="Pressed botanical illustration of a Cat's Claw vine on aged cream paper" loading="lazy" decoding="async" data-master="apoth_cats_claw"></span>
+            <span class="specimen-copy"><strong>Cat's Claw</strong><em>Uncaria tomentosa</em><span>Immune and joint support</span><small>READ THE ENTRY <i aria-hidden="true">&rarr;</i></small></span>
+          </a>
+          <a class="specimen-card" href="apothecary.html#passionflower" data-reveal data-perch>
+            <span class="specimen-image"><img src="assets/img/apoth-passionflower.webp" width="768" height="1024" alt="Pressed botanical illustration of passionflower on aged cream paper" loading="lazy" decoding="async" data-master="apoth_passionflower"></span>
+            <span class="specimen-copy"><strong>Passionflower</strong><em>Passiflora incarnata</em><span>Rest and nervous system calm</span><small>READ THE ENTRY <i aria-hidden="true">&rarr;</i></small></span>
+          </a>
+          <a class="specimen-card" href="apothecary.html#cinchona" data-reveal>
+            <span class="specimen-image"><img src="assets/img/apoth-cinchona.webp" width="768" height="1024" alt="Pressed botanical illustration of cinchona leaves and bark on aged cream paper" loading="lazy" decoding="async" data-master="apoth_cinchona"></span>
+            <span class="specimen-copy"><strong>Cinchona</strong><em>Cinchona officinalis</em><span>Andean bark with an enduring legacy</span><small>READ THE ENTRY <i aria-hidden="true">&rarr;</i></small></span>
+          </a>
+          <a class="specimen-card" href="apothecary.html#guayusa" data-reveal>
+            <span class="specimen-image"><img src="assets/img/apoth-guayusa.webp" width="768" height="1024" alt="Pressed botanical illustration of guayusa leaves on aged cream paper" loading="lazy" decoding="async" data-master="apoth_guayusa"></span>
+            <span class="specimen-copy"><strong>Guayusa</strong><em>Ilex guayusa</em><span>Steady energy and focused ritual</span><small>READ THE ENTRY <i aria-hidden="true">&rarr;</i></small></span>
+          </a>
+        </div>
+
+        <div class="section-action" data-reveal>
+          <a class="btn btn-primary button button-primary" href="apothecary.html">ENTER THE APOTHECARY <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section journey-section" id="proof" aria-labelledby="proof-title" data-section="10" data-altitude="230 m">
+      <div class="section-shell">
+        <h2 class="visually-hidden" id="proof-title">Customer story and Kawsaypac guarantees</h2>
+        <article class="proof-story" data-reveal>
+          <div class="proof-story-media">
+            <img src="assets/img/herbal-infusion.webp" width="900" height="1200" alt="A warm herbal infusion being prepared for a daily wellness ritual" loading="lazy" decoding="async">
+          </div>
+          <div class="proof-story-copy">
+            <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote>&ldquo;I started for the sleep blend. I stayed because I finally understood what I was putting in my body, and where it came from.&rdquo;</blockquote>
+            <p>Rebecca M., Portland</p>
+          </div>
+        </article>
+
+        <ul class="guarantee-strip" aria-label="Shopping guarantees" data-reveal>
+          <li><span class="guarantee-icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><strong>Free US shipping over $75</strong></li>
+          <li><span class="guarantee-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><strong>30-day happiness guarantee</strong></li>
+          <li><span class="guarantee-icon"><svg aria-hidden="true"><use href="#i-pouch"/></svg></span><strong>Small-batch freshness</strong></li>
+          <li><span class="guarantee-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><strong>Secure checkout</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hybrid-journal-preview" aria-labelledby="journal-preview-title">
+      <div class="hybrid-home-shell">
+        <header class="hybrid-home-heading hybrid-home-heading--journal" data-reveal>
+          <div>
+            <p class="kicker">THE HERBAL JOURNAL</p>
+            <h2 id="journal-preview-title">Notes for a more informed <em>ritual.</em></h2>
+          </div>
+          <div class="hybrid-home-heading__aside">
+            <span class="ritual-seal" aria-hidden="true"><img src="assets/brand/flower-of-life.svg" alt="" width="100" height="100"><i>READ<br>03</i></span>
+            <p>Field notes, preparation guides and stories that make every ingredient easier to understand and use with care.</p>
+            <a class="hybrid-text-link" href="journal.html">READ THE JOURNAL <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </header>
+
+        <div class="hybrid-journal-grid" data-reveal-group>
+          <a class="hybrid-journal-card hybrid-journal-card--lead" href="journal.html#latest" data-reveal>
+            <span class="hybrid-journal-card__media"><img src="assets/img/new/kawsaypac-herbal-field-journal.webp" width="1672" height="941" alt="An open botanical field journal surrounded by freshly gathered Ecuadorian herbs" loading="lazy" decoding="async"></span>
+            <span class="hybrid-journal-card__copy"><small>FIELD NOTES &middot; 8 MIN</small><strong>What wildcrafted really asks of us</strong><span>Why place, timing and restraint matter before an herb reaches your cup.</span><i aria-hidden="true">READ &rarr;</i></span>
+          </a>
+          <a class="hybrid-journal-card" href="journal.html#journal-library-title" data-reveal>
+            <span class="hybrid-journal-card__media"><img src="assets/img/herbal-infusion.webp" width="900" height="1200" alt="Herbal infusion steeping beside loose botanicals" loading="lazy" decoding="async"></span>
+            <span class="hybrid-journal-card__copy"><small>PREPARATION &middot; 6 MIN</small><strong>Infusion or decoction?</strong><span>A clear guide to water, time and the plant part in your hand.</span><i aria-hidden="true">READ &rarr;</i></span>
+          </a>
+          <a class="hybrid-journal-card" href="journal.html#journal-library-title" data-reveal>
+            <span class="hybrid-journal-card__media"><img src="assets/img/new/kawsaypac-hands-botanical-partnership.webp" width="1672" height="941" alt="Hands sharing freshly gathered botanicals in warm natural light" loading="lazy" decoding="async"></span>
+            <span class="hybrid-journal-card__copy"><small>RELATIONSHIPS &middot; 7 MIN</small><strong>Who holds the plant knowledge?</strong><span>Why direct partnership belongs in every conversation about sourcing.</span><i aria-hidden="true">READ &rarr;</i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="journal-section journey-section" id="journal" aria-labelledby="journal-title" data-section="11" data-altitude="220 m &middot; Suelo de la selva">
+      <div class="journal-shell section-shell" data-reveal>
+        <p class="kicker">LETTERS FROM ECUADOR</p>
+        <h2 id="journal-title" data-split-heading>Join the Herbal Journal</h2>
+        <p>Herbal wisdom, recipes and stories from the Andes to the Amazon, in your inbox.</p>
+
+        <form class="journal-form" id="journalForm" novalidate>
+          <div class="journal-field">
+            <label for="journal-email">Enter your email address</label>
+            <div class="journal-control">
+              <input id="journal-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="journal-hint journal-error" required>
+              <button class="btn button button-gold" type="submit">SUBSCRIBE <span aria-hidden="true">&rarr;</span></button>
+            </div>
+            <p class="form-hint" id="journal-hint">A quiet letter from Ecuador, sent with care.</p>
+            <p class="form-error" id="journal-error" role="alert" hidden>Please enter a valid email address.</p>
+          </div>
+          <p class="form-status" id="journal-status" aria-live="polite" aria-atomic="true"></p>
         </form>
       </div>
-      <div class="footer-grid">
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="#collections">Shop All Herbs</a></li><li><a href="#blends">Kawsaypac Blends</a></li><li><a href="#blends">Kawsaypac Bundles</a></li><li><a href="#retreats">Ecuador Retreats</a></li><li><a href="#">Recipes &amp; Programs</a></li></ul></div>
-        <div class="footer-col"><h4>Learn</h4><ul><li><a href="apothecary.html">Why Kawsaypac</a></li><li><a href="apothecary.html#prepare">Tea Preparation Guide</a></li><li><a href="apothecary.html#prepare">Preparing Your Body</a></li><li><a href="#story">Our Story</a></li></ul></div>
-        <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Contact Us</a></li><li><a href="#">FAQ</a></li><li><a href="#">Wholesale</a></li></ul></div>
-        <div class="footer-col"><h4>Policies</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">FDA Disclosure</a></li></ul></div>
-      </div>
-      <div class="footer-bottom">
-        <span class="brand-name">KAWSAYPAC</span>
-        <p class="footer-tagline">Rooted in Ecuador. Guided by Nature. Created for Transformation.</p>
-        <div class="socials">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 11-2.9 0 1.4 1.4 0 012.9 0z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0024 12z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.6 5.8a4.8 4.8 0 01-3.4-4.5H12.6v14.1a2.9 2.9 0 11-2.9-2.9c.3 0 .6 0 .9.1V9a6.4 6.4 0 00-.9-.1 6.5 6.5 0 106.5 6.5V9.2a8.3 8.3 0 004.4 1.3V6.9c-.3 0-.7 0-1-.1z"/></svg></a>
+    </section>
+
+    <section class="hybrid-closing" aria-labelledby="hybrid-closing-title">
+      <img class="hybrid-closing__image" src="assets/img/real-amazon-river.webp" width="1600" height="1067" alt="A wide river moving through the living Ecuadorian Amazon" loading="lazy" decoding="async">
+      <div class="hybrid-closing__veil" aria-hidden="true"></div>
+      <div class="hybrid-closing__inner" data-reveal>
+        <span class="ritual-seal ritual-seal--closing" aria-hidden="true"><img src="assets/brand/flower-of-life.svg" alt="" width="100" height="100"><i>LIFE<br>04</i></span>
+        <p class="kicker kicker-light">FROM ECUADOR, FOR LIFE</p>
+        <h2 id="hybrid-closing-title">Your ritual begins with knowing <em>where it came from.</em></h2>
+        <div class="hybrid-closing__actions">
+          <a class="btn btn-primary button button-primary" href="shop.html">SHOP THE COLLECTION <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-glass button button-glass" href="brand.html">MEET KAWSAYPAC <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <p class="parent-brand">THE ELECTRIC EATS</p>
-        <p class="legal">Rooted in Ecuador. &copy; 2026 The Electric Eats. All rights reserved. These statements have not been evaluated by the FDA.</p>
+      </div>
+      <p class="hybrid-closing__word" aria-hidden="true">KAWSAYPAC</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Kawsaypac site footer">
+    <div class="footer-scene">
+      <img class="footer-landscape" src="assets/img/bg-footer-jungle.webp" srcset="assets/img/bg-footer-jungle-768.webp 768w, assets/img/bg-footer-jungle-1280.webp 1280w, assets/img/bg-footer-jungle.webp 2048w" sizes="100vw" width="2048" height="878" alt="A bright Amazon forest floor with ferns, orchids and a river glinting through the leaves" loading="lazy" decoding="async" data-master="bg_footer_jungle" data-parallax data-parallax-speed="0.96">
+      <span class="footer-mist" aria-hidden="true"></span>
+
+      <div class="footer-foliage" aria-hidden="true">
+      <img class="footer-leaf footer-leaf--left footer-leaf-one" src="assets/img/fg-leaf-monstera.webp" width="1100" height="1100" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_leaf_monstera" data-leaf data-perch>
+      <img class="footer-leaf footer-leaf--right footer-leaf-two" src="assets/img/fg-leaf-fern.webp" width="1100" height="1100" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_leaf_fern" data-leaf>
+      <img class="footer-leaf footer-orchid footer-leaf-three" src="assets/img/fg-orchid.webp" width="1100" height="1100" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_orchid" data-leaf>
+      <img class="footer-leaf footer-leaf-four" src="assets/img/fg-leaf-fern.webp" width="1100" height="1100" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_leaf_fern" data-leaf>
+      <img class="footer-leaf footer-leaf-five" src="assets/img/fg-orchid.webp" width="1100" height="1100" alt="" aria-hidden="true" loading="lazy" decoding="async" data-master="fg_orchid" data-leaf>
+      </div>
+
+      <div class="footer-card" data-reveal>
+        <div class="footer-brand-row">
+          <a class="brand brand-lockup" href="#hero" aria-label="Kawsaypac Ancestral Herbs, return to top">
+            <svg class="brand-mark brand-flower" viewBox="0 0 64 64" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="21" r="11"/><circle cx="41.5" cy="26.5" r="11"/>
+                <circle cx="41.5" cy="37.5" r="11"/><circle cx="32" cy="43" r="11"/>
+                <circle cx="22.5" cy="37.5" r="11"/><circle cx="22.5" cy="26.5" r="11"/>
+                <circle cx="32" cy="32" r="11"/>
+              </g>
+            </svg>
+            <span class="brand-copy"><strong class="brand-name">KAWSAYPAC</strong><small class="brand-sub">ANCESTRAL HERBS</small></span>
+          </a>
+          <a class="btn btn-primary button button-primary" href="shop.html">SHOP BY CONCERN <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="footer-columns">
+          <nav class="footer-col" aria-labelledby="footer-explore">
+            <h2 id="footer-explore">EXPLORE</h2>
+            <a href="shop.html">Shop All Herbs</a>
+            <a href="shop.html#collection">Kawsaypac Blends</a>
+            <a href="shop.html#collection">Kits &amp; Bundles</a>
+            <a href="events.html">Ecuador Retreats</a>
+            <a href="learn.html#recipes">Recipes &amp; Programs</a>
+          </nav>
+          <nav class="footer-col" aria-labelledby="footer-learn">
+            <h2 id="footer-learn">LEARN</h2>
+            <a href="brand.html">About Kawsaypac</a>
+            <a href="learn.html#tea-preparation">Tea Preparation Guide</a>
+            <a href="learn.html#prepare">Preparing Your Body</a>
+            <a href="journal.html">Herbal Journal</a>
+            <a href="brand.html">Our Story</a>
+          </nav>
+          <nav class="footer-col" aria-labelledby="footer-support">
+            <h2 id="footer-support">SUPPORT</h2>
+            <a href="mailto:hello@theelectriceats.com">Contact Us</a>
+            <a href="learn.html">Education Hub</a>
+            <a href="mailto:hello@theelectriceats.com?subject=Wholesale%20enquiry">Wholesale</a>
+          </nav>
+          <nav class="footer-col" id="footer-policies" aria-labelledby="footer-policies-title">
+            <h2 id="footer-policies-title">POLICIES</h2>
+            <span class="footer-policy-pending">Shipping &amp; Returns <small>at launch</small></span>
+            <span class="footer-policy-pending">Refund Policy <small>at launch</small></span>
+            <span class="footer-policy-pending">Privacy Policy <small>at launch</small></span>
+            <span class="footer-policy-pending">Terms of Service <small>at launch</small></span>
+            <a href="#footer-legal">FDA Disclaimer</a>
+          </nav>
+        </div>
+
+        <div class="footer-signoff">
+          <p class="footer-parent electric-eats">THE ELECTRIC EATS</p>
+          <p class="footer-tagline">Rooted in Ecuador. Guided by Nature. Created for Transformation.</p>
+          <div class="social-links" aria-label="Follow The Electric Eats">
+            <a href="https://www.instagram.com/theelectriceats/" target="_blank" rel="noopener noreferrer" aria-label="Follow The Electric Eats on Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a href="https://www.facebook.com/theelectriceats/" target="_blank" rel="noopener noreferrer" aria-label="Follow The Electric Eats on Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a href="https://www.youtube.com/@theelectriceats" target="_blank" rel="noopener noreferrer" aria-label="Watch The Electric Eats on YouTube"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+            <a href="https://www.tiktok.com/@theelectriceats" target="_blank" rel="noopener noreferrer" aria-label="Follow The Electric Eats on TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+            <a href="mailto:hello@theelectriceats.com" aria-label="Email The Electric Eats"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+          </div>
+        </div>
+
+        <div class="legal footer-legal" id="footer-legal">
+          <p>&copy; 2026 The Electric Eats. All rights reserved.</p>
+          <p>These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
+        </div>
       </div>
     </div>
   </footer>
-
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="app.js"></script>
 </body>
 </html>

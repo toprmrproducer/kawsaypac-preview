@@ -1,0 +1,357 @@
+/*
+ * Kawsaypac conversion motion layer
+ * Movement is decorative, transform-only, and removed for reduced-motion users.
+ */
+
+:root {
+  --announcement-height: 32px;
+  --ribbon-gold: #d7bc65;
+}
+
+/* Keep the superseded prototype bird out of the first paint. The interaction
+   layer replaces it with two intentional, brand-coloured hummingbirds. */
+#hummingbird.hummingbird {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.announcement-ribbon,
+.journey-ribbon {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.announcement-ribbon {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1090;
+  display: flex;
+  height: var(--announcement-height);
+  align-items: center;
+  color: #fffdf7;
+  background: #1f3a2a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.announcement-ribbon::after,
+.journey-ribbon::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  content: "";
+  pointer-events: none;
+}
+
+.announcement-ribbon::after {
+  background: linear-gradient(90deg, #1f3a2a, transparent 5%, transparent 95%, #1f3a2a);
+}
+
+.announcement-ribbon__viewport,
+.journey-ribbon__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.announcement-ribbon__track,
+.journey-ribbon__track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  will-change: transform;
+}
+
+.announcement-ribbon__track {
+  animation: kawsaypac-ribbon-forward 34s linear infinite;
+}
+
+.announcement-ribbon__copy,
+.journey-ribbon__copy {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.announcement-ribbon__item {
+  display: inline-flex;
+  min-height: var(--announcement-height);
+  padding-inline: clamp(1.25rem, 3.2vw, 3.2rem);
+  align-items: center;
+  gap: 0.72rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+}
+
+.announcement-ribbon__item::before {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  content: "";
+  background: var(--ribbon-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(215, 188, 101, 0.12);
+}
+
+body .site-header {
+  top: calc(var(--announcement-height) + 18px);
+}
+
+/* The contextual band bridges the retreat image into commerce without adding
+   another dark panel to the page. */
+.journey-ribbon {
+  min-height: 76px;
+  color: #1f3a2a;
+  background:
+    radial-gradient(circle at 13% 50%, rgba(255, 255, 255, 0.5), transparent 24%),
+    #e5d9a8;
+  border-block: 1px solid rgba(117, 111, 67, 0.24);
+}
+
+.journey-ribbon::after {
+  background: linear-gradient(90deg, #e5d9a8, transparent 7%, transparent 93%, #e5d9a8);
+}
+
+.journey-ribbon__track {
+  min-height: 76px;
+  animation: kawsaypac-ribbon-reverse 42s linear infinite;
+}
+
+.journey-ribbon__item {
+  display: inline-flex;
+  min-height: 76px;
+  padding-inline: clamp(1.8rem, 4.2vw, 4.8rem);
+  align-items: center;
+  gap: 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1rem, 1.35vw, 1.28rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.journey-ribbon__item::after {
+  display: block;
+  width: 30px;
+  height: 1px;
+  content: "";
+  background: #a17e16;
+  box-shadow: 10px 0 0 -0.25px rgba(161, 126, 22, 0.35);
+}
+
+.journey-ribbon__item em {
+  color: #756f43;
+  font-weight: 400;
+}
+
+@keyframes kawsaypac-ribbon-forward {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes kawsaypac-ribbon-reverse {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+/* Product rail autoplay remains native scroll-snap; the tiny marker only
+   communicates that the rail is alive without creating a competing control. */
+.product-rail.is-auto-advancing {
+  cursor: grab;
+}
+
+.product-rail.is-auto-advancing:active,
+.product-rail.is-dragging {
+  cursor: grabbing;
+}
+
+.product-rail.is-auto-paused {
+  scroll-behavior: auto;
+}
+
+/* Refined hummingbirds. All fills/strokes are explicit brand colours so no
+   browser-default black can leak into either sprite. */
+.journey-hummingbird {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 46;
+  width: 68px;
+  height: 48px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 12px rgba(31, 58, 42, 0.2));
+  transform: translate3d(-100px, -100px, 0);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.journey-hummingbird.is-visible {
+  visibility: visible;
+  opacity: 0.86;
+}
+
+.journey-hummingbird svg,
+.testimonial-hummingbird svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.journey-hummingbird .hb-wing-upper,
+.journey-hummingbird .hb-wing-lower {
+  transform-box: fill-box;
+  transform-origin: 82% 72%;
+}
+
+.journey-hummingbird .hb-wing-upper {
+  animation: hummingbird-wing-upper 220ms ease-in-out infinite alternate;
+}
+
+.journey-hummingbird .hb-wing-lower {
+  animation: hummingbird-wing-lower 220ms ease-in-out infinite alternate-reverse;
+}
+
+@keyframes hummingbird-wing-upper {
+  to { transform: rotate(-13deg) scaleY(0.5); }
+}
+
+@keyframes hummingbird-wing-lower {
+  to { transform: rotate(10deg) scaleY(0.56); }
+}
+
+.testimonial-panel {
+  isolation: isolate;
+}
+
+.testimonial-hummingbird {
+  position: absolute;
+  top: 27%;
+  left: 48.5%;
+  z-index: 3;
+  width: clamp(58px, 5vw, 82px);
+  height: auto;
+  color: #d7bc65;
+  opacity: 0.78;
+  pointer-events: none;
+  filter: drop-shadow(0 9px 13px rgba(7, 24, 14, 0.22));
+  transform: rotate(-5deg);
+}
+
+.testimonial-hummingbird::after {
+  position: absolute;
+  right: -8px;
+  bottom: 2px;
+  width: 76%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, rgba(215, 188, 101, 0.72), transparent);
+  transform: rotate(-5deg);
+  transform-origin: right center;
+}
+
+.testimonial-intro {
+  max-width: 35rem;
+  margin: 1.15rem 0 1.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.62;
+}
+
+.testimonial-intro + .testimonial-stage {
+  min-height: 265px;
+}
+
+@media (hover: hover) {
+  .announcement-ribbon:hover .announcement-ribbon__track,
+  .journey-ribbon:hover .journey-ribbon__track {
+    animation-play-state: paused;
+  }
+}
+
+@media (max-width: 959px) {
+  .journey-hummingbird {
+    display: none;
+  }
+
+  .testimonial-hummingbird {
+    top: 4.5rem;
+    right: clamp(1.2rem, 7vw, 4rem);
+    left: auto;
+    width: 58px;
+    opacity: 0.68;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --announcement-height: 30px;
+  }
+
+  body .site-header {
+    top: calc(var(--announcement-height) + 7px);
+  }
+
+  .announcement-ribbon__item {
+    padding-inline: 1.1rem;
+    font-size: 0.59rem;
+    letter-spacing: 0.085em;
+  }
+
+  .journey-ribbon,
+  .journey-ribbon__track,
+  .journey-ribbon__item {
+    min-height: 62px;
+  }
+
+  .journey-ribbon__item {
+    padding-inline: 1.45rem;
+    font-size: 0.94rem;
+  }
+
+  .testimonial-hummingbird {
+    top: 2.2rem;
+    right: 1.25rem;
+    width: 48px;
+    opacity: 0.56;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-ribbon__track,
+  .journey-ribbon__track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .announcement-ribbon__copy[aria-hidden="true"],
+  .journey-ribbon__copy[aria-hidden="true"] {
+    display: none;
+  }
+
+  .announcement-ribbon__viewport,
+  .journey-ribbon__viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .announcement-ribbon__viewport::-webkit-scrollbar,
+  .journey-ribbon__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .journey-hummingbird {
+    display: none !important;
+  }
+
+  .testimonial-hummingbird {
+    opacity: 0.48;
+  }
+
+  .journey-hummingbird .hb-wing-upper,
+  .journey-hummingbird .hb-wing-lower {
+    animation: none !important;
+  }
+}
