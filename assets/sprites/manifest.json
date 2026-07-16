@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "basePath": "./assets/sprites",
+  "contactSheet": "herb-icons/herb-icons-contact-sheet.png",
+  "herbs": [
+    {
+      "id": "guayusa-sprig",
+      "label": "Guayusa sprig",
+      "png": "herb-icons/guayusa-sprig.png",
+      "webp": "herb-icons/guayusa-sprig.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "passionflower-vine",
+      "label": "Passionflower and vine",
+      "png": "herb-icons/passionflower-vine.png",
+      "webp": "herb-icons/passionflower-vine.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "cats-claw-vine",
+      "label": "Cat's claw vine",
+      "png": "herb-icons/cats-claw-vine.png",
+      "webp": "herb-icons/cats-claw-vine.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "cinchona-bark-leaves",
+      "label": "Cinchona bark and leaves",
+      "png": "herb-icons/cinchona-bark-leaves.png",
+      "webp": "herb-icons/cinchona-bark-leaves.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "herbal-teacup",
+      "label": "Herbal teacup",
+      "png": "herb-icons/herbal-teacup.png",
+      "webp": "herb-icons/herbal-teacup.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "seed-pod",
+      "label": "Seed pod and drifting seeds",
+      "png": "herb-icons/seed-pod.png",
+      "webp": "herb-icons/seed-pod.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "orchid-cluster",
+      "label": "Orchid cluster",
+      "png": "herb-icons/orchid-cluster.png",
+      "webp": "herb-icons/orchid-cluster.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    },
+    {
+      "id": "mountain-herb-rosette",
+      "label": "Mountain herb rosette",
+      "png": "herb-icons/mountain-herb-rosette.png",
+      "webp": "herb-icons/mountain-herb-rosette.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": true
+    }
+  ],
+  "hummingbirds": [
+    {
+      "id": "hummingbird-flight",
+      "pose": "flight",
+      "png": "hummingbirds/hummingbird-flight.png",
+      "webp": "hummingbirds/hummingbird-flight.webp",
+      "width": 1536,
+      "height": 1024,
+      "alpha": true
+    },
+    {
+      "id": "hummingbird-perched",
+      "pose": "perched",
+      "png": "hummingbirds/hummingbird-perched.png",
+      "webp": "hummingbirds/hummingbird-perched.webp",
+      "width": 1536,
+      "height": 1024,
+      "alpha": true
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+/* Secondary Kawsaypac pages retain the supplied template grid and motion hooks. */
+
+.secondary-direct {
+  min-width: 320px;
+  overflow-x: clip;
+  background: var(--kp-cream);
+}
+
+.direct-skip {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  padding: 12px 18px;
+  color: var(--kp-cream);
+  background: var(--kp-forest);
+  border-radius: 999px;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
+
+.direct-skip:focus { transform: translateY(0); }
+
+.secondary-direct .about-us-banner {
+  min-height: min(820px, 88svh);
+  margin: 12px clamp(10px, 2vw, 28px) 0;
+  border-radius: clamp(22px, 3vw, 44px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.secondary-direct .about-us-banner::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background: linear-gradient(90deg, rgba(15, 34, 24, .58), rgba(15, 34, 24, .08) 68%),
+              linear-gradient(0deg, rgba(12, 27, 19, .54), transparent 58%);
+  pointer-events: none;
+}
+
+.secondary-direct .about-us-banner .full-image {
+  object-position: center;
+  filter: saturate(.96) contrast(1.02);
+}
+
+.secondary-direct.about-page .about-us-banner .full-image { object-position: 50% 37%; }
+.secondary-direct.retreats-page .about-us-banner .full-image { object-position: 50% 52%; }
+.secondary-direct.journal-page .about-us-banner .full-image { object-position: 50% 46%; }
+.secondary-direct.learn-page .about-us-banner .full-image { object-position: 50% 52%; }
+
+.secondary-direct .banner-title-wrapper {
+  z-index: 3;
+  max-width: 1040px;
+}
+
+.secondary-direct .banner-title {
+  max-width: 980px;
+  font-size: clamp(4rem, 8vw, 8.2rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.secondary-direct .banner-description {
+  max-width: 680px;
+  font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.secondary-direct .banner-bottom-overlay { display: none; }
+
+.secondary-direct .section {
+  padding-top: clamp(76px, 9vw, 140px);
+  padding-bottom: clamp(76px, 9vw, 140px);
+}
+
+.secondary-direct .title-section,
+.secondary-direct .event-title {
+  max-width: 880px;
+  color: var(--kp-forest);
+  font-size: clamp(2.8rem, 5.5vw, 5.9rem);
+  line-height: .96;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.secondary-direct .section-description,
+.secondary-direct .event-section-description p {
+  max-width: 700px;
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.secondary-direct .feature-image-large,
+.secondary-direct .numbers-image-large-about,
+.secondary-direct .blog-link-large,
+.secondary-direct .event-image-wrapper,
+.secondary-direct .event-image-wrap {
+  overflow: hidden;
+  border-radius: clamp(18px, 2.2vw, 32px);
+}
+
+.secondary-direct .feature-image-large .cover-image,
+.secondary-direct .blog-link-large .cover-image,
+.secondary-direct [class*="event-image"] .cover-image {
+  transition: transform .7s cubic-bezier(.2,.75,.2,1), filter .7s ease;
+}
+
+.secondary-direct .feature-image-large:hover .cover-image,
+.secondary-direct .blog-link-large:hover .cover-image,
+.secondary-direct [class*="event-image"]:hover .cover-image {
+  transform: scale(1.035);
+  filter: saturate(1.04);
+}
+
+.secondary-direct .feature-item {
+  min-height: 150px;
+  padding: clamp(18px, 2.4vw, 34px);
+  border: 1px solid rgba(31, 58, 42, .15);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .58);
+}
+
+.secondary-direct .feature-item .icon-feature {
+  width: clamp(58px, 6vw, 92px) !important;
+  height: clamp(64px, 7vw, 104px) !important;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(31, 58, 42, .12));
+}
+
+.secondary-direct .dark-background {
+  color: var(--kp-cream);
+  background: var(--kp-forest) !important;
+}
+
+.secondary-direct .numbers-image-large-about .cover-image {
+  min-height: 620px;
+  object-fit: cover;
+}
+
+.secondary-direct .image-team,
+.secondary-direct .author-ab,
+.secondary-direct .author-image {
+  object-position: center top;
+  filter: saturate(.92) contrast(1.02);
+}
+
+.secondary-direct .name-blog {
+  color: var(--kp-forest);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.3rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.secondary-direct .collection-item-3,
+.secondary-direct [role="listitem"] {
+  border-color: rgba(31, 58, 42, .13);
+}
+
+.secondary-direct .primary-button-small,
+.secondary-direct .primary-button-link,
+.secondary-direct .primary-button,
+.secondary-direct .primary-button-white {
+  min-height: 46px;
+}
+
+.secondary-direct .primary-button-small {
+  color: var(--kp-cream);
+  background: var(--kp-forest);
+}
+
+.secondary-direct .cta-section {
+  min-height: min(760px, 85svh);
+  margin: 0 clamp(10px, 2vw, 28px);
+  border-radius: clamp(22px, 3vw, 44px);
+  overflow: hidden;
+}
+
+.secondary-direct .cta-section::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background: linear-gradient(90deg, rgba(16, 35, 24, .66), rgba(16, 35, 24, .1) 72%);
+  pointer-events: none;
+}
+
+.secondary-direct .cta-section .base-container { position: relative; z-index: 3; }
+.secondary-direct .cta-section h2 { max-width: 820px; text-wrap: balance; }
+
+.secondary-direct .footer-relative-wrapper { margin-top: clamp(70px, 8vw, 130px); }
+.secondary-direct .footer-logo { height: 42px !important; }
+.secondary-direct .sticky-photo-section { min-height: 72svh; }
+.secondary-direct .footer-image-wrap .cover-image { object-position: center 56%; }
+.secondary-direct .large-text-footer { font-size: clamp(5rem, 18vw, 18rem); }
+
+.secondary-direct .direct-fda {
+  border-top: 1px solid rgba(250, 249, 246, .14);
+}
+
+.secondary-direct .w-commerce-commercecartwrapper,
+.secondary-direct .search-desktop {
+  z-index: 900;
+}
+
+.secondary-direct .promotion-labels-wrapper-to-remove { display: none !important; }
+
+@media (max-width: 991px) {
+  .secondary-direct .about-us-banner {
+    min-height: 78svh;
+  }
+
+  .secondary-direct .banner-title { font-size: clamp(3.6rem, 11vw, 6.2rem); }
+  .secondary-direct .feature-item { min-height: 128px; }
+  .secondary-direct .numbers-image-large-about .cover-image { min-height: 480px; }
+}
+
+@media (max-width: 767px) {
+  .secondary-direct .about-us-banner {
+    min-height: 700px;
+    margin: 8px 8px 0;
+    border-radius: 24px;
+  }
+
+  .secondary-direct .about-us-banner::after {
+    background: linear-gradient(0deg, rgba(12, 27, 19, .72), rgba(12, 27, 19, .06) 75%);
+  }
+
+  .secondary-direct .banner-title { font-size: clamp(3.25rem, 16vw, 5rem); }
+  .secondary-direct .banner-description { font-size: 1rem; }
+  .secondary-direct .section { padding-top: 72px; padding-bottom: 72px; }
+  .secondary-direct .title-section,
+  .secondary-direct .event-title { font-size: clamp(2.7rem, 12vw, 4.2rem); }
+
+  .secondary-direct .feature-item {
+    min-height: 112px;
+    border-radius: 16px;
+  }
+
+  .secondary-direct .feature-item .icon-feature {
+    width: 58px !important;
+    height: 68px !important;
+  }
+
+  .secondary-direct .cta-section {
+    min-height: 720px;
+    margin: 0 8px;
+    border-radius: 24px;
+  }
+
+  .secondary-direct .cta-section::after {
+    background: linear-gradient(0deg, rgba(16, 35, 24, .74), rgba(16, 35, 24, .08) 74%);
+  }
+
+  .secondary-direct .sticky-photo-section { min-height: 620px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .secondary-direct .feature-image-large .cover-image,
+  .secondary-direct .blog-link-large .cover-image,
+  .secondary-direct [class*="event-image"] .cover-image {
+    transition: none;
+  }
+}
