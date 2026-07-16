@@ -45,7 +45,11 @@
       var open = li.classList.toggle("open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
       document.querySelectorAll(".has-drop.open").forEach(function (other) {
-        if (other !== li) { other.classList.remove("open"); }
+        if (other !== li) {
+          other.classList.remove("open");
+          var otherBtn = other.querySelector(".drop-trigger");
+          if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+        }
       });
     });
   });
@@ -82,6 +86,7 @@
         sheet.classList.remove("open");
         toggle.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
+        sheet.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
       });
     });
@@ -93,6 +98,7 @@
     var imgs = document.querySelectorAll(".hero-card-imgs img");
     var dots = document.querySelectorAll(".hero-card-txt .dots i");
     if (!imgs.length) return;
+    if (prefersReduced) return;
     var i = 0;
     setInterval(function () {
       imgs[i].classList.remove("on");
@@ -213,7 +219,7 @@
     var open = function () {
       lastFocus = document.activeElement;
       frame.innerHTML =
-        '<iframe src="https://www.youtube-nocookie.com/embed/MHHxiENWMho?autoplay=1&rel=0" title="Kawsaypac retreats video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        '<iframe src="https://player.vimeo.com/video/1210451731?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" title="Kawsaypac mountain film" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
       lb.classList.add("open");
       lb.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -233,6 +239,14 @@
     lb.addEventListener("click", function (e) { if (e.target === lb) shut(); });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && lb.classList.contains("open")) shut();
+      if (e.key === "Tab" && lb.classList.contains("open")) {
+        var focusable = lb.querySelectorAll('button, iframe, a[href], [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
   })();
 
@@ -245,12 +259,16 @@
       e.preventDefault();
       var email = form.querySelector("input");
       if (!email.value || email.value.indexOf("@") < 1) {
+        ok.textContent = "Please enter a valid email address.";
+        ok.hidden = false;
         email.focus();
         email.style.borderColor = "#B0563C";
         return;
       }
-      form.hidden = true;
+      email.style.borderColor = "";
+      ok.textContent = "Opening your email app so you can request an invitation to the Herbal Journal.";
       ok.hidden = false;
+      window.location.href = "mailto:hello@theelectriceats.com?subject=Join%20the%20Kawsaypac%20Herbal%20Journal&body=" + encodeURIComponent("Please add " + email.value + " to the Herbal Journal.");
     });
   })();
 
@@ -282,8 +300,6 @@
     if (motionReady || prefersReduced || typeof gsap === "undefined") return;
     motionReady = true;
     if (typeof ScrollTrigger !== "undefined") gsap.registerPlugin(ScrollTrigger);
-    var heavy = window.innerWidth >= 900;
-
     /* native scroll + anchor focus management (no scroll-hijack: must feel light) */
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       if (a.classList.contains("skip-link")) return;
@@ -309,9 +325,24 @@
       .from(".hero-card", { x: 46, autoAlpha: 0, duration: 0.9, immediateRender: false }, 0.65)
       .from(".hero-badge", { y: -18, autoAlpha: 0, duration: 0.7, immediateRender: false }, 0.55);
 
+    /* a quiet living object at the top, after the entrance has settled */
+    heroTl.call(function () {
+      gsap.to(".hero-card", {
+        y: -6,
+        rotation: 0.25,
+        duration: 3.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+    });
+
+    var groupedRevealSelector = ".pathway-card, .p-card, .bowl, .specimen";
+
     /* generic reveals: text enters from the left, cards fade up */
     gsap.utils.toArray(".reveal").forEach(function (el) {
       if (el.classList.contains("story-imgs")) return; /* gets the clip-path unmask instead */
+      if (el.matches(groupedRevealSelector)) return; /* grouped below for a deliberate stagger */
       var vars = {
         autoAlpha: 0, duration: 0.9, ease: "power3.out", immediateRender: false,
         scrollTrigger: { trigger: el, start: "top 82%", once: true }
@@ -332,6 +363,30 @@
       });
     });
 
+    /* coherent card families enter as one composition instead of firing randomly */
+    [
+      { targets: ".pathway-grid .pathway-card", trigger: ".pathway-grid", distance: 38, each: 0.11 },
+      { targets: "#blendCar .p-card", trigger: "#blendCar", distance: 32, each: 0.08 },
+      { targets: ".bowls .bowl", trigger: ".bowls", distance: 30, each: 0.07 },
+      { targets: ".specimens .specimen", trigger: ".specimens", distance: 34, each: 0.09 }
+    ].forEach(function (group) {
+      var items = gsap.utils.toArray(group.targets);
+      if (!items.length || !document.querySelector(group.trigger)) return;
+      gsap.from(items, {
+        y: group.distance,
+        autoAlpha: 0,
+        duration: 0.85,
+        stagger: group.each,
+        ease: "power3.out",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: group.trigger,
+          start: "top 84%",
+          once: true
+        }
+      });
+    });
+
     /* image unmasks: clip-path sweeps open from the left */
     var unmask = function (targets, triggerEl, stagger, delay) {
       var els = gsap.utils.toArray(targets);
@@ -346,45 +401,38 @@
     };
     unmask(".story-imgs .story-main img", ".story-imgs");
     unmask(".story-polaroid", ".story-imgs", 0, 0.15);
-    unmask(".proof-img img", ".proof-card", 0, 0.1);
-    unmask(".why-grid .why-photo img", ".why-grid", 0.08);
-    unmask(".vt-grid .vt-card img", ".vt-grid", 0.08);
+    unmask(".pathway-card .pathway-image", ".pathway-grid", 0.08);
 
-    /* parallax terrain (heavy: desktop only) */
-    if (heavy) {
-      gsap.utils.toArray(".parallax-bg").forEach(function (img) {
-        gsap.to(img, {
-          yPercent: -8, ease: "none",
-          scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: 0.6 }
-        });
+    if (typeof ScrollTrigger !== "undefined") {
+      /* top-of-page depth only: no pinned sections or scroll hijacking */
+      gsap.to(".hero-base", {
+        scale: 1.045,
+        yPercent: 1.25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".j-hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.1
+        }
       });
 
-      /* extend the same gentle scrub to every scene backdrop (oversized so no edges show) */
-      gsap.utils.toArray(".why-scene img, .blends-scene img, .basin-band img, .mist-edge img, .journal-scene img, .footer-bg").forEach(function (img) {
-        if (img.classList.contains("parallax-bg") || !img.offsetParent) return;
-        gsap.fromTo(img,
-          { yPercent: 4, scale: 1.08 },
-          {
-            yPercent: -4, scale: 1.08, ease: "none",
-            scrollTrigger: { trigger: img.closest("section, footer") || img.parentElement, start: "top bottom", end: "bottom top", scrub: 0.6 }
-          });
+      /* the journey becomes living again at the Amazon floor */
+      gsap.from(".footer-card", {
+        y: 38,
+        autoAlpha: 0,
+        duration: 1,
+        ease: "power3.out",
+        immediateRender: false,
+        scrollTrigger: { trigger: ".j-footer", start: "top 78%", once: true }
       });
-
-      /* corner floaters: subtle scroll drift, composes with their CSS sway (individual rotate) */
-      gsap.utils.toArray(".floater").forEach(function (fl) {
-        gsap.to(fl, {
-          y: -14, ease: "none",
-          scrollTrigger: { trigger: fl.parentElement, start: "top bottom", end: "bottom top", scrub: 0.8 }
-        });
-      });
-    }
-
-    /* hero word drifts slightly on scroll (depth vs locked peak) */
-    var heroWord = document.querySelector(".hero-word");
-    if (heroWord) {
-      gsap.to(heroWord, {
-        yPercent: 30, autoAlpha: 0.3, ease: "none",
-        scrollTrigger: { trigger: ".hero-frame", start: "top top", end: "bottom top", scrub: 0.5 }
+      gsap.from(".f-leaf", {
+        autoAlpha: 0,
+        duration: 1.25,
+        stagger: 0.14,
+        ease: "power2.out",
+        immediateRender: false,
+        scrollTrigger: { trigger: ".j-footer", start: "top 82%", once: true }
       });
     }
 
@@ -394,49 +442,57 @@
   var safetyNet = function () {
     setTimeout(function () {
       document.querySelectorAll('[style*="visibility: hidden"], [style*="opacity: 0"]').forEach(function (el) {
-        if (el.closest(".quote-rotator") || el.classList.contains("hero-video")) return;
+        if (el.closest(".quote-rotator")) return;
         el.style.opacity = "";
         el.style.visibility = "";
       });
     }, 4000);
   };
 
-  /* ── micro-interactions: magnetic buttons + card tilt ── */
+  /* ── micro-interactions: magnetic buttons + responsive card imagery ── */
   var initMicro = function () {
-    if (prefersReduced || window.innerWidth < 900) return;
+    if (prefersReduced || window.innerWidth < 900 || typeof gsap === "undefined" || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     document.querySelectorAll(".btn").forEach(function (b) {
       b.addEventListener("mousemove", function (e) {
         var r = b.getBoundingClientRect();
         var dx = (e.clientX - r.left - r.width / 2) / r.width;
         var dy = (e.clientY - r.top - r.height / 2) / r.height;
-        b.style.transform = "translate(" + dx * 6 + "px," + dy * 5 + "px)";
+        gsap.to(b, { x: dx * 6, y: dy * 5, duration: 0.3, ease: "power2.out", overwrite: "auto" });
       });
-      b.addEventListener("mouseleave", function () { b.style.transform = ""; });
+      b.addEventListener("mouseleave", function () {
+        gsap.to(b, { x: 0, y: 0, duration: 0.5, ease: "power3.out", clearProps: "transform", overwrite: "auto" });
+      });
     });
-    document.querySelectorAll(".p-card").forEach(function (c) {
+
+    document.querySelectorAll(".p-card, .pathway-card, .specimen").forEach(function (c) {
+      var visual = c.querySelector(".p-img img, .pathway-image img") || c.querySelector("img");
+      if (!visual) return;
       c.addEventListener("mousemove", function (e) {
         var r = c.getBoundingClientRect();
-        var rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
-        var ry = ((e.clientX - r.left) / r.width - 0.5) * 5;
-        c.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-6px)";
+        var dx = (e.clientX - r.left) / r.width - 0.5;
+        var dy = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(visual, {
+          x: dx * 9,
+          y: dy * 7,
+          scale: 1.05,
+          duration: 0.42,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
       });
-      c.addEventListener("mouseleave", function () { c.style.transform = ""; });
+      c.addEventListener("mouseleave", function () {
+        gsap.to(visual, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: 0.55,
+          ease: "power3.out",
+          clearProps: "transform",
+          overwrite: "auto"
+        });
+      });
     });
   };
-
-  /* ── hero video: force load + autoplay, retry on first interaction ── */
-  var initHeroVideo = function () {
-    var v = document.querySelector(".hero-video");
-    if (!v) return;
-    var kick = function () { if (v.paused) { try { v.load(); } catch (e) {} v.play().catch(function () {}); } };
-    kick();
-    setTimeout(kick, 1200);
-    ["pointerdown", "touchstart", "scroll", "keydown"].forEach(function (ev) {
-      window.addEventListener(ev, kick, { once: true, passive: true });
-    });
-  };
-  if (document.readyState !== "loading") initHeroVideo();
-  else document.addEventListener("DOMContentLoaded", initHeroVideo);
 
   /* motion + progress start at DOM ready (gsap is deferred, so it's parsed by now);
      load stays as a fallback for any readyState edge */

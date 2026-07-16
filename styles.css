@@ -210,6 +210,7 @@ a { color: inherit; }
 @media (max-width: 1020px) {
   .nav-links, .btn-nav { display: none; }
   .nav-toggle { display: flex; }
+  .nav-pill { position: relative; z-index: 210; }
 }
 
 /* ── shared flower-of-life ────────────────────── */
