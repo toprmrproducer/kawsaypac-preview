@@ -1,1 +1,29 @@
-(function(){'use strict';function boot(){const data=window.KAWSAYPAC;if(!data)return setTimeout(boot,20);const filters=document.querySelector('[data-shop-filters]'),grid=document.querySelector('[data-shop-grid]'),status=document.querySelector('[data-shop-status]'),empty=document.querySelector('.shop-empty');const card=p=>`<article class="product-card" data-concern="${p.concerns}" data-type="${p.tag.toLowerCase()}"><a class="product-media" href="product.html?product=${p.slug}"><img src="${p.image}?v=17" alt="${p.name} herbal product" loading="lazy"><span class="product-tag">${p.tag}</span></a><div class="product-copy"><h3>${p.name}</h3><strong>${p.price}</strong><p>${p.desc}</p><a class="card-link" href="product.html?product=${p.slug}">View blend</a></div></article>`;grid.innerHTML=data.products.map(card).join('');filters.innerHTML=data.concerns.map((c,i)=>`<span class="filter"><input type="radio" name="concern" id="filter-${c[1]}" value="${c[1]}" ${i===0?'checked':''}><label for="filter-${c[1]}">${c[0]}</label></span>`).join('');function update(slug){let count=0;document.querySelectorAll('[data-concern]',grid).forEach(card=>{const values=card.dataset.concern.split(' ');const show=slug==='all'||values.includes(slug)||values.includes('all');card.hidden=!show;if(show)count++});status.textContent=`Showing ${count} ${count===1?'product':'products'}.`;empty.classList.toggle('show',count===0);const input=document.getElementById(`filter-${slug}`)||document.getElementById('filter-all');if(input)input.checked=true;const url=new URL(location.href);if(slug==='all')url.searchParams.delete('concern');else url.searchParams.set('concern',slug);history.replaceState({},'',url)}filters.addEventListener('change',e=>{if(e.target.matches('input'))update(e.target.value)});const params=new URLSearchParams(location.search);const type=params.get('type');if(type){const wanted=type==='bundles'?'bundle':type==='blends'?'':'ebook';document.querySelectorAll('[data-type]',grid).forEach(card=>{const show=wanted?card.dataset.type.includes(wanted):!card.dataset.type.includes('bundle')&&!card.dataset.type.includes('ebook');card.hidden=!show});status.textContent=`Showing ${Array.from(grid.children).filter(c=>!c.hidden).length} products.`}else update(params.get('concern')||'all')}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot()})();
+(function () {
+  'use strict';
+
+  let attempts = 0;
+
+  function boot() {
+    if (window.KawsaypacStorefront) {
+      window.KawsaypacStorefront.initShop();
+      return;
+    }
+
+    attempts += 1;
+    if (attempts < 100) {
+      window.setTimeout(boot, 50);
+      return;
+    }
+
+    const status = document.querySelector('[data-shop-status]');
+    const empty = document.querySelector('[data-shop-empty]');
+    if (status) status.textContent = 'The live apothecary could not be initialized.';
+    if (empty) {
+      empty.hidden = false;
+      empty.dataset.kind = 'error';
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
+  else boot();
+})();
