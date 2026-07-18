@@ -1,0 +1,57 @@
+.journey-preview{background:#0d2518}
+.journey-scroll{position:relative;height:520vh;background:#0d2518}
+.journey-sticky{position:relative;height:100svh;min-height:700px;overflow:hidden;isolation:isolate;background:#a8c0c8;color:#fff}
+.journey-landscape,.journey-jungle,.journey-shade{position:absolute;inset:0}
+.journey-landscape,.journey-jungle{overflow:hidden;will-change:filter,transform,opacity}
+.journey-landscape{z-index:1;background:#9fb9c3}
+.journey-jungle{z-index:10}
+.journey-landscape img,.journey-jungle img{position:absolute;max-width:none;pointer-events:none;user-select:none;will-change:transform,opacity,filter}
+.journey-landscape-master,.journey-jungle-master{inset:0;width:100%;height:100%;object-fit:cover}
+.journey-landscape-master{z-index:1;object-position:center 52%;filter:saturate(.88) contrast(1.04) brightness(.8);transform:scale(1.14)}
+.journey-ridge-wide{z-index:2;left:-6%;bottom:-10%;width:112%;height:61%;object-fit:cover;object-position:center bottom;filter:saturate(.72) brightness(.62)}
+.journey-ridge-left{z-index:3;left:-18%;bottom:-8%;width:74%;height:78%;object-fit:contain;object-position:left bottom;filter:saturate(.74) brightness(.63)}
+.journey-ridge-right{z-index:3;right:-16%;bottom:-5%;width:74%;height:78%;object-fit:contain;object-position:right bottom;filter:saturate(.74) brightness(.61)}
+.journey-mountain{z-index:4;left:50%;bottom:13%;width:min(68vw,1120px);height:auto;transform:translateX(-50%);filter:saturate(.86) brightness(.86) drop-shadow(0 30px 40px rgba(27,44,39,.22))}
+.journey-river{z-index:5;left:6%;bottom:-19%;width:88%;height:76%;object-fit:contain;object-position:center bottom;filter:saturate(.78) brightness(.78)}
+.journey-clouds{z-index:6;left:-6%;top:6%;width:112%;height:48%;object-fit:cover;opacity:.68;mix-blend-mode:screen}
+.journey-mist{z-index:7;left:-7%;top:15%;width:114%;height:70%;object-fit:cover;opacity:.3;mix-blend-mode:screen;filter:blur(3px)}
+.journey-jungle-master{z-index:1;object-position:center 48%;filter:saturate(.82) brightness(.58) contrast(1.05);transform:scale(1.04)}
+.journey-canopy{z-index:2;right:-21%;bottom:-18%;width:78%;height:80%;object-fit:contain;object-position:right bottom;filter:saturate(.88) brightness(.64)}
+.journey-philodendron{z-index:3;left:-22%;top:-17%;width:74%;height:78%;object-fit:contain;object-position:left top;filter:saturate(.92) brightness(.68)}
+.journey-bromeliads{z-index:4;left:15%;top:-24%;width:72%;height:66%;object-fit:contain;object-position:center top;filter:saturate(.86) brightness(.68)}
+.journey-orchid{z-index:4;left:-11%;bottom:-21%;width:54%;height:60%;object-fit:contain;object-position:left bottom;filter:saturate(.86) brightness(.62)}
+.journey-snake{z-index:5;left:-13%;bottom:4%;width:58%;height:46%;object-fit:contain;object-position:left center;filter:saturate(.9) brightness(.7) drop-shadow(0 25px 34px rgba(0,0,0,.28))}
+.journey-toucan{z-index:5;right:-13%;top:7%;width:46%;height:58%;object-fit:contain;object-position:right top;filter:saturate(.95) brightness(.82) drop-shadow(0 24px 32px rgba(0,0,0,.22))}
+.journey-forest-frame{z-index:6;inset:-10%;width:120%;height:120%;object-fit:cover;object-position:center bottom;filter:saturate(.9) brightness(.48) blur(1px)}
+.journey-shade{z-index:15;background:linear-gradient(180deg,rgba(5,25,14,.16),transparent 35%,rgba(4,22,12,.68)),radial-gradient(circle at center,transparent 22%,rgba(4,23,13,.46) 100%);pointer-events:none;will-change:opacity}
+.journey-brand,.journey-beat,.journey-final,.journey-progress{position:absolute;z-index:20}
+.journey-brand{inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;text-shadow:0 4px 36px rgba(3,20,11,.74)}
+.journey-brand span,.journey-brand em{font-size:.66rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;font-style:normal}
+.journey-brand strong{display:block;margin:8px 0 15px;font-family:var(--display);font-size:clamp(5.6rem,13vw,12rem);font-weight:400;line-height:.78;letter-spacing:-.07em}
+.journey-brand em{color:#f1d678}
+.journey-beat{left:clamp(28px,7vw,112px);bottom:clamp(62px,8vh,98px);width:min(670px,calc(100% - 56px));opacity:0;transform:translateY(32px);pointer-events:none;text-shadow:0 3px 34px rgba(3,20,11,.72)}
+.journey-beat span{display:block;margin-bottom:15px;color:#f1d678;font-size:.64rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.journey-beat h1,.journey-beat h2{max-width:720px;margin:0;font-family:var(--display);font-size:clamp(3.6rem,7.2vw,7.6rem);font-weight:400;line-height:.84;letter-spacing:-.055em}
+.journey-beat p{max-width:520px;margin:21px 0 0;color:rgba(255,255,255,.88);font-size:clamp(.95rem,1.24vw,1.12rem)}
+.journey-beat-water{left:auto;right:clamp(28px,7vw,112px);text-align:right}
+.journey-beat-water p{margin-left:auto}
+.journey-final{left:clamp(28px,6vw,96px);bottom:clamp(46px,6vh,76px);width:min(750px,calc(100% - 56px));opacity:0;transform:translateY(28px);text-shadow:0 3px 32px rgba(5,24,13,.64)}
+.journey-final .eyebrow{color:#f3d97e}
+.journey-final h2{max-width:780px;margin:0;font-family:var(--display);font-size:clamp(4.1rem,8vw,8.4rem);font-weight:400;line-height:.82;letter-spacing:-.06em}
+.journey-final h2 span{color:#d9b847;font-style:italic;font-weight:400}
+.journey-final>p:not(.eyebrow){max-width:590px;margin:22px 0;color:rgba(255,255,255,.92);font-size:clamp(.98rem,1.25vw,1.14rem)}
+.journey-final .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.journey-final .btn-secondary{background:rgba(12,35,22,.26)}
+.journey-trust{display:flex;flex-wrap:wrap;gap:25px;margin-top:23px;padding-top:17px;border-top:1px solid rgba(255,255,255,.34);font-size:.6rem;font-weight:760;letter-spacing:.1em;text-transform:uppercase}
+.journey-trust strong{margin-right:6px;font-family:var(--display);font-size:1.18rem;font-weight:500;letter-spacing:0}
+.journey-progress{right:23px;top:50%;width:1px;height:210px;background:rgba(255,255,255,.3);transform:translateY(-50%)}
+.journey-progress span{display:block;width:2px;height:100%;background:#f0d269;transform:scaleY(0);transform-origin:top}
+.journey-progress small{position:absolute;top:50%;left:14px;white-space:nowrap;font-size:.52rem;font-weight:760;letter-spacing:.17em;text-transform:uppercase;transform:rotate(90deg) translateY(-50%);transform-origin:left top}
+.journey-preview .site-header{z-index:9000}
+.journey-preview .collections{background:var(--cream)}
+.journey-preview .concern-section{background:linear-gradient(180deg,#f4f0e7,#faf9f6);color:var(--charcoal)}
+.journey-preview .concern-section .section-head h2{color:var(--forest)}
+.journey-preview .concern-tile{background:rgba(255,255,255,.72);border-color:rgba(31,58,42,.14)}
+@media(max-width:980px){.journey-mountain{width:88vw}.journey-river{left:-2%;width:104%}.journey-toucan{right:-20%;width:58%}.journey-snake{left:-20%;width:70%}.journey-canopy{right:-30%;width:92%}.journey-philodendron{left:-30%;width:88%}.journey-final h2{font-size:clamp(4rem,11vw,7rem)}}
+@media(max-width:720px){.journey-scroll{height:auto}.journey-sticky{height:100svh;min-height:740px}.journey-landscape-master{object-position:53% center;filter:saturate(.9) brightness(.69);transform:scale(1.08)!important}.journey-ridge-wide,.journey-ridge-left,.journey-ridge-right,.journey-mountain,.journey-river,.journey-clouds,.journey-mist,.journey-jungle-master,.journey-bromeliads,.journey-orchid,.journey-snake,.journey-toucan{display:none}.journey-jungle{opacity:1!important;filter:none!important}.journey-canopy{display:block;right:-47%;bottom:-27%;width:114%;height:70%;filter:brightness(.58)}.journey-philodendron{display:block;left:-54%;top:-24%;width:118%;height:70%;filter:brightness(.58)}.journey-forest-frame{display:block;inset:-5%;width:110%;height:110%;opacity:.72!important;transform:none!important;filter:brightness(.44)}.journey-brand,.journey-beat{display:none}.journey-shade{opacity:.74!important}.journey-final{left:22px;right:22px;bottom:38px;width:auto;opacity:1!important;visibility:visible!important;transform:none!important}.journey-final h2{font-size:clamp(3.7rem,18vw,5.7rem)}.journey-final>p:not(.eyebrow){font-size:.92rem}.journey-final .btn{padding:0 16px;font-size:.66rem}.journey-trust{gap:12px;font-size:.5rem}.journey-progress{display:none}}
+@media(prefers-reduced-motion:reduce){.journey-scroll{height:auto}.journey-sticky{height:100svh}.journey-jungle{opacity:.28!important}.journey-jungle-master,.journey-snake,.journey-toucan,.journey-bromeliads,.journey-orchid{display:none}.journey-brand,.journey-beat{display:none}.journey-final{opacity:1!important;transform:none!important}.journey-progress{display:none}}
