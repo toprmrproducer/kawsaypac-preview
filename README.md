@@ -1,7 +1,26 @@
-# Kawsaypac — Ancestral Herbs (Design Preview)
+# Kawsaypac Ancestral Herbs
 
-Premium website preview for The Electric Eats / Kawsaypac (Raisa & Brian).
-Built by RapidXAI. Custom front end; Shopify backend integration to follow.
+Production static preview for The Electric Eats LLC.
 
-Pages: index.html (homepage journey), apothecary.html (Living Apothecary), product.html (Cat's Claw PDP).
-Stack: static HTML + CSS + vanilla JS + GSAP ScrollTrigger. No build step.
+## Run locally
+
+```bash
+python3 -m http.server 4173
+```
+
+Open `http://127.0.0.1:4173/`.
+
+## Stack
+
+Multi-page HTML, CSS, vanilla JavaScript, GSAP 3.12, and ScrollTrigger. Commerce buttons are presentation-ready but Shopify checkout is intentionally not connected in this preview.
+
+## Key routes
+
+- Home: `index.html`
+- Shop and concern filters: `shop.html`
+- Product detail: `product.html?product=zapped-in`
+- Apothecary, story, philosophy, retreats, learning guides, support, and policy routes are all static HTML pages.
+
+## Deployment
+
+GitHub Pages serves the `main` branch. `.nojekyll` keeps the static asset paths unchanged.
