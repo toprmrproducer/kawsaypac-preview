@@ -21,7 +21,7 @@ Kawsaypac is a luminous, landscape-led Ecuadorian herbal brand. The visual syste
 
 ## 3. Layout
 
-The homepage begins with a full-viewport pinned scene. Cotopaxi stays high and right. Product copy occupies the lower-left valley pocket and does not overlap the volcano. The hero is a protected surface and is not changed by the editorial homepage track.
+The homepage begins inside a full-viewport pinned Cotopaxi scene with no blank title screen. The short camera journey moves continuously from a close summit, through a lush Andean valley with native vegetation and wildflowers, into a sunlit Amazon canopy. Cotopaxi remains the visual anchor through the middle reveal so transitions never feel like unrelated locations. Wildlife is incidental and tiny: one distant condor and one hummingbird only. Nature remains the hero.
 
 Below the hero, the locked order is: Our Collections, Philosophy, Best Sellers, Shop by Concern, Retreats, Community Stories, Newsletter, Footer. The body uses generous warm-white space, subtle tonal transitions, circular bowl imagery, and calm editorial grids. Landscape imagery appears only as a contained accent in Retreats and the footer. Secondary pages use a compact image-led hero and a readable 760px article measure.
 
@@ -38,7 +38,7 @@ Below the hero, the locked order is: Our Collections, Philosophy, Best Sellers, 
 
 ## 5. Motion
 
-The hero is the single large motion moment. Its six visual layers rise from below at depth-scaled speeds, driven directly by scroll progress. Product copy appears only after 78 percent progress. All other reveals move only upward by 16px while fading. Cards may use a restrained hover lift and image scale. No horizontal entrances, scroll hijacking, body-edge flowers, or draggable body ornaments are permitted. Motion uses transform, opacity, and filter only. Reduced-motion and mobile receive a complete static hero.
+The hero is the single large motion moment. One GSAP ScrollTrigger timeline pins the viewport for a short descent and scrubs three photorealistic scene plates: summit (0–33%), green valley (33–68%), and Amazon (68–100%). Transitions use cross-dissolve, upward drift, mist, and a continuous pullback; there are no hard cuts, spins, sideways travel, dark overlays, or flicker-prone layout animation. Headline copy begins left of the summit and may be partially occluded by the mountain. All other reveals move only upward by 16px while fading. Cards may use a restrained hover lift and image scale. No horizontal entrances, scroll hijacking, body-edge flowers, or draggable body ornaments are permitted. Motion uses transform, opacity, and filter only. Reduced-motion and mobile receive a complete static summit hero with readable copy.
 
 ## 6. Responsive behavior
 

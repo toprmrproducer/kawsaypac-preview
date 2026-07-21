@@ -21,7 +21,23 @@
   function normalizeRibbon(){const track=$('.trust-track');if(!track||track.querySelector('.trust-group'))return;const items=[...track.children],mid=Math.ceil(items.length/2);const first=document.createElement('div'),second=document.createElement('div');first.className='trust-group';second.className='trust-group';second.setAttribute('aria-hidden','true');items.slice(0,mid).forEach(item=>first.append(item));items.slice(mid).forEach(item=>second.append(item));track.append(first,second)}
   function renderFooter(){const host=$('[data-site-footer]');if(!host)return;host.innerHTML=`<footer class="site-footer"><img class="footer-bg" src="assets/img/bg-footer-jungle.webp?v=17" alt="Sunlit Ecuadorian forest floor"><div class="footer-foliage" aria-hidden="true"><img src="assets/img/fg-leaf-monstera.webp?v=17" alt=""><img src="assets/img/fg-leaf-fern.webp?v=17" alt=""></div><div class="footer-card"><div class="footer-grid"><div class="footer-intro"><a class="brand" href="index.html"><img src="assets/brand/kawsaypac-mark.svg?v=17" alt=""><span><strong>KAWSAYPAC</strong><small>ANCESTRAL HERBS</small></span></a><p>Wildcrafted herbal rituals rooted in Ecuador and shared through direct community relationships.</p></div><div class="footer-col"><h3>Explore</h3><ul><li><a href="shop.html">Shop All Herbs</a></li><li><a href="shop.html?type=blends">Kawsaypac Blends</a></li><li><a href="shop.html?type=bundles">Kawsaypac Bundles</a></li><li><a href="retreats.html">Ecuador Retreats</a></li><li><a href="recipes.html">Recipes & Programs</a></li></ul></div><div class="footer-col"><h3>Learn</h3><ul><li><a href="philosophy.html">Why Kawsaypac</a></li><li><a href="tea-preparation.html">Tea Preparation Guide</a></li><li><a href="preparing-your-body.html">Preparing Your Body</a></li><li><a href="story.html">Our Story</a></li></ul></div><div class="footer-col"><h3>Support</h3><ul><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="wholesale.html">Wholesale</a></li></ul></div><div class="footer-col"><h3>Policies</h3><ul><li><a href="shipping-returns.html">Shipping & Returns</a></li><li><a href="refund-policy.html">Refund Policy</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="fda-disclaimer.html">FDA Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div><div class="electric">THE ELECTRIC EATS</div><div class="footer-tagline">Rooted in Ecuador. Guided by Nature. Created for Transformation.</div></div><div class="socials"><a href="https://www.instagram.com/theelectriceats/" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.youtube.com/@theelectriceats" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21 8.2a3 3 0 0 0-2-2C17 5.6 14.3 5.5 12 5.5s-5 .1-6.9.7A3 3 0 0 0 3 8.2 20 20 0 0 0 2.5 12 20 20 0 0 0 3 15.8a3 3 0 0 0 2.1 2c1.9.6 4.6.7 6.9.7s5-.1 6.9-.7a3 3 0 0 0 2.1-2 20 20 0 0 0 .5-3.8 20 20 0 0 0-.5-3.8Z"/><path d="m10 9 5 3-5 3Z"/></svg></a><a href="https://x.com/theelectriceats" aria-label="X"><svg viewBox="0 0 24 24"><path d="M5 4l14 16M19 4 5 20"/></svg></a><a href="https://www.tiktok.com/@theelectriceats" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a4.5 4.5 0 1 1-4-4.5M14 3c.5 3 2 4.5 5 5"/></svg></a><a href="mailto:hello@theelectriceats.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a></div><p class="legal">© 2026 The Electric Eats. These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure, or prevent disease.</p></div></div></footer>`;}
   function renderModal(){const host=$('[data-site-modal]');if(!host)return;host.innerHTML='<div class="modal" role="dialog" aria-modal="true" aria-label="Media viewer"><div class="modal-card"><button class="modal-close icon-button" type="button" aria-label="Close"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="video-frame" data-modal-content></div></div></div><div class="toast" role="status" aria-live="polite"></div>';}
-  function initNav(){const toggle=$('.menu-toggle'),sheet=$('.mobile-sheet');if(toggle&&sheet){toggle.addEventListener('click',()=>{const open=!sheet.classList.contains('open');sheet.classList.toggle('open',open);sheet.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});$$('a',sheet).forEach(a=>a.addEventListener('click',()=>{sheet.classList.remove('open');document.body.classList.remove('menu-open')}));}$$('.drop-trigger').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();const item=btn.closest('.nav-item');const open=!item.classList.contains('open');$$('.nav-item.open').forEach(i=>i.classList.remove('open'));item.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open))}));document.addEventListener('click',()=>$$('.nav-item.open').forEach(i=>i.classList.remove('open')));document.addEventListener('keydown',e=>{if(e.key==='Escape'){$$('.nav-item.open').forEach(i=>i.classList.remove('open'));if(sheet){sheet.classList.remove('open');document.body.classList.remove('menu-open');}}});}
+  function initNav(){
+    const toggle=$('.menu-toggle'),sheet=$('.mobile-sheet');
+    const setMenu=open=>{
+      if(!toggle||!sheet)return;
+      sheet.classList.toggle('open',open);
+      sheet.setAttribute('aria-hidden',String(!open));
+      toggle.setAttribute('aria-expanded',String(open));
+      document.body.classList.toggle('menu-open',open);
+    };
+    if(toggle&&sheet){
+      toggle.addEventListener('click',()=>setMenu(!sheet.classList.contains('open')));
+      $$('a',sheet).forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+    }
+    $$('.drop-trigger').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();const item=btn.closest('.nav-item');const open=!item.classList.contains('open');$$('.nav-item.open').forEach(i=>i.classList.remove('open'));item.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open))}));
+    document.addEventListener('click',()=>$$('.nav-item.open').forEach(i=>i.classList.remove('open')));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){$$('.nav-item.open').forEach(i=>i.classList.remove('open'));setMenu(false)}});
+  }
   function card(p){return `<article class="product-card reveal" data-shop-product data-concern="${p.concerns}" data-type="${p.tag.toLowerCase()}"><a class="product-media" href="product.html?product=${p.slug}"><img src="${p.image}?v=17" alt="${p.name} herbal product" loading="lazy"><span class="product-tag">${p.tag}</span></a><div class="product-copy"><h3>${p.name}</h3><strong>${p.price}</strong><p>${p.desc}</p><a class="card-link" href="product.html?product=${p.slug}">View blend</a></div></article>`}
   const liveProductUrls={
     'river-of-life':'https://theelectriceats.com/products/river-of-life',
@@ -45,7 +61,85 @@
     }
   }
   function initReveal(){if(matchMedia('(prefers-reduced-motion: reduce)').matches){$$('.reveal').forEach(e=>e.classList.add('visible'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});$$('.reveal').forEach(e=>io.observe(e))}
-  function initHero(){const hero=$('.hero-scroll');if(!hero)return;const layers={far:$('.layer-far'),peak:$('.layer-cotopaxi'),valley:$('.layer-valley'),front:$('.layer-foreground'),foliage:$('.layer-foliage')},backdrop=$('.hero-static-range'),finalScene=$('.hero-final-scene'),brand=$('.brand-statement'),copy=$('.hero-copy');const mobile=matchMedia('(max-width: 720px)').matches,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(mobile||reduce||!window.gsap||!window.ScrollTrigger){Object.values(layers).forEach(e=>e&&(e.style.transform='none'));if(backdrop)backdrop.style.display='none';if(finalScene){finalScene.style.opacity='1';finalScene.style.visibility='visible';finalScene.style.clipPath='none'}if(brand)brand.style.display='none';if(copy){copy.style.opacity='1';copy.style.visibility='visible';copy.style.transform='none'}return}gsap.registerPlugin(ScrollTrigger);const starts={far:86,peak:62,valley:118,front:132,foliage:145},ends={far:0,peak:-7,valley:0,front:0,foliage:0};const timing={far:[.03,.31],peak:[.06,.40],valley:[.20,.38],front:[.30,.36],foliage:[.39,.31]};const progress=(p,start,duration)=>Math.max(0,Math.min(1,(p-start)/duration));Object.entries(layers).forEach(([k,e])=>e&&gsap.set(e,{yPercent:starts[k],autoAlpha:1,force3D:true}));if(backdrop)gsap.set(backdrop,{autoAlpha:.24,scale:1.04,force3D:true});gsap.set(finalScene,{autoAlpha:0});ScrollTrigger.create({trigger:hero,start:'top top',end:'+=205%',pin:$('.hero-sticky'),scrub:true,anticipatePin:1,invalidateOnRefresh:true,onUpdate:self=>{const p=self.progress;Object.entries(layers).forEach(([k,e])=>{if(!e)return;const [start,duration]=timing[k];const t=progress(p,start,duration);const eased=1-Math.pow(1-t,3);gsap.set(e,{yPercent:starts[k]+(ends[k]-starts[k])*eased,y:k==='peak'?-20*eased:0})});if(backdrop)gsap.set(backdrop,{autoAlpha:.24*(1-progress(p,.02,.28)),scale:1.04-progress(p,.02,.28)*.04});const bo=1-progress(p,.10,.13);gsap.set(brand,{autoAlpha:bo,y:(1-bo)*-10});const co=progress(p,.74,.13);gsap.set(copy,{autoAlpha:co,y:18*(1-co)});}})}
+  function initHero(){
+    const hero=$('.hero-scroll'),sticky=$('.hero-sticky');
+    if(!hero||!sticky)return;
+
+    const mobile=matchMedia('(max-width: 720px)').matches;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(mobile||reduce||!window.gsap||!window.ScrollTrigger)return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const summit=$('.hero-frame-summit');
+    const summitImage=$('.hero-frame-summit img');
+    const summitOccluder=$('.hero-summit-occluder');
+    const valley=$('.hero-frame-valley');
+    const valleyImage=$('.hero-frame-valley img');
+    const amazon=$('.hero-frame-amazon');
+    const amazonImage=$('.hero-frame-amazon img');
+    const intro=$('.hero-intro');
+    const valleyChapter=$('.hero-chapter-valley');
+    const amazonChapter=$('.hero-chapter-amazon');
+    const clouds=$('.hero-clouds');
+    const mist=$('.hero-mist');
+    const rays=$('.hero-rays');
+    const hummingbird=$('.hero-hummingbird');
+    const altitude=$('[data-hero-altitude]');
+    const altitudeLine=$('.hero-altitude i');
+
+    gsap.set([summit,summitImage,summitOccluder,intro],{autoAlpha:1,force3D:true});
+    gsap.set([valley,amazon,valleyChapter,amazonChapter,mist,rays,hummingbird],{autoAlpha:0,force3D:true});
+    gsap.set(valleyImage,{scale:1.36,yPercent:2,transformOrigin:'52% 10%',force3D:true});
+    gsap.set(amazonImage,{scale:1.12,yPercent:3,transformOrigin:'50% 48%',force3D:true});
+    gsap.set(clouds,{autoAlpha:.18,xPercent:-2,yPercent:1,force3D:true});
+    gsap.set(valleyChapter,{y:24});
+    gsap.set(amazonChapter,{y:24});
+    gsap.set(hummingbird,{xPercent:-12,yPercent:8,rotation:-3,transformOrigin:'50% 50%'});
+    gsap.set(altitudeLine,{scaleY:0});
+
+    const altitudeAt=progress=>Math.round(5897+(250-5897)*progress);
+    const timeline=gsap.timeline({
+      defaults:{ease:'none',force3D:true},
+      scrollTrigger:{
+        id:'home-hero',
+        trigger:hero,
+        start:'top top',
+        end:()=>`+=${Math.round(innerHeight*1.65)}`,
+        pin:sticky,
+        scrub:.65,
+        anticipatePin:1,
+        invalidateOnRefresh:true,
+        onUpdate:self=>{
+          if(altitude)altitude.textContent=`${altitudeAt(self.progress).toLocaleString()} m`;
+          if(altitudeLine)gsap.set(altitudeLine,{scaleY:self.progress});
+        }
+      }
+    });
+
+    timeline
+      .to([summitImage,summitOccluder],{scale:1.075,yPercent:-1.5,duration:30},0)
+      .to(clouds,{xPercent:1.5,yPercent:-1.5,autoAlpha:.28,duration:34},0)
+      .to(intro,{autoAlpha:0,y:-22,duration:9},19)
+      .to(mist,{autoAlpha:.34,yPercent:-4,duration:7},24)
+      .to(valley,{autoAlpha:1,duration:10},26)
+      .to([summit,summitOccluder],{autoAlpha:0,duration:10},29)
+      .to(mist,{autoAlpha:.08,yPercent:-8,duration:8},31)
+      .to(valleyImage,{scale:1.015,yPercent:-1,duration:31},28)
+      .to(valleyChapter,{autoAlpha:1,y:0,duration:8},37)
+      .to(valleyChapter,{autoAlpha:0,y:-18,duration:7},57)
+      .to(mist,{autoAlpha:.3,yPercent:-12,duration:7},62)
+      .to(amazon,{autoAlpha:1,duration:10},64)
+      .to(valley,{autoAlpha:0,duration:10},67)
+      .to(amazonImage,{scale:1,yPercent:-1,duration:31},64)
+      .to(mist,{autoAlpha:.04,yPercent:-16,duration:9},70)
+      .to(rays,{autoAlpha:.28,duration:10},70)
+      .to(amazonChapter,{autoAlpha:1,y:0,duration:9},74)
+      .to(hummingbird,{autoAlpha:.82,xPercent:0,yPercent:0,rotation:2,duration:8},79)
+      .to(hummingbird,{xPercent:9,yPercent:-6,rotation:-1,duration:17},87)
+      .to(rays,{autoAlpha:.16,duration:20},80);
+
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>ScrollTrigger.refresh());
+  }
   function initFilm(){const frame=$('[data-youtube-film]');if(!frame)return;let loaded=false;const command=func=>{if(frame.contentWindow)frame.contentWindow.postMessage(JSON.stringify({event:'command',func,args:[]}), '*')};const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){if(!loaded){frame.src=frame.dataset.src;loaded=true;setTimeout(()=>command('playVideo'),900)}else command('playVideo')}else if(loaded)command('pauseVideo')}),{threshold:.45});io.observe(frame)}
   function initDraggableSprites(){
     const placements=[

@@ -213,3 +213,73 @@
   .concern-bowl strong{font-size:1.35rem}
   .concern-bowl small{font-size:.69rem}
 }
+
+/* v24 cinematic hero: Cotopaxi summit → living Andean valley → Amazon. */
+.home-page .hero-scroll{position:relative;min-height:100svh;background:#8296a2;color:#fff}
+.home-page .nav-pill{z-index:9001}
+.home-page .hero-sticky{position:relative;height:100svh;min-height:680px;overflow:hidden;isolation:isolate;background:#8296a2}
+.hero-cinematic,.hero-frame,.hero-frame img,.hero-summit-occluder,.hero-grade{position:absolute;inset:0;width:100%;height:100%}
+.hero-cinematic{z-index:1;overflow:hidden;contain:paint}
+.hero-frame{margin:0;overflow:hidden;backface-visibility:hidden;transform:translateZ(0);will-change:transform,opacity}
+.hero-frame img,.hero-summit-occluder{max-width:none;object-fit:cover;backface-visibility:hidden;transform:translateZ(0);will-change:transform,opacity}
+.hero-frame-summit{z-index:1;opacity:1}
+.hero-frame-summit img{object-position:52% center}
+.hero-frame-valley{z-index:2;opacity:0;visibility:hidden}
+.hero-frame-valley img{object-position:50% 0}
+.hero-frame-amazon{z-index:3;opacity:0;visibility:hidden}
+.hero-frame-amazon img{object-position:center center}
+.hero-atmosphere{position:absolute;z-index:4;left:-7%;top:-3%;width:114%;height:106%;max-width:none;object-fit:cover;pointer-events:none;backface-visibility:hidden;transform:translateZ(0);will-change:transform,opacity}
+.hero-clouds{opacity:.18}
+.hero-mist{z-index:5;opacity:0}
+.hero-rays{position:absolute;z-index:5;inset:-10%;opacity:0;pointer-events:none;background:linear-gradient(116deg,transparent 21%,rgba(255,239,191,.13) 33%,transparent 45%,rgba(255,246,215,.09) 54%,transparent 67%);transform:translate3d(-3%,0,0);will-change:transform,opacity}
+.hero-hummingbird{position:absolute;z-index:6;right:8%;top:23%;width:clamp(46px,5vw,76px);height:auto;opacity:0;visibility:hidden;pointer-events:none;filter:drop-shadow(0 8px 12px rgba(9,35,19,.2));transform-origin:center;will-change:transform,opacity}
+.hero-grade{z-index:4;pointer-events:none;background:linear-gradient(90deg,rgba(10,28,19,.18),transparent 48%),linear-gradient(0deg,rgba(8,24,16,.14),transparent 34%)}
+.hero-summit-occluder{z-index:8;object-position:52% center;pointer-events:none;clip-path:polygon(49% 0,100% 0,100% 100%,38% 100%,45% 75%,50% 53%,56% 31%);will-change:transform,opacity}
+.hero-intro,.hero-chapter,.hero-altitude{position:absolute;z-index:7}
+.hero-intro{left:max(38px,5.4vw);top:50%;width:min(590px,42vw);transform:translateY(-44%);text-shadow:0 3px 32px rgba(16,39,26,.42);will-change:transform,opacity}
+.hero-kicker,.hero-chapter>p{margin:0 0 16px;font-size:.67rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+.hero-intro h1,.hero-chapter h2{margin:0;font-family:var(--display);font-weight:400;letter-spacing:-.055em;text-wrap:balance}
+.hero-intro h1{max-width:8.7ch;font-size:clamp(4.1rem,7.8vw,9rem);line-height:.83}
+.hero-intro h1 span{display:block}
+.hero-intro h1 em,.hero-chapter h2 em{color:#f0cf69;font-weight:400}
+.hero-lede{max-width:42ch;margin:25px 0 0;font-size:clamp(.92rem,1.05vw,1.08rem);line-height:1.55;text-shadow:0 2px 18px rgba(8,31,18,.64)}
+.hero-scroll-cue{display:flex;align-items:center;gap:12px;margin-top:30px;font-size:.62rem;font-weight:750;letter-spacing:.17em;text-transform:uppercase}
+.hero-scroll-cue::after{content:'';width:52px;height:1px;background:currentColor;transform-origin:left;animation:hero-cue 2.4s ease-in-out infinite}
+@keyframes hero-cue{0%,100%{transform:scaleX(.45);opacity:.45}50%{transform:scaleX(1);opacity:1}}
+.hero-chapter{opacity:0;visibility:hidden;text-shadow:0 3px 30px rgba(7,28,16,.58);will-change:transform,opacity}
+.hero-chapter h2{font-size:clamp(3.8rem,7vw,7.8rem);line-height:.87}
+.hero-chapter-valley{left:max(38px,5.4vw);bottom:max(44px,7vh);width:min(680px,48vw)}
+.hero-chapter-amazon{left:max(38px,5.4vw);top:50%;width:min(660px,48vw);transform:translateY(-44%)}
+.hero-chapter-amazon h2{max-width:8.6ch}
+.hero-chapter-amazon .hero-actions{margin-top:27px}
+.hero-chapter-amazon .btn-secondary{border-color:rgba(255,255,255,.72);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.hero-altitude{z-index:9;right:24px;top:50%;display:flex;align-items:center;gap:12px;writing-mode:vertical-rl;transform:translateY(-50%);font-size:.57rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 2px 12px rgba(8,28,16,.55)}
+.hero-altitude i{display:block;width:1px;height:92px;background:rgba(255,255,255,.7);transform-origin:top}
+.hero-altitude small{font-size:inherit}
+
+@media(max-width:980px){
+  .hero-intro{width:min(570px,52vw)}
+  .hero-intro h1{font-size:clamp(4rem,9vw,7rem)}
+  .hero-chapter{width:min(620px,56vw)}
+  .hero-summit-occluder{clip-path:polygon(54% 0,100% 0,100% 100%,45% 100%,51% 70%,57% 36%)}
+}
+
+@media(max-width:720px){
+  .home-page .hero-scroll{min-height:100svh}
+  .home-page .hero-sticky{height:100svh;min-height:660px}
+  .hero-frame-summit img{object-position:61% center;transform:none!important}
+  .hero-frame-valley,.hero-frame-amazon,.hero-atmosphere,.hero-rays,.hero-hummingbird,.hero-summit-occluder,.hero-chapter,.hero-altitude{display:none!important}
+  .hero-grade{background:linear-gradient(90deg,rgba(8,28,18,.24),transparent 78%),linear-gradient(0deg,rgba(7,24,15,.35),transparent 58%)}
+  .hero-intro{left:22px;right:22px;top:auto;bottom:34px;width:auto;transform:none!important;opacity:1!important;visibility:visible!important}
+  .hero-intro h1{max-width:7.6ch;font-size:clamp(4rem,17vw,6rem)}
+  .hero-lede{max-width:32ch;font-size:.9rem}
+  .hero-scroll-cue{margin-top:22px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home-page .hero-scroll{min-height:100svh}
+  .home-page .hero-sticky{height:100svh}
+  .hero-frame-summit,.hero-frame-summit img,.hero-intro{opacity:1!important;visibility:visible!important;transform:none!important}
+  .hero-frame-valley,.hero-frame-amazon,.hero-atmosphere,.hero-rays,.hero-hummingbird,.hero-summit-occluder,.hero-chapter,.hero-altitude{display:none!important}
+  .hero-scroll-cue::after{animation:none}
+}
