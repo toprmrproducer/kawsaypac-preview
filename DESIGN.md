@@ -21,7 +21,7 @@ Kawsaypac is a luminous, landscape-led Ecuadorian herbal brand. The visual syste
 
 ## 3. Layout
 
-The homepage begins inside a full-viewport pinned Cotopaxi scene with no blank title screen. The short camera journey moves continuously from a close summit, through a lush Andean valley with native vegetation and wildflowers, into a sunlit Amazon canopy. Cotopaxi remains the visual anchor through the middle reveal so transitions never feel like unrelated locations. Wildlife is incidental and tiny: one distant condor and one hummingbird only. Nature remains the hero.
+The homepage begins inside a full-viewport pinned Cotopaxi scene with no blank title screen. The short camera journey moves continuously from a close summit, through a lush Andean valley with native vegetation and wildflowers, into a sunlit Amazon canopy. The summit and jungle are assembled from full-canvas registered component stacks; the valley is assembled from prepared keyed sky, peak, ridge, river, meadow, mist, and wildflower layers. Components in a registered stack always share one geometry so the landscape cannot split at scroll seams. Nature remains the hero.
 
 Below the hero, the locked order is: Our Collections, Philosophy, Best Sellers, Shop by Concern, Retreats, Community Stories, Newsletter, Footer. The body uses generous warm-white space, subtle tonal transitions, circular bowl imagery, and calm editorial grids. Landscape imagery appears only as a contained accent in Retreats and the footer. Secondary pages use a compact image-led hero and a readable 760px article measure.
 
@@ -38,13 +38,13 @@ Below the hero, the locked order is: Our Collections, Philosophy, Best Sellers, 
 
 ## 5. Motion
 
-The hero is the single large motion moment. One GSAP ScrollTrigger timeline pins the viewport for a short descent and scrubs three photorealistic scene plates: summit (0–33%), green valley (33–68%), and Amazon (68–100%). Transitions use cross-dissolve, upward drift, mist, and a continuous pullback; there are no hard cuts, spins, sideways travel, dark overlays, or flicker-prone layout animation. Headline copy begins left of the summit and may be partially occluded by the mountain. All other reveals move only upward by 16px while fading. Cards may use a restrained hover lift and image scale. No horizontal entrances, scroll hijacking, body-edge flowers, or draggable body ornaments are permitted. Motion uses transform, opacity, and filter only. Reduced-motion and mobile receive a complete static summit hero with readable copy.
+The hero is the single large motion moment. One GSAP ScrollTrigger timeline pins the viewport for `+=420%` and scrubs three component-built scenes: summit (0–30%), green valley (30–62%), and Amazon (62–100%). Scene changes are vertical pushes: the next complete scene rises from below while the current complete scene drifts upward. Full photographs never crossfade, no diagonal masks are permitted, and summit registration may diverge only by 2–6% of subtle parallax. Incoming valley and jungle scenes use a narrow top alpha feather so their leading edges dissolve into atmosphere. There are no hard cuts, spins, sideways travel, dark overlays, or flicker-prone layout animation. Headline copy is scene-local and never survives into a different landscape. Cards may use a restrained hover lift and image scale. No horizontal entrances, scroll hijacking, body-edge flowers, or draggable body ornaments are permitted. Motion uses transform and opacity only. Reduced-motion receives the complete static summit composition with readable copy.
 
 ## 6. Responsive behavior
 
 - Desktop: pinned hero and full pill navigation.
 - Tablet: two-column content grids and mobile navigation sheet.
-- Mobile at 390px: static composed hero, visible product copy, hidden brand statement, single-column cards, no horizontal overflow, and at least 44px targets.
+- Mobile at 390px: the same registered component journey with responsive cropping and smaller scene-local copy, visible product copy, hidden brand statement, single-column cards, no horizontal overflow, and at least 44px targets. Reduced-motion remains a static composed summit.
 
 ## 7. Accessibility and accepted integration debt
 

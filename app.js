@@ -62,83 +62,83 @@
   }
   function initReveal(){if(matchMedia('(prefers-reduced-motion: reduce)').matches){$$('.reveal').forEach(e=>e.classList.add('visible'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});$$('.reveal').forEach(e=>io.observe(e))}
   function initHero(){
-    const hero=$('.hero-scroll'),sticky=$('.hero-sticky');
-    if(!hero||!sticky)return;
+    const hero=$('#hero');
+    if(!hero||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 
-    const mobile=matchMedia('(max-width: 720px)').matches;
-    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(mobile||reduce||!window.gsap||!window.ScrollTrigger)return;
+    const start=()=>{
+      if(!window.gsap||!window.ScrollTrigger)return;
+      gsap.registerPlugin(ScrollTrigger);
+      const summit=$('#hero-scene-summit');
+      const valley=$('#hero-scene-valley');
+      const jungle=$('#hero-scene-jungle');
+      const altitude=$('[data-hero-altitude]');
+      const progressFill=$('[data-hero-progress]');
+      const altitudeAt=progress=>Math.round(5897+(250-5897)*progress);
 
-    gsap.registerPlugin(ScrollTrigger);
-    const summit=$('.hero-frame-summit');
-    const summitImage=$('.hero-frame-summit img');
-    const summitOccluder=$('.hero-summit-occluder');
-    const valley=$('.hero-frame-valley');
-    const valleyImage=$('.hero-frame-valley img');
-    const amazon=$('.hero-frame-amazon');
-    const amazonImage=$('.hero-frame-amazon img');
-    const intro=$('.hero-intro');
-    const valleyChapter=$('.hero-chapter-valley');
-    const amazonChapter=$('.hero-chapter-amazon');
-    const clouds=$('.hero-clouds');
-    const mist=$('.hero-mist');
-    const rays=$('.hero-rays');
-    const hummingbird=$('.hero-hummingbird');
-    const altitude=$('[data-hero-altitude]');
-    const altitudeLine=$('.hero-altitude i');
+      gsap.set(summit,{autoAlpha:1,yPercent:0,force3D:true});
+      gsap.set([valley,jungle],{autoAlpha:1,yPercent:100,visibility:'hidden',force3D:true});
+      gsap.set(['#hero-copy-valley','#hero-copy-jungle'],{autoAlpha:0,y:0,force3D:true});
+      gsap.set(progressFill,{height:'0%'});
 
-    gsap.set([summit,summitImage,summitOccluder,intro],{autoAlpha:1,force3D:true});
-    gsap.set([valley,amazon,valleyChapter,amazonChapter,mist,rays,hummingbird],{autoAlpha:0,force3D:true});
-    gsap.set(valleyImage,{scale:1.36,yPercent:2,transformOrigin:'52% 10%',force3D:true});
-    gsap.set(amazonImage,{scale:1.12,yPercent:3,transformOrigin:'50% 48%',force3D:true});
-    gsap.set(clouds,{autoAlpha:.18,xPercent:-2,yPercent:1,force3D:true});
-    gsap.set(valleyChapter,{y:24});
-    gsap.set(amazonChapter,{y:24});
-    gsap.set(hummingbird,{xPercent:-12,yPercent:8,rotation:-3,transformOrigin:'50% 50%'});
-    gsap.set(altitudeLine,{scaleY:0});
-
-    const altitudeAt=progress=>Math.round(5897+(250-5897)*progress);
-    const timeline=gsap.timeline({
-      defaults:{ease:'none',force3D:true},
-      scrollTrigger:{
-        id:'home-hero',
-        trigger:hero,
-        start:'top top',
-        end:()=>`+=${Math.round(innerHeight*1.65)}`,
-        pin:sticky,
-        scrub:.65,
-        anticipatePin:1,
-        invalidateOnRefresh:true,
-        onUpdate:self=>{
-          if(altitude)altitude.textContent=`${altitudeAt(self.progress).toLocaleString()} m`;
-          if(altitudeLine)gsap.set(altitudeLine,{scaleY:self.progress});
+      const timeline=gsap.timeline({
+        defaults:{ease:'none',force3D:true},
+        scrollTrigger:{
+          id:'home-hero',
+          trigger:hero,
+          start:'top top',
+          end:'+=420%',
+          pin:true,
+          scrub:.6,
+          anticipatePin:1,
+          invalidateOnRefresh:true,
+          onUpdate:self=>{
+            if(altitude)altitude.textContent=`${altitudeAt(self.progress).toLocaleString()} m`;
+            if(progressFill)progressFill.style.height=`${(self.progress*100).toFixed(2)}%`;
+          }
         }
-      }
-    });
+      });
 
-    timeline
-      .to([summitImage,summitOccluder],{scale:1.075,yPercent:-1.5,duration:30},0)
-      .to(clouds,{xPercent:1.5,yPercent:-1.5,autoAlpha:.28,duration:34},0)
-      .to(intro,{autoAlpha:0,y:-22,duration:9},19)
-      .to(mist,{autoAlpha:.34,yPercent:-4,duration:7},24)
-      .to(valley,{autoAlpha:1,duration:10},26)
-      .to([summit,summitOccluder],{autoAlpha:0,duration:10},29)
-      .to(mist,{autoAlpha:.08,yPercent:-8,duration:8},31)
-      .to(valleyImage,{scale:1.015,yPercent:-1,duration:31},28)
-      .to(valleyChapter,{autoAlpha:1,y:0,duration:8},37)
-      .to(valleyChapter,{autoAlpha:0,y:-18,duration:7},57)
-      .to(mist,{autoAlpha:.3,yPercent:-12,duration:7},62)
-      .to(amazon,{autoAlpha:1,duration:10},64)
-      .to(valley,{autoAlpha:0,duration:10},67)
-      .to(amazonImage,{scale:1,yPercent:-1,duration:31},64)
-      .to(mist,{autoAlpha:.04,yPercent:-16,duration:9},70)
-      .to(rays,{autoAlpha:.28,duration:10},70)
-      .to(amazonChapter,{autoAlpha:1,y:0,duration:9},74)
-      .to(hummingbird,{autoAlpha:.82,xPercent:0,yPercent:0,rotation:2,duration:8},79)
-      .to(hummingbird,{xPercent:9,yPercent:-6,rotation:-1,duration:17},87)
-      .to(rays,{autoAlpha:.16,duration:20},80);
+      timeline
+        .to('#summit-volcano',{yPercent:-4,scale:1.03,duration:.30},0)
+        .to('#summit-left-ridge',{yPercent:-6,scale:1.04,duration:.30},0)
+        .to('#summit-right-ridge',{yPercent:-5,scale:1.04,duration:.30},0)
+        .to('#summit-sky',{yPercent:-2,duration:.30},0)
+        .to('#hero-copy-summit',{autoAlpha:0,y:-40,ease:'power1.in',duration:.08},.20)
 
-    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>ScrollTrigger.refresh());
+        .set(valley,{visibility:'visible'},.28)
+        .fromTo(valley,{yPercent:100},{yPercent:0,duration:.12},.30)
+        .to(summit,{yPercent:-38,duration:.12},.30)
+        .set(summit,{visibility:'hidden'},.43)
+
+        .fromTo('#valley-peaks',{yPercent:3},{yPercent:-2,duration:.24},.40)
+        .fromTo('#valley-mist-far',{xPercent:3},{xPercent:-3,duration:.24},.40)
+        .fromTo('#valley-ridge-left',{yPercent:6},{yPercent:-3,duration:.24},.40)
+        .fromTo('#valley-ridge-right',{yPercent:6},{yPercent:-3,duration:.24},.40)
+        .fromTo('#valley-river',{yPercent:9},{yPercent:-4,duration:.24},.40)
+        .fromTo('#valley-mist-near',{xPercent:-4},{xPercent:4,duration:.24},.40)
+        .fromTo('#valley-meadow',{yPercent:12},{yPercent:-6,duration:.24},.40)
+        .fromTo('#valley-wildflowers',{yPercent:15},{yPercent:-8,duration:.24},.40)
+        .to('#hero-copy-valley',{autoAlpha:1,y:-14,ease:'power1.out',duration:.06},.43)
+        .to('#hero-copy-valley',{autoAlpha:0,y:-40,ease:'power1.in',duration:.06},.56)
+
+        .set(jungle,{visibility:'visible'},.60)
+        .fromTo(jungle,{yPercent:100},{yPercent:0,duration:.12},.62)
+        .to(valley,{yPercent:-38,duration:.12},.62)
+        .set(valley,{visibility:'hidden'},.75)
+
+        .fromTo('#jungle-canopy-left',{yPercent:5,scale:1.04},{yPercent:-4,scale:1,duration:.28},.72)
+        .fromTo('#jungle-canopy-right',{yPercent:7},{yPercent:-5,duration:.28},.72)
+        .fromTo('#jungle-orchid-ferns',{yPercent:9},{yPercent:-6,duration:.28},.72)
+        .fromTo('#jungle-snake-branch',{yPercent:10},{yPercent:-7,duration:.28},.72)
+        .to('#hero-copy-jungle',{autoAlpha:1,y:-14,ease:'power1.out',duration:.07},.78);
+
+      const refresh=()=>ScrollTrigger.refresh();
+      if(document.fonts&&document.fonts.ready)document.fonts.ready.then(refresh);
+      else refresh();
+    };
+
+    if(document.readyState==='complete')start();
+    else window.addEventListener('load',start,{once:true});
   }
   function initFilm(){const frame=$('[data-youtube-film]');if(!frame)return;let loaded=false;const command=func=>{if(frame.contentWindow)frame.contentWindow.postMessage(JSON.stringify({event:'command',func,args:[]}), '*')};const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){if(!loaded){frame.src=frame.dataset.src;loaded=true;setTimeout(()=>command('playVideo'),900)}else command('playVideo')}else if(loaded)command('pauseVideo')}),{threshold:.45});io.observe(frame)}
   function initDraggableSprites(){
